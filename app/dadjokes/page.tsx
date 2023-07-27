@@ -6,7 +6,7 @@ export default function Page() {
     </p> 
     <h2>1. Information We Collect:</h2> 
     <ul> 
-      <li>Automatically Collected Information: We may collect certain information automatically when you use the app, including your device's identifier, operating system, and usage data. This helps us analyze trends, monitor the performance of our app, and improve our services.</li> 
+      <li>Automatically Collected Information: We may collect certain information automatically when you use the app, including your device’s identifier, operating system, and usage data. This helps us analyze trends, monitor the performance of our app, and improve our services.</li> 
       </ul> 
     <h2>2. Use of Information:</h2> 
     <ul> 
