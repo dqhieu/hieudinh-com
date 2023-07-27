@@ -1,5 +1,12 @@
+import { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Dad Jokes & Puns',
+}
+
 export default function Page() {
   return (
+    
     <div>
     <h1>Privacy Policy for Dad Jokes & Puns App</h1> 
     <p>At Dad Jokes &amp; Puns, we value your privacy and are committed to protecting your personal information.  This Privacy Policy explains how we collect, use, and safeguard your data when you use our app.
