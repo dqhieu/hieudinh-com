@@ -21,7 +21,7 @@ export default function Page() {
     <h2>4. Data Security:</h2> 
     <p>We strive to protect your personal information and have implemented technical and organizational measures to safeguard it. However, no transmission over the internet or electronic storage is completely secure, so we cannot guarantee absolute security of your data.</p> 
     <h2>6. Changes to this Privacy Policy:</h2> 
-    <p>Dad Jokes &amp; Puns reserves the right to modify or update this Privacy Policy at any time. We will notify you of any material changes through a prominent notice on our app or by other means before the changes take effect.</p>
+    <p>Dad Jokes &amp; Puns reserves the right to modify or update this Privacy Policy at any time. We will notify you of any material changes through a prominent notice on our app or by other means before the changes take effect.</p> 
      <p>By using Dad Jokes &amp; Puns, you consent to the collection, use, and disclosure of your information as described in this Privacy Policy.</p> 
      <p>If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:dadjokes.support@hieudinh.com">dadjokes.support@hieudinh.com</a>.</p> 
      <p>Last updated: July 27, 2023</p>
