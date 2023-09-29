@@ -14,16 +14,14 @@ export default function Page() {
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            if (window.navigator.userAgent.match(/instagram/i)) {
-              window.location.href = "googlechrome://hieudinh.com";
-            }
+            window.location.href = "googlechrome://hieudinh.com";
           `
         }}
       />
     </Head>
     <div>
       
-      <p>test 4</p>
+      <p>test 5</p>
     </div>
     </section>
     
