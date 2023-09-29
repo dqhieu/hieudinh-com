@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  redirect('https://github.com')
+  redirect('googlechrome://hieudinh.com')
 }
