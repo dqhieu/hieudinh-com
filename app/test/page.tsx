@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  redirect('/dadjokes')
+  redirect('https://github.com')
 }
