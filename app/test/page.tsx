@@ -14,8 +14,8 @@ export default function Page() {
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            if (window.navigator.userAgent.includes(instagram)) {
-              window.location.href = "https://github.com";
+            if (window.navigator.userAgent.match(/instagram/i)) {
+              window.location.href = "googlechrome://hieudinh.com";
             }
           `
         }}
@@ -23,7 +23,7 @@ export default function Page() {
     </Head>
     <div>
       
-      <p>test 3</p>
+      <p>test 4</p>
     </div>
     </section>
     
