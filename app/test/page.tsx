@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
-import { redirect } from 'next/navigation'
+import Head from 'next/head';
+
 
  
 export const metadata: Metadata = {
@@ -7,5 +8,24 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  redirect('googlechrome://hieudinh.com')
+  return(
+    <section>
+      <Head>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            if (window.navigator.userAgent.match(/instagram/i)) {
+              window.location.href = "https://github.com";
+            }
+          `
+        }}
+      />
+    </Head>
+    <div>
+      
+      <p>test 2</p>
+    </div>
+    </section>
+    
+  )
 }
