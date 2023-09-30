@@ -1,14 +1,10 @@
 import { Metadata } from 'next'
+import { redirect } from 'next/navigation'
  
 export const metadata: Metadata = {
   title: 'Dad Jokes & Puns',
 }
 
 export default function Page() {
-  return(
-    <a href='https://expensebuddy.app/' target='_blank' rel='noopener noreferrer'>
-			test 3
-		</a>
-    
-  )
+  redirect('Https://hieudinh.com')
 }
