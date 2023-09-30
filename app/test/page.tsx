@@ -6,8 +6,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return(
-    <a href='https://github.com/atomantic/is-ua-webview/' target='_blank' rel='noopener noreferrer'>
-							test 2
+    <a href='https://expensebuddy.app/' target='_blank' rel='noopener noreferrer'>
+			test 3
 		</a>
     
   )
