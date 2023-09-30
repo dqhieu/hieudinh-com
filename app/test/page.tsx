@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Head from 'next/head';
-
-
+import { redirect } from 'next/navigation'
  
 export const metadata: Metadata = {
   title: 'Dad Jokes & Puns',
@@ -9,21 +8,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return(
-    <section>
-      <Head>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.location.href = "googlechrome://hieudinh.com";
-          `
-        }}
-      />
-    </Head>
-    <div>
-      
-      <p>test 5</p>
-    </div>
-    </section>
+    <a href="https://github.com" target="_blank" rel="noopener noreferrer">Open Link in New Tab</a>
     
   )
 }
