@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/(c/C)ompress(x/X)',
+        destination: '/compressx',
+      },
+    ]
+  },
+}
