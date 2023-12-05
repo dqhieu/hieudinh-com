@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>CompressX</title>
+        <item>
+            <title>0.6</title>
+            <pubDate>Wed, 06 Dec 2023 00:48:12 +0800</pubDate>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>0.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
+            <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2618009" type="application/octet-stream" sparkle:edSignature="6xo4PXne5gPh4BqXzpMMPBLZt/WlD3eRdCTslNbaGDMV4pExB1Y5Om+adV1Jg7nvJ/eiU10Z9YLPjN7jrHkbAA=="/>
+        </item>
+    </channel>
+</rss>
