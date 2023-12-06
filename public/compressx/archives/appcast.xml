@@ -3,6 +3,15 @@
     <channel>
         <title>CompressX</title>
         <item>
+            <title>0.7</title>
+            <pubDate>Wed, 06 Dec 2023 23:22:49 +0800</pubDate>
+            <sparkle:version>7</sparkle:version>
+            <sparkle:shortVersionString>0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
+            <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2627439" type="application/octet-stream" sparkle:edSignature="o+O3j5M3SOjgWyilHkzJey6+tU7/awPTuSIYZQtaeOfQQ3as+tVNornbu8yuTkurs64/ZbRz4LJwGXyDzk4wCA=="/>
+        </item>
+        <item>
             <title>0.6</title>
             <pubDate>Wed, 06 Dec 2023 00:48:12 +0800</pubDate>
             <sparkle:version>6</sparkle:version>
