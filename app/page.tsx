@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import swiftGif from 'src/images/wwdc-swift.gif'
+import swiftGif from '/src/images/wwdc-swift.gif'
 
 export default function Home() {
   return (
