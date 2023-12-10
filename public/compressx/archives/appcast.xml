@@ -3,6 +3,15 @@
     <channel>
         <title>CompressX</title>
         <item>
+            <title>0.9.2</title>
+            <pubDate>Sun, 10 Dec 2023 13:43:51 +0800</pubDate>
+            <sparkle:version>11</sparkle:version>
+            <sparkle:shortVersionString>0.9.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
+            <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2640272" type="application/octet-stream" sparkle:edSignature="G6x705xvZtiGL+Iwb3xiaKKbev/xt2QUhLFJQSqCdmPruCnOWNLOo6okvWAxthPGf3qXmG2gtj7CVQ05WA8PDw=="/>
+        </item>
+        <item>
             <title>0.9</title>
             <pubDate>Sat, 09 Dec 2023 16:50:08 +0800</pubDate>
             <sparkle:version>9</sparkle:version>
@@ -19,15 +28,6 @@
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
             <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2627439" type="application/octet-stream" sparkle:edSignature="o+O3j5M3SOjgWyilHkzJey6+tU7/awPTuSIYZQtaeOfQQ3as+tVNornbu8yuTkurs64/ZbRz4LJwGXyDzk4wCA=="/>
-        </item>
-        <item>
-            <title>0.6</title>
-            <pubDate>Wed, 06 Dec 2023 00:48:12 +0800</pubDate>
-            <sparkle:version>6</sparkle:version>
-            <sparkle:shortVersionString>0.6</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
-            <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2618009" type="application/octet-stream" sparkle:edSignature="6xo4PXne5gPh4BqXzpMMPBLZt/WlD3eRdCTslNbaGDMV4pExB1Y5Om+adV1Jg7nvJ/eiU10Z9YLPjN7jrHkbAA=="/>
         </item>
     </channel>
 </rss>
