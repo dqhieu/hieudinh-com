@@ -4,6 +4,15 @@
         <title>CompressX</title>
         <item>
             <title>0.11</title>
+            <pubDate>Sun, 17 Dec 2023 00:02:27 +0800</pubDate>
+            <sparkle:version>14</sparkle:version>
+            <sparkle:shortVersionString>0.11</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
+            <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2673862" type="application/octet-stream" sparkle:edSignature="zj0JlrzU5gaoIKoxgfl1a7V3POjV8+DB9Do8QaHGvNtqwMvP2+VTRP+AzsmMnKOxBK61NJS56tFyEieVhwFTAQ=="/>
+        </item>
+        <item>
+            <title>0.11</title>
             <pubDate>Sat, 16 Dec 2023 21:21:44 +0800</pubDate>
             <sparkle:version>13</sparkle:version>
             <sparkle:shortVersionString>0.11</sparkle:shortVersionString>
@@ -19,15 +28,6 @@
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
             <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2650528" type="application/octet-stream" sparkle:edSignature="HBjVp2UfHKHYfJcM4cv7YOMazBZuO4EFULXtDTkTRQ3MbuAVWac9I/06z/8156c4Qi/0+13SUtATWAvhDpWgAQ=="/>
-        </item>
-        <item>
-            <title>0.9.2</title>
-            <pubDate>Sun, 10 Dec 2023 13:43:51 +0800</pubDate>
-            <sparkle:version>11</sparkle:version>
-            <sparkle:shortVersionString>0.9.2</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
-            <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2640272" type="application/octet-stream" sparkle:edSignature="G6x705xvZtiGL+Iwb3xiaKKbev/xt2QUhLFJQSqCdmPruCnOWNLOo6okvWAxthPGf3qXmG2gtj7CVQ05WA8PDw=="/>
         </item>
     </channel>
 </rss>
