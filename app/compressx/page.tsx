@@ -129,9 +129,11 @@ export default function Page() {
             <p className="mt-2 text-xl tracking-tight text-gray-900 dark:text-slate-100">
               Ultra video compression
             </p>
-            <div id='download' className="flex flex-wrap items-center justify-center text-2xl mt-8 dark:text-slate-200">
-              Get it for free on<a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'><LemonSqueezyLogo/></a>
-            </div>
+            <a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'>
+              <div id='download' className="flex flex-wrap items-center justify-center text-2xl mt-8 dark:text-slate-200">
+                Get it for free on<LemonSqueezyLogo/>
+              </div>
+            </a>
             <p className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200">
               Trusted by 1900+ users
             </p>
