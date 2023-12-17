@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import { Tweet } from 'react-tweet'
 import Image from 'next/image'
-import LemonSqueezyLogo from '/src/images/lemon_squeezy_black.svg'
+import LemonSqueezyLogoLightMode from '/src/images/lemon_squeezy_black.svg'
+import LemonSqueezyLogoDarkMode from '/src/images/lemon_squeezy.svg'
 
 export const metadata: Metadata = {
   title: 'CompressX - Ultra video compression',
@@ -10,6 +11,15 @@ export const metadata: Metadata = {
       images: ['/src/images/compressx_meta.png'],
   },
 }
+
+const LemonSqueezyLogo = () => {
+    return (
+      <picture>
+        <source srcSet={LemonSqueezyLogoDarkMode.src} media="(prefers-color-scheme: dark)" />
+        <Image className="pl-2" src={LemonSqueezyLogoLightMode} alt="LemonSqueezy logo"/>
+      </picture>
+  );
+};
 
 const testimonials = [
   [
@@ -88,7 +98,7 @@ function classNames(...classes: string[]): string {
 export default function Page() {
   return (
     <div>
-      <div className="relative isolate bg-white pb-12 sm:pb-12 pt-12 sm:pt-12">
+      <div className="relative isolate bg-white dark:bg-slate-950 pb-12 sm:pb-12 pt-12 sm:pt-12">
         <div
           className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
           aria-hidden="true"
@@ -115,19 +125,19 @@ export default function Page() {
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-xl text-center">
-            <h2 className="text-3xl font-bold leading-8 tracking-tight">CompresX</h2>
-            <p className="mt-2 text-xl tracking-tight text-gray-900">
+            <h2 className="text-3xl font-bold leading-8 tracking-tight dark:text-white">CompresX</h2>
+            <p className="mt-2 text-xl tracking-tight text-gray-900 dark:text-slate-100">
               Ultra video compression
             </p>
-            <div id='download' className="flex flex-wrap items-center justify-center text-2xl mt-8">
-              Get it for free on<a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'><Image className="pl-2" src={LemonSqueezyLogo} alt="LemonSqueezy logo"/></a>
+            <div id='download' className="flex flex-wrap items-center justify-center text-2xl mt-8 dark:text-slate-200">
+              Get it for free on<a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'><LemonSqueezyLogo/></a>
             </div>
-            <p className="mt-12 text-lg tracking-tight text-gray-900">
+            <p className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200">
               Trusted by 1900+ users
             </p>
           </div>
           <div className="mx-auto  sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
-            <div className='light sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
+            <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
               <div className='tweet-container sm:scale-110' >
                 <Tweet id='1731312819075948847'/>
               </div>
@@ -146,7 +156,7 @@ export default function Page() {
                     )}
                   >
                     {column.map((testimonial) => (
-                      <div className='light rounded-2xl shadow-lg' key={testimonial.id}>
+                      <div className='rounded-2xl shadow-lg' key={testimonial.id}>
                         <Tweet id={testimonial.id} />
                       </div> 
                     ))}
@@ -157,14 +167,14 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <footer className="bg-white">
+      <footer className="bg-white dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
         <div className="flex justify-center space-x-6 md:order-2">
-          <a key='X' href='https://hieudinh.notion.site/How-to-setup-CompressX-bae796ec3aa54781bfee27c8481d6e00' className="text-gray-400 hover:text-gray-500">
-            <p className="text-center text-xs leading-5 text-gray-500">How to setup</p>
+          <a key='X' href='https://hieudinh.notion.site/How-to-setup-CompressX-bae796ec3aa54781bfee27c8481d6e00' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+            <p className="text-center text-xs leading-5">How to setup</p>
           </a>
-          <a key='X' href='https://twitter.com/hieudinh_' className="flex flex-wrap text-gray-400 hover:text-gray-500">
-            <p className=" text-center text-xs leading-5 text-gray-500">Follow me on</p>
+          <a key='X' href='https://twitter.com/hieudinh_' className="flex flex-wrap text-gray-500 hover:text-gray-400 dark:text-slate-200">
+            <p className=" text-center text-xs leading-5">Follow me on</p>
             <svg 
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" width="1em" height="1em"
               aria-hidden="true"
@@ -175,7 +185,7 @@ export default function Page() {
           </a>
         </div>
         <div className="mt-8 md:order-1 md:mt-0">
-          <p className="text-center text-xs leading-5 text-gray-500">
+          <p className="text-center text-xs leading-5 text-gray-500 dark:text-slate-200">
             Made with ❤️ and ☕️ by &copy; 2023 Dinh Quang Hieu 🐈
           </p>
         </div>
