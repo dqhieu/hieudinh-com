@@ -123,7 +123,7 @@ export default function Page() {
               Ultra video compression
             </p>
             <div id='download' className="flex flex-wrap items-center justify-center text-2xl mt-8">
-              Get it for free on<a href='https://hieudinh.lemonsqueezy.com/'><Image className="pl-2" src={LemonSqueezyLogo} alt="LemonSqueezy logo"/></a>
+              Get it for free on<a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'><Image className="pl-2" src={LemonSqueezyLogo} alt="LemonSqueezy logo"/></a>
             </div>
             <p className="mt-12 text-lg tracking-tight text-gray-900">
               Trusted by 5000+ users
