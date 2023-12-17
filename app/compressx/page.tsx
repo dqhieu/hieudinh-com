@@ -126,7 +126,7 @@ export default function Page() {
               Get it for free on<a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'><Image className="pl-2" src={LemonSqueezyLogo} alt="LemonSqueezy logo"/></a>
             </div>
             <p className="mt-12 text-lg tracking-tight text-gray-900">
-              Trusted by 5000+ users
+              Trusted by 1900+ users
             </p>
           </div>
           <div className="mx-auto  sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
