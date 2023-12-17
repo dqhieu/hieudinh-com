@@ -84,7 +84,7 @@ const testimonials = [
   ],
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -149,7 +149,7 @@ export default function Page() {
                     )}
                   >
                     {column.map((testimonial) => (
-                      <div className='light rounded-2xl shadow-lg'>
+                      <div className='light rounded-2xl shadow-lg' key={testimonial.id}>
                         <Tweet id={testimonial.id} />
                       </div> 
                     ))}
