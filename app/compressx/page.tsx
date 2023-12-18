@@ -3,6 +3,7 @@ import { Tweet } from 'react-tweet'
 import Image from 'next/image'
 import LemonSqueezyLogoLightMode from '/src/images/lemon_squeezy_black.svg'
 import LemonSqueezyLogoDarkMode from '/src/images/lemon_squeezy.svg'
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 export const metadata: Metadata = {
   title: 'CompressX - Ultra video compression',
@@ -16,10 +17,17 @@ const LemonSqueezyLogo = () => {
     return (
       <picture>
         <source srcSet={LemonSqueezyLogoLightMode.src} media="(prefers-color-scheme: dark)" />
-        <Image className="pl-2" src={LemonSqueezyLogoDarkMode} alt="LemonSqueezy logo"/>
+        <Image className="px-2" src={LemonSqueezyLogoDarkMode} alt="LemonSqueezy logo" width={212} height={28}/>
       </picture>
   );
 };
+
+const features = [
+  "Native macOS app",
+  "Work offline",
+  "Up to 90% reduced file size",
+  "Raycast extension supported"
+]
 
 const testimonials = [
   [
@@ -131,15 +139,32 @@ export default function Page() {
                 Ultra video compression
               </p>
               <a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'>
-                <div id='download' className="mx-20 flex items-center bg-black dark:bg-slate-100 justify-center text-xl mt-6 text-gray-100 dark:text-black py-2 rounded-full">
-                  Get it for free on<LemonSqueezyLogo/>
+                <div id='download' className="whitespace-nowrap sm:mx-20 mx-16 min-w-min sm:flex items-center bg-black dark:bg-slate-100 justify-center text-xl mt-6 text-gray-100 dark:text-black py-2 sm:rounded-full rounded-3xl">
+                  Get it for free on
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <LemonSqueezyLogo/>
+                  </div>
                 </div>
               </a>
+            </div>
+            <div className="mx-auto max-w-xl xl:max-w-6xl">
+              <dl className="mt-12 space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 xl:grid-cols-4">
+              {features.map((feature) => (
+                  <div key={feature} className="relative">
+                    <dt>
+                      <CheckCircleIcon className="absolute mt-1 h-6 w-6 text-green-500" aria-hidden="true" />
+                      <p className="mt-2 ml-9 text-base text-slate-900 dark:text-gray-200">{feature}</p>
+                    </dt>
+                    </div>
+                ))}
+                </dl>
+            </div>
+            <div className="mx-auto max-w-xl text-center">
               <p className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200">
                 Trusted by 1900+ users
-              </p>
+            </p>
             </div>
-            <div className="mx-auto  sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
+            <div className="mx-auto sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
               <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
                 <div className='tweet-container sm:scale-110' >
                   <Tweet id='1731312819075948847'/>
