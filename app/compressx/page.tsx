@@ -149,15 +149,13 @@ export default function Page() {
             </div>
             <div className="mx-auto max-w-xl xl:max-w-6xl">
               <dl className="mt-12 space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 xl:grid-cols-4">
-              {features.map((feature) => (
-                  <div key={feature} className="relative">
-                    <dt>
-                      <CheckCircleIcon className="absolute mt-1 h-6 w-6 text-green-500" aria-hidden="true" />
-                      <p className="mt-2 ml-9 text-base text-slate-900 dark:text-gray-200">{feature}</p>
-                    </dt>
-                    </div>
+                {features.map((feature) => (
+                  <div key={feature} className="relative flex items-center">
+                    <CheckCircleIcon className=" h-6 w-6 text-green-500" aria-hidden="true" />
+                    <p className="ml-2 text-base text-slate-900 dark:text-gray-200">{feature}</p>
+                  </div>
                 ))}
-                </dl>
+              </dl>
             </div>
             <div className="mx-auto max-w-xl text-center">
               <p className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200">
