@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 const LemonSqueezyLogo = () => {
     return (
       <picture>
-        <source srcSet={LemonSqueezyLogoDarkMode.src} media="(prefers-color-scheme: dark)" />
-        <Image className="pl-2" src={LemonSqueezyLogoLightMode} alt="LemonSqueezy logo"/>
+        <source srcSet={LemonSqueezyLogoLightMode.src} media="(prefers-color-scheme: dark)" />
+        <Image className="pl-2" src={LemonSqueezyLogoDarkMode} alt="LemonSqueezy logo"/>
       </picture>
   );
 };
@@ -98,77 +98,79 @@ function classNames(...classes: string[]): string {
 export default function Page() {
   return (
     <div>
-      <div className="relative isolate bg-white dark:bg-slate-950 pb-12 sm:pb-12 pt-12 sm:pt-12">
-        <div
-          className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
-          aria-hidden="true"
-        >
+      <section>
+        <div className="relative isolate bg-white dark:bg-slate-950 pb-12 sm:pb-12 pt-12 sm:pt-12">
           <div
-            className="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-          />
-        </div>
-        <div
-          className="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end"
-          aria-hidden="true"
-        >
+            className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
+            aria-hidden="true"
+          >
+            <div
+              className="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
+              style={{
+                clipPath:
+                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              }}
+            />
+          </div>
           <div
-            className="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-          />
-        </div>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-xl text-center">
-            <h2 className="text-3xl font-bold leading-8 tracking-tight dark:text-white">CompresX</h2>
-            <p className="mt-2 text-xl tracking-tight text-gray-900 dark:text-slate-100">
-              Ultra video compression
-            </p>
-            <a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'>
-              <div id='download' className="flex flex-wrap items-center justify-center text-2xl mt-8 dark:text-slate-200">
-                Get it for free on<LemonSqueezyLogo/>
-              </div>
-            </a>
-            <p className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200">
-              Trusted by 1900+ users
-            </p>
+            className="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end"
+            aria-hidden="true"
+          >
+            <div
+              className="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
+              style={{
+                clipPath:
+                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+              }}
+            />
           </div>
-          <div className="mx-auto  sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
-            <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
-              <div className='tweet-container sm:scale-110' >
-                <Tweet id='1731312819075948847'/>
-              </div>
-            </div> 
-            {testimonials.map((columnGroup, columnGroupIdx) => (
-              <div key={columnGroupIdx} className="space-y-8 xl:contents xl:space-y-0">
-                {columnGroup.map((column, columnIdx) => (
-                  <div
-                    key={columnIdx}
-                    className={classNames(
-                      (columnGroupIdx === 0 && columnIdx === 0) ||
-                        (columnGroupIdx === testimonials.length - 1 && columnIdx === columnGroup.length - 1)
-                        ? 'xl:row-span-2'
-                        : 'xl:row-start-1',
-                      'space-y-8'
-                    )}
-                  >
-                    {column.map((testimonial) => (
-                      <div className='rounded-2xl shadow-lg' key={testimonial.id}>
-                        <Tweet id={testimonial.id} />
-                      </div> 
-                    ))}
-                  </div>
-                ))}
-              </div>
-            ))}
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-xl text-center">
+              <h2 className="text-3xl font-bold leading-8 tracking-tight dark:text-white">CompresX</h2>
+              <p className="mt-2 text-xl tracking-tight text-gray-900 dark:text-slate-100">
+                Ultra video compression
+              </p>
+              <a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'>
+                <div id='download' className="mx-20 flex items-center bg-black dark:bg-slate-100 justify-center text-xl mt-6 text-gray-100 dark:text-black py-2 rounded-full">
+                  Get it for free on<LemonSqueezyLogo/>
+                </div>
+              </a>
+              <p className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200">
+                Trusted by 1900+ users
+              </p>
+            </div>
+            <div className="mx-auto  sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
+              <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
+                <div className='tweet-container sm:scale-110' >
+                  <Tweet id='1731312819075948847'/>
+                </div>
+              </div> 
+              {testimonials.map((columnGroup, columnGroupIdx) => (
+                <div key={columnGroupIdx} className="space-y-8 xl:contents xl:space-y-0">
+                  {columnGroup.map((column, columnIdx) => (
+                    <div
+                      key={columnIdx}
+                      className={classNames(
+                        (columnGroupIdx === 0 && columnIdx === 0) ||
+                          (columnGroupIdx === testimonials.length - 1 && columnIdx === columnGroup.length - 1)
+                          ? 'xl:row-span-2'
+                          : 'xl:row-start-1',
+                        'space-y-8'
+                      )}
+                    >
+                      {column.map((testimonial) => (
+                        <div className='rounded-2xl shadow-lg' key={testimonial.id}>
+                          <Tweet id={testimonial.id} />
+                        </div> 
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       <footer className="bg-white dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
         <div className="flex justify-center space-x-6 md:order-2">
