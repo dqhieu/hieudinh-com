@@ -26,7 +26,7 @@ const features = [
   "Native macOS app",
   "Up to 90% reduced file size",
   "Support various video formats",
-  "Raycast extension supported",
+  "Raycast extension",
 ]
 
 const testimonials = [
@@ -134,7 +134,7 @@ export default function Page() {
           </div>
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-xl text-center">
-              <h2 className="text-3xl font-bold leading-8 tracking-tight dark:text-white">CompresX</h2>
+              <h1 className="text-4xl font-bold leading-8 tracking-tight dark:text-white">CompresX</h1>
               <p className="mt-2 text-xl tracking-tight text-gray-900 dark:text-slate-100">
                 Ultra video compression
               </p>
