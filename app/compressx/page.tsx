@@ -24,9 +24,9 @@ const LemonSqueezyLogo = () => {
 
 const features = [
   "Native macOS app",
-  "Work offline",
   "Up to 90% reduced file size",
-  "Raycast extension supported"
+  "Support various video formats",
+  "Raycast extension supported",
 ]
 
 const testimonials = [
@@ -146,6 +146,7 @@ export default function Page() {
                   </div>
                 </div>
               </a>
+              <p className='text-sm text-gray-500 mt-2'>macOS 13+ is requried</p>
             </div>
             <div className="mx-auto max-w-xl xl:max-w-6xl">
               <dl className="mt-12 space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 xl:grid-cols-4">
