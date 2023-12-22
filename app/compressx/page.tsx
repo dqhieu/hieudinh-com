@@ -148,7 +148,7 @@ export default function Page() {
                 Ultra video compression
               </p>
               <a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'>
-                <div id='download' className="whitespace-nowrap sm:mx-20 mx-16 min-w-min sm:flex items-center bg-black dark:bg-slate-100 justify-center text-xl mt-6 text-gray-100 dark:text-black py-2 sm:rounded-full rounded-3xl transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400">
+                <div id='download' className="whitespace-nowrap sm:mx-28 mx-16 px-4 min-w-min sm:flex items-center bg-black dark:bg-slate-100 justify-center text-xl mt-6 text-gray-100 dark:text-black py-2 sm:rounded-full rounded-3xl transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400">
                   Get it on
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <LemonSqueezyLogo/>
