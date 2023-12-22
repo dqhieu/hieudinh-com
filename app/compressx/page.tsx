@@ -22,6 +22,15 @@ const LemonSqueezyLogo = () => {
   );
 };
 
+const VideoPlayer = () => {
+  return (
+    <video controls autoPlay muted loop playsInline>
+      <source src="/compressx/demo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+};
+
 const features = [
   "Native macOS app",
   "Up to 90% reduced file size",
@@ -140,13 +149,16 @@ export default function Page() {
               </p>
               <a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'>
                 <div id='download' className="whitespace-nowrap sm:mx-20 mx-16 min-w-min sm:flex items-center bg-black dark:bg-slate-100 justify-center text-xl mt-6 text-gray-100 dark:text-black py-2 sm:rounded-full rounded-3xl transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400">
-                  Get it for free on
+                  Get it on
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <LemonSqueezyLogo/>
                   </div>
                 </div>
               </a>
               <p className='text-sm text-gray-500 mt-2'>macOS 13+ is requried</p>
+              <div className='mt-4 rounded-full'>
+                <VideoPlayer/>
+              </div>
             </div>
             <div className="mx-auto max-w-xl xl:max-w-6xl">
               <dl className="mt-12 space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 xl:grid-cols-4">
