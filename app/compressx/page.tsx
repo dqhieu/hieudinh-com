@@ -134,7 +134,7 @@ export default function Page() {
           </div>
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-xl text-center">
-              <h1 className="text-4xl font-bold leading-8 tracking-tight dark:text-white">CompresX</h1>
+              <h1 className="text-4xl font-bold leading-8 tracking-tight dark:text-white">CompressX</h1>
               <p className="mt-2 text-xl tracking-tight text-gray-900 dark:text-slate-100">
                 Ultra video compression
               </p>
@@ -198,7 +198,10 @@ export default function Page() {
       <footer className="bg-white dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
         <div className="flex justify-center space-x-6 md:order-2">
-          <a key='X' href='https://hieudinh.notion.site/How-to-setup-CompressX-bae796ec3aa54781bfee27c8481d6e00' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+          <a key='feature_request' href='https://github.com/dqhieu/CompressXApp' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+            <p className="text-center text-xs leading-5">Feature request</p>
+          </a>
+          <a key='how_to_setup' href='https://hieudinh.notion.site/How-to-setup-CompressX-bae796ec3aa54781bfee27c8481d6e00' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
             <p className="text-center text-xs leading-5">How to setup</p>
           </a>
           <a key='X' href='https://twitter.com/hieudinh_' className="flex flex-wrap text-gray-500 hover:text-gray-400 dark:text-slate-200">
