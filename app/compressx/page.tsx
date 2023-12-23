@@ -147,7 +147,7 @@ export default function Page() {
       setCount(dataString);
     })
     .catch(error => {
-      setCount("2,190+")
+      setCount("2190")
       console.error('Error fetching total users:', error);
     });
   }, []);
@@ -229,7 +229,7 @@ export default function Page() {
                 </div>
               </div>
               <div className="mx-auto max-w-xl xl:max-w-6xl">
-                <dl className="mt-12 space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 xl:grid-cols-4">
+                <dl className="mt-8 space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 xl:grid-cols-4">
                   {features.map((feature) => (
                     <div key={feature} className="relative flex items-center">
                       <CheckCircleIcon className=" h-6 w-6 text-green-500" aria-hidden="true" />
@@ -239,7 +239,7 @@ export default function Page() {
                 </dl>
               </div>
               <div id='totalUsers' className="flex justify-center items-center mx-auto max-w-xl text-center">
-                <div className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200 flex items-center">
+                <div className="mt-8 text-lg tracking-tight text-gray-900 dark:text-slate-200 flex items-center">
                   <span id='ping' className="relative flex h-6 w-6 justify-center items-center cursor-pointer">
                     <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
