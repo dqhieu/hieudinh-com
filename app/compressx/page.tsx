@@ -131,15 +131,18 @@ function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
 }
 
-function formatBytesAsGB(bytes: number, decimals = 2) {
-  return Math.round(bytes / Math.pow(1024, 3));
+function formatBytesAsGB(bytes: number, decimals = 2): string {
+  return Math.round(bytes / Math.pow(1024, 3)).toString();
 }
 
 export default function Page() {
 
   const [usersCount, setUsersCount] = useState("2190");
   const [videosCount, setVideosCount] = useState("6114");
-  const [totalReducedSize, setTotalReducedSize] = useState("3000");
+  const [totalReducedSize, setTotalReducedSize] = useState("3014");
+  const [loadingUsers, setLoadingUsers] = useState(true);
+  const [loadingVideos, setLoadingVideos] = useState(true);
+  const [loadingSize, setLoadingSize] = useState(true);
 
   useEffect(() => {
     fetch('https://amctrqowqyzxipgtwaxx.supabase.co/functions/v1/getTotalUsers', {
@@ -152,14 +155,14 @@ export default function Page() {
     .then(data => {
       const dataString = JSON.stringify(data);
       setUsersCount(dataString);
+      setLoadingUsers(false);
     })
     .catch(error => {
-      setUsersCount("2190")
+      setLoadingUsers(false);
+      // setUsersCount("2190")
       // console.error('Error fetching total users:', error);
     });
-  }, []);
 
-  useEffect(() => {
     fetch('https://amctrqowqyzxipgtwaxx.supabase.co/functions/v1/getTotalCompressedVideos', {
       method: 'GET',
       headers: {
@@ -170,14 +173,14 @@ export default function Page() {
     .then(data => {
       const dataString = JSON.stringify(data);
       setVideosCount(dataString);
+      setLoadingVideos(false);
     })
     .catch(error => {
-      setVideosCount("6114")
+      setLoadingVideos(false);
+      // setVideosCount("6114")
       // console.error('Error fetching total videos:', error);
     });
-  }, []);
 
-  useEffect(() => {
     fetch('https://amctrqowqyzxipgtwaxx.supabase.co/functions/v1/getTotalReducedSize', {
       method: 'GET',
       headers: {
@@ -187,11 +190,14 @@ export default function Page() {
     .then(response => response.json())
     .then(data => {
       const dataString = JSON.stringify(data);
-      setTotalReducedSize(dataString);
+      let dataSizeString = formatBytesAsGB(parseInt(dataString));
+      setTotalReducedSize(dataSizeString);
+      setLoadingSize(false);
       // console.error('reduced size', dataString);
     })
     .catch(error => {
-      setTotalReducedSize("3000")
+      setLoadingSize(false);
+      // setTotalReducedSize("3000")
       // console.error('Error fetching total reduced size:', error);
     });
   }, []);
@@ -287,21 +293,41 @@ export default function Page() {
                   <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                Trusted by <CountUp className='px-2' start={2190} end={parseInt(usersCount)} duration={2} separator="," /> users 🌟
+                Trusted by 
+                {
+                  loadingUsers ?
+                  <CountUp className='px-2' start={0} end={2190} duration={2} separator="," /> 
+                  :
+                  <CountUp className='px-2' start={2190} end={parseInt(usersCount)} duration={2} separator="," /> 
+                }
+                
+                users 🌟
               </div>
               <div id='totalVideos' className="flex justify-center items-center mx-auto max-w-xl text-center mt-2 text-lg tracking-tight text-gray-900 dark:text-slate-200">
                 <span id='ping' className="relative flex h-6 w-6 justify-center items-center">
-                    <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                  <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <CountUp className='pr-2' start={6000} end={parseInt(videosCount)} duration={2} separator="," /> videos compressed 📀
+                {
+                  loadingVideos ?
+                  <CountUp className='pr-2' start={0} end={6000} duration={2} separator="," />
+                  :
+                  <CountUp className='pr-2' start={6000} end={parseInt(videosCount)} duration={2} separator="," />
+                }
+                 videos compressed 📀
               </div>
               <div id='totalReducedSize' className="flex justify-center items-center mx-auto max-w-xl text-center mt-2 text-lg tracking-tight text-gray-900 dark:text-slate-200">
                 <span id='ping' className="relative flex h-6 w-6 justify-center items-center">
-                    <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                  <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <CountUp className='pr-2' start={3000} end={formatBytesAsGB(parseInt(totalReducedSize))} duration={2} separator="," /> GB reduced 🔽
+                {
+                  loadingSize ?
+                  <CountUp className='pr-2' start={0} end={3014} duration={2} separator="," />
+                  :
+                  <CountUp className='pr-2' start={3014} end={parseInt(totalReducedSize)} duration={2} separator="," />
+                }
+                GB reduced 🔽
               </div>
               <div className="mx-auto sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
                 <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
