@@ -1,6 +1,31 @@
 import Image from 'next/image'
 import swiftGif from '/src/images/wwdc-swift.gif'
 import LemonSqueezyLogo from '/src/images/lemon_squeezy.svg'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  openGraph: {
+    title: 'Hieu Dinh',
+    description: 'I make apps for  ecosystem',
+    url: 'https://hieudinh.com/',
+    siteName: 'Hieu Dinh',
+    images: [
+      {
+        url: 'https://hieudinh.com/opengraph-image.png',
+        width: 1200,
+        height: 627,
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hieu Dinh',
+    description: 'I make apps for  ecosystem',
+    images: ['https://hieudinh.com/twitter-image.png'],
+  },
+}
 
 export default function Home() {
   return (

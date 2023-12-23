@@ -6,10 +6,26 @@ import LemonSqueezyLogoDarkMode from '/src/images/lemon_squeezy.svg'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 export const metadata: Metadata = {
-  title: 'CompressX - Ultra video compression',
-  description: 'Compress your video in just 2 clicks',
   openGraph: {
-      images: ['/src/images/compressx_meta.png'],
+    title: 'CompressX',
+    description: 'Ultra video compression',
+    url: 'https://hieudinh.com/compressx',
+    siteName: 'CompressX',
+    images: [
+      {
+        url: 'https://hieudinh.com/compressx/opengraph-image.png',
+        width: 1200,
+        height: 627,
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CompressX',
+    description: 'Ultra video compression',
+    images: ['twitter-image.png'],
   },
 }
 

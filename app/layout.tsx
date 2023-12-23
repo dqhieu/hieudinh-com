@@ -6,7 +6,7 @@ import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Hieu Dinh'
+  metadataBase: new URL('https://hieudinh.com'),
 }
 
 export default function RootLayout({
