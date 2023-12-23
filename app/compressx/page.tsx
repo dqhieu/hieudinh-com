@@ -1,33 +1,36 @@
+'use client'
+
 import { Metadata } from 'next'
 import { Tweet } from 'react-tweet'
 import Image from 'next/image'
+import React, { useState, useEffect } from 'react';
 import LemonSqueezyLogoLightMode from '/src/images/lemon_squeezy_black.svg'
 import LemonSqueezyLogoDarkMode from '/src/images/lemon_squeezy.svg'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
-export const metadata: Metadata = {
-  openGraph: {
-    title: 'CompressX',
-    description: 'Ultra video compression',
-    url: 'https://hieudinh.com/compressx',
-    siteName: 'CompressX',
-    images: [
-      {
-        url: 'https://hieudinh.com/compressx/opengraph-image.png',
-        width: 1200,
-        height: 627,
-      }
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'CompressX',
-    description: 'Ultra video compression',
-    images: ['https://hieudinh.com/compressx/twitter-image.png'],
-  },
-}
+// export const metadata: Metadata = {
+//   openGraph: {
+//     title: 'CompressX',
+//     description: 'Ultra video compression',
+//     url: 'https://hieudinh.com/compressx',
+//     siteName: 'CompressX',
+//     images: [
+//       {
+//         url: 'https://hieudinh.com/compressx/opengraph-image.png',
+//         width: 1200,
+//         height: 627,
+//       }
+//     ],
+//     locale: 'en_US',
+//     type: 'website',
+//   },
+//   twitter: {
+//     card: 'summary_large_image',
+//     title: 'CompressX',
+//     description: 'Ultra video compression',
+//     images: ['https://hieudinh.com/compressx/twitter-image.png'],
+//   },
+// }
 
 const LemonSqueezyLogo = () => {
     return (
@@ -128,6 +131,26 @@ function classNames(...classes: string[]): string {
 }
 
 export default function Page() {
+
+  const [count, setCount] = useState("2190+");
+
+  useEffect(() => {
+    fetch('https://amctrqowqyzxipgtwaxx.supabase.co/functions/v1/getTotalUsers', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(response => response.json())
+    .then(data => {
+      const dataString = JSON.stringify(data);
+      setCount(dataString);
+    })
+    .catch(error => {
+      console.error('Error fetching total users:', error);
+    });
+  }, []);
+
   return (
     <div>
       <section>
@@ -197,10 +220,14 @@ export default function Page() {
                 ))}
               </dl>
             </div>
-            <div className="mx-auto max-w-xl text-center">
-              <p className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200">
-                Trusted by 2100+ users 🌟
-            </p>
+            <div id='totalUsers' className="flex justify-center items-center mx-auto max-w-xl text-center">
+              <p className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200 flex items-center">
+                <span className="relative flex h-6 w-6 justify-center items-center cursor-pointer">
+                  <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                Trusted by {count} users 🌟
+              </p>
             </div>
             <div className="mx-auto sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
               <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
