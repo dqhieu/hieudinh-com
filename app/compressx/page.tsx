@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'CompressX',
     description: 'Ultra video compression',
-    images: ['twitter-image.png'],
+    images: ['https://hieudinh.com/compressx/twitter-image.png'],
   },
 }
 
@@ -199,7 +199,7 @@ export default function Page() {
             </div>
             <div className="mx-auto max-w-xl text-center">
               <p className="mt-12 text-lg tracking-tight text-gray-900 dark:text-slate-200">
-                Trusted by 1900+ users 🌟
+                Trusted by 2100+ users 🌟
             </p>
             </div>
             <div className="mx-auto sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
