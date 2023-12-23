@@ -273,7 +273,7 @@ export default function Page() {
                     </div>
                   </div>
                 </a>
-                <p className='text-sm text-gray-500 mt-2'>macOS 13+ is requried</p>
+                <p className='text-sm text-gray-500 dark:text-slate-200 mt-2'>macOS 13+ is requried</p>
                 <div className='mt-4'>
                   <VideoPlayer/>
                 </div>
