@@ -363,12 +363,24 @@ export default function Page() {
         </section>
         <footer className="bg-white dark:bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
-          <div className="flex justify-center space-x-6 md:order-2">
-            <a key='feature_request' href='https://github.com/dqhieu/CompressXApp' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
-              <p className="text-center text-xs leading-5">Feature request</p>
-            </a>
+          <div className="flex justify-center items-center md:order-2 grid md:grid-cols-7 grid-cols-4">
             <a key='how_to_setup' href='https://hieudinh.notion.site/How-to-setup-CompressX-bae796ec3aa54781bfee27c8481d6e00' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
               <p className="text-center text-xs leading-5">How to setup</p>
+            </a>
+            <a key='changelog' href='https://hieudinh.notion.site/Changelog-a1a7c020cd2d468cbd7fe826bec4875b?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+              <p className="text-center text-xs leading-5">Changelog</p>
+            </a>
+            <a key='terms_of_service' href='https://hieudinh.notion.site/Terms-of-Service-906def93ee1541769bb74957f0d8a412?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+              <p className="text-center text-xs leading-5">Terms of Service</p>
+            </a>
+            <a key='privacy_policy' href='https://hieudinh.notion.site/Privacy-Policy-f9e0cae49daa40d69ba7d3baff5c8038?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+              <p className="text-center text-xs leading-5">Privacy Policy</p>
+            </a>
+            <a key='acknowledgements' href='https://hieudinh.notion.site/Acknowledgements-bf74067c491a479588321852a18922b3?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+              <p className="text-center text-xs leading-5">Acknowledgements</p>
+            </a>
+            <a key='faqs' href='https://hieudinh.notion.site/FAQs-4581e1e772184711bf5dd7891386599b?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+              <p className="text-center text-xs leading-5">FAQs</p>
             </a>
             <a key='X' href='https://twitter.com/hieudinh_' className="flex flex-wrap text-gray-500 hover:text-gray-400 dark:text-slate-200">
               <p className=" text-center text-xs leading-5">Follow me on</p>
