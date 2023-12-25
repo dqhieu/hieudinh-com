@@ -52,7 +52,7 @@ const VideoPlayer = () => {
 
 const features = [
   "Native macOS app",
-  "Up to 90% reduced file size",
+  "Up to 90% file size reduction",
   "Support various video formats",
   "Raycast extension",
 ]
