@@ -363,12 +363,12 @@ export default function Page() {
         </section>
         <footer className="bg-white dark:bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
-          <div className="flex justify-center items-center md:order-2 grid md:grid-cols-7 grid-cols-4">
+          <div className="flex justify-center items-center text-center md:order-2 grid sm:grid-flow-col sm:auto-cols-auto space-x-4">
             <a key='how_to_setup' href='https://hieudinh.notion.site/How-to-setup-CompressX-bae796ec3aa54781bfee27c8481d6e00' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
-              <p className="text-center text-xs leading-5">How to setup</p>
+              <p className="text-center text-xs leading-5 ">How to setup</p>
             </a>
-            <a key='changelog' href='https://hieudinh.notion.site/Changelog-a1a7c020cd2d468cbd7fe826bec4875b?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
-              <p className="text-center text-xs leading-5">Changelog</p>
+            <a key='changelog' href='https://hieudinh.notion.site/Changelog-a1a7c020cd2d468cbd7fe826bec4875b?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200 ">
+              <p className="text-center text-xs leading-5 ">Changelog</p>
             </a>
             <a key='terms_of_service' href='https://hieudinh.notion.site/Terms-of-Service-906def93ee1541769bb74957f0d8a412?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
               <p className="text-center text-xs leading-5">Terms of Service</p>
