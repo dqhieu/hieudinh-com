@@ -296,7 +296,7 @@ export default function Page() {
                 Trusted by 
                 {
                   loadingUsers ?
-                  <CountUp className='px-2' start={0} end={2190} duration={2} separator="," /> 
+                  <CountUp className='px-2' start={0} end={2190} duration={3} separator="," /> 
                   :
                   <CountUp className='px-2' start={2190} end={parseInt(usersCount)} duration={1} separator="," /> 
                 }
@@ -310,7 +310,7 @@ export default function Page() {
                 </span>
                 {
                   loadingVideos ?
-                  <CountUp className='pr-2' start={0} end={6000} duration={2} separator="," />
+                  <CountUp className='pr-2' start={0} end={6000} duration={3} separator="," />
                   :
                   <CountUp className='pr-2' start={6000} end={parseInt(videosCount)} duration={1} separator="," />
                 }
@@ -323,7 +323,7 @@ export default function Page() {
                 </span>
                 {
                   loadingSize ?
-                  <CountUp className='pr-2' start={0} end={3014} duration={2} separator="," />
+                  <CountUp className='pr-2' start={0} end={3014} duration={5} separator="," />
                   :
                   <CountUp className='pr-2' start={3014} end={parseInt(totalReducedSize)} duration={1} separator="," />
                 }
