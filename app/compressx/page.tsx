@@ -284,7 +284,7 @@ export default function Page() {
                       <LemonSqueezyLogo/>
                     </a>
                   </div>
-                  <p className='text-sm text-gray-500 dark:text-slate-200 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
+                  <p className='text-sm text-gray-500 dark:text-slate-400 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
                 </div>
                 <div className='mt-4 w-full' >
                   <VideoPlayer/>
