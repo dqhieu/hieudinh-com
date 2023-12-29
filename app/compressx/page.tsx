@@ -4,12 +4,10 @@
 import { Tweet } from 'react-tweet'
 import Image from 'next/image'
 import React, { useState, useEffect, Component } from 'react';
-import LemonSqueezyLogoLightMode from '/public/assets/lemon_squeezy_black.svg'
-import LemonSqueezyLogoDarkMode from '/public/assets/lemon_squeezy.svg'
+import LemonSqueezyLogoLightMode from '/src/images/lemon_squeezy_black.svg'
+import LemonSqueezyLogoDarkMode from '/src/images/lemon_squeezy.svg'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import CountUp from 'react-countup'
-import preview1 from '/public/assets/preview1.png'
-import preview2 from '/public/assets/preview2.png'
 
 // export const metadata: Metadata = {
 //   openGraph: {
