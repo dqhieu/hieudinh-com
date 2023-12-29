@@ -266,7 +266,7 @@ export default function Page() {
             </div>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-xl lg:max-w-7xl">
-                <div className="lg:mt-8 lg:ml-32 text-center lg:text-left">
+                <div className="lg:mt-12 lg:ml-32 text-center flex flex-col items-center">
                   <h1 className="text-4xl lg:text-5xl font-bold leading-8 tracking-tight dark:text-white">CompressX</h1>
                   <p className="mt-2 lg:mr-4 text-xl tracking-tight text-gray-700 dark:text-slate-300">
                     Significant file size reduction, similar video quality!
@@ -285,6 +285,15 @@ export default function Page() {
                     </a>
                   </div>
                   <p className='text-sm text-gray-500 dark:text-slate-400 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
+                  <div id="productHunt" className='mt-4 lg:mt-8'>
+                    <a 
+                    href="https://www.producthunt.com/posts/compressx?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-compressx" 
+                    target="_blank">
+                      <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=431659&theme=light" 
+                      alt="CompressX - Ultra&#0032;video&#0032;compression | Product Hunt" 
+                      width="250" height="54" />
+                    </a>
+                  </div>
                 </div>
                 <div className='mt-4 w-full' >
                   <VideoPlayer/>
