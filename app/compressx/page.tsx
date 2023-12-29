@@ -44,7 +44,7 @@ const LemonSqueezyLogo = () => {
 
 const VideoPlayer = () => {
   return (
-    <video className="rounded-xl shadow-2xl" autoPlay muted loop playsInline>
+    <video className="rounded-xl shadow-2xl w-full" autoPlay muted loop playsInline>
       <source src="/compressx/demo.mp4" type="video/mp4" />
     </video>
   );
@@ -265,35 +265,44 @@ export default function Page() {
               />
             </div>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mx-auto max-w-xl text-center">
-                <h1 className="text-4xl font-bold leading-8 tracking-tight dark:text-white">CompressX</h1>
-                <p className="mt-2 text-xl tracking-tight text-gray-900 dark:text-slate-100">
-                  Ultra video compression
-                </p>
-                <a href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'>
-                  <div id='download' className="whitespace-nowrap sm:mx-28 mx-16 px-4 min-w-min sm:flex items-center bg-black dark:bg-slate-100 justify-center text-xl mt-6 text-gray-100 dark:text-black py-2 sm:rounded-full rounded-3xl transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400">
-                    Get it on
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-xl lg:max-w-7xl">
+                <div className="lg:mt-8 lg:ml-32 text-center lg:text-left">
+                  <h1 className="text-4xl lg:text-5xl font-bold leading-8 tracking-tight dark:text-white">CompressX</h1>
+                  <p className="mt-2 lg:mr-4 text-xl tracking-tight text-gray-700 dark:text-slate-300">
+                    Significant file size reduction, similar video quality!
+                  </p>
+                  <div id="download">
+                    <a className="inline-flex justify-center mt-6 
+                    rounded-full py-2 px-6 
+                    text-xl text-gray-100 dark:text-black py-2
+                    outline-2 outline-offset-2 
+                    bg-black dark:bg-slate-100 group
+                    transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400"
+                    href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'
+                    >
+                      <span className="">Get it on</span>
                       <LemonSqueezyLogo/>
-                    </div>
+                    </a>
                   </div>
-                </a>
-                <p className='text-sm text-gray-500 dark:text-slate-200 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
-                <div className='mt-4'>
+                  <p className='text-sm text-gray-500 dark:text-slate-200 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
+                </div>
+                <div className='mt-4 w-full' >
                   <VideoPlayer/>
                 </div>
               </div>
-              <div className="mx-auto max-w-xl xl:max-w-6xl">
-                <dl className="mt-8 space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 xl:grid-cols-4">
-                  {features.map((feature) => (
-                    <div key={feature} className="relative flex items-center">
-                      <CheckCircleIcon className=" h-6 w-6 text-green-500" aria-hidden="true" />
-                      <p className="ml-2 text-base text-slate-900 dark:text-gray-200">{feature}</p>
-                    </div>
-                  ))}
-                </dl>
+              <div id="features">
+                <div className="mx-auto max-w-xl lg:max-w-7xl">
+                  <dl className="mt-8 space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 lg:grid-cols-4">
+                    {features.map((feature) => (
+                      <div key={feature} className="relative flex items-center">
+                        <CheckCircleIcon className=" h-6 w-6 text-green-500" aria-hidden="true" />
+                        <p className="ml-2 text-base text-slate-900 dark:text-gray-200">{feature}</p>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
               </div>
-              <div>
+              <div id="stats">
                 <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
                   <div key="totalUsers" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
                     <dt className="flex items-center">
