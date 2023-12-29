@@ -351,34 +351,37 @@ export default function Page() {
                   </div>
                 </dl>
               </div>
-              <div className="mx-auto sm:mt-12 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-7xl xl:grid-flow-col xl:grid-cols-4">
-                <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
-                  <div className='tweet-container sm:scale-110' >
-                    <Tweet id='1731312819075948847'/>
-                  </div>
-                </div> 
-                {testimonials.map((columnGroup, columnGroupIdx) => (
-                  <div key={columnGroupIdx} className="space-y-8 xl:contents xl:space-y-0">
-                    {columnGroup.map((column, columnIdx) => (
-                      <div
-                        key={columnIdx}
-                        className={classNames(
-                          (columnGroupIdx === 0 && columnIdx === 0) ||
-                            (columnGroupIdx === testimonials.length - 1 && columnIdx === columnGroup.length - 1)
-                            ? 'xl:row-span-2'
-                            : 'xl:row-start-1',
-                          'space-y-8'
-                        )}
-                      >
-                        {column.map((testimonial) => (
-                          <div className='rounded-2xl shadow-lg' key={testimonial.id}>
-                            <Tweet id={testimonial.id} />
-                          </div> 
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                ))}
+              <div id="testimonial" className="mt-12">
+                <div className="flex flex-col text-center text-2xl text-black dark:text-white font-semibold">🪴 People LOVE CompressX 🌱</div>
+                <div className="mx-auto sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-7xl xl:grid-flow-col xl:grid-cols-4">
+                  <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
+                    <div className='tweet-container sm:scale-110' >
+                      <Tweet id='1731312819075948847'/>
+                    </div>
+                  </div> 
+                  {testimonials.map((columnGroup, columnGroupIdx) => (
+                    <div key={columnGroupIdx} className="space-y-8 xl:contents xl:space-y-0">
+                      {columnGroup.map((column, columnIdx) => (
+                        <div
+                          key={columnIdx}
+                          className={classNames(
+                            (columnGroupIdx === 0 && columnIdx === 0) ||
+                              (columnGroupIdx === testimonials.length - 1 && columnIdx === columnGroup.length - 1)
+                              ? 'xl:row-span-2'
+                              : 'xl:row-start-1',
+                            'space-y-8'
+                          )}
+                        >
+                          {column.map((testimonial) => (
+                            <div className='rounded-2xl shadow-lg' key={testimonial.id}>
+                              <Tweet id={testimonial.id} />
+                            </div> 
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
