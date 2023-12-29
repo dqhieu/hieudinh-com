@@ -294,23 +294,23 @@ export default function Page() {
                 </dl>
               </div>
               <div>
-                <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3  text-gray-900 dark:text-slate-200">
+                <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
                   <div key="totalUsers" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
                     <dt className="flex items-center">
                       <span id='totalUsersPing' className="relative flex h-6 w-6 justify-center items-center">
                         <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                       </span>
-                      <span className="truncate text-lg tracking-tight">Trusted by</span>
+                      <span className="truncate text-md font-medium tracking-tight text-gray-700 dark:text-slate-400">Trusted by</span>
                     </dt>
-                    <dd className="px-2 text-lg">
+                    <dd className="px-2">
                       {
                         loadingUsers ?
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={0} end={2190} duration={3} separator="," /> 
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={2190} duration={3} separator="," /> 
                         :
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={2190} end={parseInt(usersCount)} duration={1} separator="," /> 
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={2190} end={parseInt(usersCount)} duration={1} separator="," /> 
                       }
-                      users
+                      <span className="text-md text-gray-700 dark:text-slate-400">users</span>
                     </dd>
                   </div>
                   <div key="totalCompressedVideo" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
@@ -319,16 +319,16 @@ export default function Page() {
                         <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                       </span>
-                      <span className="truncate text-lg tracking-tight">Compressed</span>
+                      <span className="truncate text-md font-medium tracking-tight text-gray-700 dark:text-slate-400">Compressed</span>
                     </dt>
                     <dd className="px-2 text-lg">
                       {
                         loadingVideos ?
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={0} end={6000} duration={3} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={6000} duration={3} separator="," />
                         :
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={6000} end={parseInt(videosCount)} duration={1} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={6000} end={parseInt(videosCount)} duration={1} separator="," />
                       }
-                      videos
+                      <span className="text-md text-gray-700 dark:text-slate-400">videos</span>
                     </dd>
                   </div>
                   <div key="totalReducedSize" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
@@ -337,16 +337,16 @@ export default function Page() {
                         <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                       </span>
-                      <span className="truncate text-lg tracking-tight">Reduced</span>
+                      <span className="truncate text-md font-medium tracking-tight text-gray-700 dark:text-slate-400">Reduced</span>
                     </dt>
                     <dd className="px-2 text-lg">
                       {
                         loadingSize ?
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={0} end={3014} duration={5} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={3014} duration={5} separator="," />
                         :
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={3014} end={parseInt(totalReducedSize)} duration={1} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={3014} end={parseInt(totalReducedSize)} duration={1} separator="," />
                       }
-                      GB
+                      <span className="text-md text-gray-700 dark:text-slate-400">GB</span>
                     </dd>
                   </div>
                 </dl>
