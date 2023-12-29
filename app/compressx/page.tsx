@@ -1,13 +1,15 @@
 'use client'
 
-import { Metadata } from 'next'
+// import { Metadata } from 'next'
 import { Tweet } from 'react-tweet'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react';
-import LemonSqueezyLogoLightMode from '/src/images/lemon_squeezy_black.svg'
-import LemonSqueezyLogoDarkMode from '/src/images/lemon_squeezy.svg'
+import React, { useState, useEffect, Component } from 'react';
+import LemonSqueezyLogoLightMode from '/public/assets/lemon_squeezy_black.svg'
+import LemonSqueezyLogoDarkMode from '/public/assets/lemon_squeezy.svg'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
-import CountUp from 'react-countup';
+import CountUp from 'react-countup'
+import preview1 from '/public/assets/preview1.png'
+import preview2 from '/public/assets/preview2.png'
 
 // export const metadata: Metadata = {
 //   openGraph: {
@@ -51,10 +53,14 @@ const VideoPlayer = () => {
 };
 
 const features = [
-  "Native macOS app",
+  "Optimized for macOS",
   "Up to 90% file size reduction",
-  "Support various video formats",
-  "Raycast extension",
+  "Multi-format video support",
+  "Integrated Raycast extension",
+  "Work 100% offline",
+  "Support 5 quality options",
+  "Support MP4, WebM export",
+  "Transparent video compatible"
 ]
 
 const testimonials = [
@@ -221,6 +227,7 @@ export default function Page() {
       <meta name="twitter:description" content="Ultra video compression" />
       <meta name="twitter:image" content="https://hieudinh.com/compressx/twitter-image.png" />
       <div>
+        
         <section>
           <div className="relative isolate bg-white dark:bg-slate-950 pb-12 sm:pb-12 pt-12 sm:pt-12">
             <div
@@ -273,7 +280,7 @@ export default function Page() {
                     </div>
                   </div>
                 </a>
-                <p className='text-sm text-gray-500 dark:text-slate-200 mt-2'>macOS 13+ is requried</p>
+                <p className='text-sm text-gray-500 dark:text-slate-200 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
                 <div className='mt-4'>
                   <VideoPlayer/>
                 </div>
