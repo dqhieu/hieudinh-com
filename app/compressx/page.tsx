@@ -295,48 +295,65 @@ export default function Page() {
                   ))}
                 </dl>
               </div>
-              <div id='totalUsers' className="mt-8 flex justify-center items-center mx-auto max-w-xl text-center text-lg tracking-tight text-gray-900 dark:text-slate-200">
-                <span id='ping' className="relative flex h-6 w-6 justify-center items-center">
-                  <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                Trusted by 
-                {
-                  loadingUsers ?
-                  <CountUp className='px-2' start={0} end={2190} duration={3} separator="," /> 
-                  :
-                  <CountUp className='px-2' start={2190} end={parseInt(usersCount)} duration={1} separator="," /> 
-                }
-                
-                users 🌟
+              <div>
+                <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3  text-gray-900 dark:text-slate-200">
+                  <div key="totalUsers" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
+                    <dt className="flex items-center">
+                      <span id='totalUsersPing' className="relative flex h-6 w-6 justify-center items-center">
+                        <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                      </span>
+                      <span className="truncate text-lg tracking-tight">Trusted by</span>
+                    </dt>
+                    <dd className="px-2 text-lg">
+                      {
+                        loadingUsers ?
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={0} end={2190} duration={3} separator="," /> 
+                        :
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={2190} end={parseInt(usersCount)} duration={1} separator="," /> 
+                      }
+                      users
+                    </dd>
+                  </div>
+                  <div key="totalCompressedVideo" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
+                    <dt className="flex items-center">
+                      <span id='totalCompressedVideoPing' className="relative flex h-6 w-6 justify-center items-center">
+                        <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                      </span>
+                      <span className="truncate text-lg tracking-tight">Compressed</span>
+                    </dt>
+                    <dd className="px-2 text-lg">
+                      {
+                        loadingVideos ?
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={0} end={6000} duration={3} separator="," />
+                        :
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={6000} end={parseInt(videosCount)} duration={1} separator="," />
+                      }
+                      videos
+                    </dd>
+                  </div>
+                  <div key="totalReducedSize" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
+                    <dt className="flex items-center">
+                      <span id='totalReducedSizePing' className="relative flex h-6 w-6 justify-center items-center">
+                        <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                      </span>
+                      <span className="truncate text-lg tracking-tight">Reduced</span>
+                    </dt>
+                    <dd className="px-2 text-lg">
+                      {
+                        loadingSize ?
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={0} end={3014} duration={5} separator="," />
+                        :
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight' start={3014} end={parseInt(totalReducedSize)} duration={1} separator="," />
+                      }
+                      GB
+                    </dd>
+                  </div>
+                </dl>
               </div>
-              <div id='totalVideos' className="flex justify-center items-center mx-auto max-w-xl text-center mt-2 text-lg tracking-tight text-gray-900 dark:text-slate-200">
-                <span id='ping' className="relative flex h-6 w-6 justify-center items-center">
-                  <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                {
-                  loadingVideos ?
-                  <CountUp className='pr-2' start={0} end={6000} duration={3} separator="," />
-                  :
-                  <CountUp className='pr-2' start={6000} end={parseInt(videosCount)} duration={1} separator="," />
-                }
-                 videos compressed 📀
-              </div>
-              <div id='totalReducedSize' className="flex justify-center items-center mx-auto max-w-xl text-center mt-2 text-lg tracking-tight text-gray-900 dark:text-slate-200">
-                <span id='ping' className="relative flex h-6 w-6 justify-center items-center">
-                  <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                {
-                  loadingSize ?
-                  <CountUp className='pr-2' start={0} end={3014} duration={5} separator="," />
-                  :
-                  <CountUp className='pr-2' start={3014} end={parseInt(totalReducedSize)} duration={1} separator="," />
-                }
-                GB reduced 🔽
-              </div>
-              <div className="mx-auto sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
+              <div className="mx-auto sm:mt-12 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-7xl xl:grid-flow-col xl:grid-cols-4">
                 <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
                   <div className='tweet-container sm:scale-110' >
                     <Tweet id='1731312819075948847'/>
