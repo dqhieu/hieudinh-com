@@ -305,6 +305,15 @@ export default function Page() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-xl lg:max-w-7xl">
                 <div className="lg:mt-12 text-center flex flex-col items-center lg:items-start">
+                  <div className="mb-8 sm:flex sm:justify-center">
+                    <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 dark:text-white ring-1 ring-gray-900/10 dark:ring-gray-50/25 hover:ring-gray-900/20 dark:hover:ring-gray-50/50">
+                      Our Product Hunt launch scheduled for January 4th, 2023!{' '}
+                      <a href="https://www.producthunt.com/posts/compressx" className="font-semibold text-red-500">
+                        <span className="absolute inset-0" aria-hidden="true" />
+                        Join us <span aria-hidden="true">&rarr;</span>
+                      </a>
+                    </div>
+                  </div>
                   <h1 className="text-4xl lg:text-5xl font-bold leading-8 tracking-tight dark:text-white">CompressX</h1>
                   <p className="mt-2 lg:mr-4 text-xl tracking-tight text-gray-700 dark:text-slate-300">
                     Significant file size reduction, similar video quality!
@@ -440,6 +449,11 @@ export default function Page() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+        <section>
+          <div id="joinCreators">
+
           </div>
         </section>
         <section>
