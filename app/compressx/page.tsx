@@ -11,7 +11,6 @@ import CountUp from 'react-countup'
 import { Suspense } from 'react'
 import { TweetSkeleton, EmbeddedTweet, TweetNotFound } from 'react-tweet'
 import { getTweet as _getTweet } from 'react-tweet/api'
-import { kv } from '@vercel/kv'
 import { unstable_cache } from 'next/cache'
 
 // export const metadata: Metadata = {
