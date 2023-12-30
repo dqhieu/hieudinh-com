@@ -88,6 +88,47 @@ const LemonSqueezySubscribeForm = () => {
   );
 };
 
+const GetItOnLemonSqueezy =() => {
+  return (
+    <div id="download">
+      <a className="inline-flex justify-center mt-4 
+      rounded-full py-2 px-6 
+      text-xl text-gray-100 dark:text-black py-2
+      outline-2 outline-offset-2 
+      bg-black dark:bg-slate-100 group
+      transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400"
+      href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'
+      >
+        <span className="">Get it on</span>
+        <LemonSqueezyLogo/>
+      </a>
+    </div>
+  )
+}
+
+const JoinCreators =({ users }: { users: string }) => {
+  return (
+    <div className="bg-white dark:bg-slate-950">
+      <div className="relative isolate">
+        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="
+          mx-auto flex max-w-2xl flex-col gap-8 bg-slate-100 dark:bg-white/5 px-6 py-8 
+          border dark:border-slate-700 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row 
+          lg:items-center lg:py-10 xl:gap-x-8 xl:px-8">
+            <div className="w-full flex flex-col items-center">
+              <h2 className="text-center text-2xl text-black dark:text-white font-semibold">Boost your productivity, today 🚀</h2>
+              <p className="mt-2 text-lg text-center leading-8  text-gray-700 dark:text-slate-300">
+                Join {users} users and enjoy smaller file size with the similar video quality!
+              </p>
+              <GetItOnLemonSqueezy/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const features = [
   "Optimized for macOS",
   "Up to 90% file size reduction",
@@ -318,19 +359,7 @@ export default function Page() {
                   <p className="mt-2 lg:mr-4 text-xl tracking-tight text-gray-700 dark:text-slate-300">
                     Significant file size reduction, similar video quality!
                   </p>
-                  <div id="download">
-                    <a className="inline-flex justify-center mt-6 
-                    rounded-full py-2 px-6 
-                    text-xl text-gray-100 dark:text-black py-2
-                    outline-2 outline-offset-2 
-                    bg-black dark:bg-slate-100 group
-                    transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400"
-                    href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'
-                    >
-                      <span className="">Get it on</span>
-                      <LemonSqueezyLogo/>
-                    </a>
-                  </div>
+                  <GetItOnLemonSqueezy/>
                   <p className='text-sm text-gray-500 dark:text-slate-400 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
                   <div id="productHunt" className='mt-4 lg:mt-8'>
                     <a 
@@ -453,7 +482,7 @@ export default function Page() {
         </section>
         <section>
           <div id="joinCreators">
-
+            <JoinCreators users={parseInt(usersCount).toLocaleString('en-US')}/>
           </div>
         </section>
         <section>
