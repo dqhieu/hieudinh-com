@@ -3,7 +3,7 @@
 // import { Metadata } from 'next'
 import { Tweet } from 'react-tweet'
 import Image from 'next/image'
-import React, { useState, useEffect, Component } from 'react';
+import { useEffect, useState } from 'react';
 import LemonSqueezyLogoLightMode from '/src/images/lemon_squeezy_black.svg'
 import LemonSqueezyLogoDarkMode from '/src/images/lemon_squeezy.svg'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
@@ -128,6 +128,34 @@ const JoinCreators =({ users }: { users: string }) => {
     </div>
   )
 }
+
+const TimeUpdated = () => {
+  const [lastUpdated, setLastUpdated] = useState(Date.now());
+  const [formattedTime, setFormattedTime] = useState('updated just now');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLastUpdated(Date.now());
+    }, 60000); // Update 'lastUpdated' every minute
+    return;
+  }, []);
+
+  useEffect(() => {
+    const formatTimeAgo = () => {
+      const seconds = Math.floor((Date.now() - lastUpdated) / 1000);
+      if (seconds < 60) {
+        setFormattedTime('updated just now')
+      } else {
+        setFormattedTime(`updated ${Math.floor(seconds / 60)} minute${seconds >= 120 ? 's' : ''} ago`);
+      }
+    };
+
+    const interval = setInterval(formatTimeAgo, 60000); // Recalculate 'formattedTime' every minute
+    return;
+  }, [lastUpdated]); // Rerun the effect when 'lastUpdated' changes
+
+  return <div>{formattedTime}</div>;
+};
 
 const features = [
   "Optimized for macOS",
@@ -391,13 +419,9 @@ export default function Page() {
                 <dl className="mt-8 lg:mt-16 grid grid-cols-1 gap-5 sm:grid-cols-3">
                   <div key="totalUsers" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
                     <dt className="flex items-center">
-                      <span id='totalUsersPing' className="relative flex h-6 w-6 justify-center items-center">
-                        <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                      </span>
-                      <span className="truncate text-md font-medium tracking-tight text-gray-700 dark:text-slate-400">Trusted by</span>
+                      <span className="truncate text-md font-medium tracking-tight text-gray-700 dark:text-slate-400">🧑‍💻 Trusted by</span>
                     </dt>
-                    <dd className="px-2">
+                    <dd className="">
                       {
                         loadingUsers ?
                         <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={2190} duration={3} separator="," /> 
@@ -409,13 +433,9 @@ export default function Page() {
                   </div>
                   <div key="totalCompressedVideo" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
                     <dt className="flex items-center">
-                      <span id='totalCompressedVideoPing' className="relative flex h-6 w-6 justify-center items-center">
-                        <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                      </span>
-                      <span className="truncate text-md font-medium tracking-tight text-gray-700 dark:text-slate-400">Compressed</span>
+                      <span className="truncate text-md font-medium tracking-tight text-gray-700 dark:text-slate-400">📀 Compressed</span>
                     </dt>
-                    <dd className="px-2 text-lg">
+                    <dd className="">
                       {
                         loadingVideos ?
                         <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={6000} duration={3} separator="," />
@@ -427,13 +447,9 @@ export default function Page() {
                   </div>
                   <div key="totalReducedSize" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
                     <dt className="flex items-center">
-                      <span id='totalReducedSizePing' className="relative flex h-6 w-6 justify-center items-center">
-                        <span className="animate-ping-slow absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                      </span>
-                      <span className="truncate text-md font-medium tracking-tight text-gray-700 dark:text-slate-400">Reduced</span>
+                      <span className="truncate text-md font-medium tracking-tight text-gray-700 dark:text-slate-400">🔻 Reduced</span>
                     </dt>
-                    <dd className="px-2 text-lg">
+                    <dd className="">
                       {
                         loadingSize ?
                         <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={3014} duration={5} separator="," />
@@ -444,6 +460,24 @@ export default function Page() {
                     </dd>
                   </div>
                 </dl>
+                <div className="flex items-center justify-center pt-4 space-x-1">
+                  <span id='totalCompressedVideoPing' className="relative flex h-6 w-6 justify-center items-center">
+                    {
+                      loadingUsers || loadingVideos || loadingSize ?
+                    <span className="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+                    :
+                    <span className="animate-ping-slow delay-1000 absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
+                    }
+                    
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                  </span>
+                    {
+                      loadingUsers || loadingVideos || loadingSize ?
+                    <span className="text-sm text-gray-400">fetching latest data</span>
+                    :
+                    <span className="text-sm text-gray-400"><TimeUpdated/></span>
+                    }
+                </div>
               </div>
               <div id="testimonial" className="mt-12 lg:mt-16">
                 <div className="flex flex-col text-center text-2xl text-black dark:text-white font-semibold">🪴 People LOVE CompressX 🌱</div>
