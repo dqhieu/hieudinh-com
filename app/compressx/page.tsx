@@ -118,7 +118,7 @@ const JoinCreators =({ users }: { users: string }) => {
             <div className="w-full flex flex-col items-center">
               <h2 className="text-center text-2xl text-black dark:text-white font-semibold">Boost your productivity, today 🚀</h2>
               <p className="mt-2 text-lg text-center leading-8  text-gray-700 dark:text-slate-300">
-                Join {users} users and enjoy smaller file size with the similar video quality!
+                Join {users} users and enjoy a smaller file size with similar video quality!
               </p>
               <GetItOnLemonSqueezy/>
             </div>
