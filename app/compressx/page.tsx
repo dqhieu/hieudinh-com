@@ -8,6 +8,11 @@ import LemonSqueezyLogoLightMode from '/src/images/lemon_squeezy_black.svg'
 import LemonSqueezyLogoDarkMode from '/src/images/lemon_squeezy.svg'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import CountUp from 'react-countup'
+import { Suspense } from 'react'
+import { TweetSkeleton, EmbeddedTweet, TweetNotFound } from 'react-tweet'
+import { getTweet as _getTweet } from 'react-tweet/api'
+import { kv } from '@vercel/kv'
+import { unstable_cache } from 'next/cache'
 
 // export const metadata: Metadata = {
 //   openGraph: {
@@ -32,6 +37,22 @@ import CountUp from 'react-countup'
 //     images: ['https://hieudinh.com/compressx/twitter-image.png'],
 //   },
 // }
+
+const getTweet = unstable_cache(
+  async (id: string) => _getTweet(id),
+  ['tweet'],
+  { revalidate: 3600 * 24 }
+)
+ 
+const TweetPage = async ({ id }: { id: string }) => {
+  try {
+    const tweet = await getTweet(id)
+    return tweet ? <EmbeddedTweet tweet={tweet} /> : <TweetNotFound />
+  } catch (error) {
+    console.error(error)
+    return <TweetNotFound error={error} />
+  }
+}
 
 const LemonSqueezyLogo = () => {
     return (
@@ -405,7 +426,7 @@ export default function Page() {
               </div>
               <div id="features">
                 <div className="mx-auto max-w-xl lg:max-w-7xl mt-8 lg:mt-16">
-                  <dl className=" space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 lg:grid-cols-4">
+                  <dl className=" space-y-2 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 lg:grid-cols-4">
                     {features.map((feature) => (
                       <div key={feature} className="relative flex items-center">
                         <CheckCircleIcon className=" h-6 w-6 text-green-500" aria-hidden="true" />
@@ -484,7 +505,10 @@ export default function Page() {
                 <div className="mx-auto sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-7xl xl:grid-flow-col xl:grid-cols-4">
                   <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
                     <div className='tweet-container sm:scale-110' >
-                      <Tweet id='1731312819075948847'/>
+                      {/* <Tweet id='1731312819075948847'/> */}
+                      <Suspense fallback={<TweetSkeleton />}>
+                        <TweetPage id='1731312819075948847' />
+                      </Suspense>
                     </div>
                   </div> 
                   {testimonials.map((columnGroup, columnGroupIdx) => (
