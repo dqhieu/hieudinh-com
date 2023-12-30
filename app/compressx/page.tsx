@@ -389,7 +389,7 @@ export default function Page() {
                   </p>
                   <GetItOnLemonSqueezy/>
                   <p className='text-sm text-gray-500 dark:text-slate-400 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
-                  <div id="productHunt" className='mt-4 lg:mt-8'>
+                  <div id="productHunt" className='mt-4 lg:mt-8 rounded-xl transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400'>
                     <a 
                     href="https://www.producthunt.com/posts/compressx?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-compressx" 
                     target="_blank">
