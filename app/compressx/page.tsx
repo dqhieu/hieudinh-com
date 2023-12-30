@@ -266,7 +266,7 @@ export default function Page() {
             </div>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-xl lg:max-w-7xl">
-                <div className="lg:mt-12 lg:ml-32 text-center flex flex-col items-center">
+                <div className="lg:mt-12 text-center flex flex-col items-center lg:items-start">
                   <h1 className="text-4xl lg:text-5xl font-bold leading-8 tracking-tight dark:text-white">CompressX</h1>
                   <p className="mt-2 lg:mr-4 text-xl tracking-tight text-gray-700 dark:text-slate-300">
                     Significant file size reduction, similar video quality!
@@ -300,8 +300,8 @@ export default function Page() {
                 </div>
               </div>
               <div id="features">
-                <div className="mx-auto max-w-xl lg:max-w-7xl">
-                  <dl className="mt-8 space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 lg:grid-cols-4">
+                <div className="mx-auto max-w-xl lg:max-w-7xl mt-8 lg:mt-16">
+                  <dl className=" space-y-2 sm:grid sm:grid-cols-2 md:grid-cols-2 sm:gap-x-6 sm:gap-y-6 sm:space-y-0 lg:grid-cols-4">
                     {features.map((feature) => (
                       <div key={feature} className="relative flex items-center">
                         <CheckCircleIcon className=" h-6 w-6 text-green-500" aria-hidden="true" />
@@ -312,7 +312,7 @@ export default function Page() {
                 </div>
               </div>
               <div id="stats">
-                <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+                <dl className="mt-8 lg:mt-16 grid grid-cols-1 gap-5 sm:grid-cols-3">
                   <div key="totalUsers" className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 px-4 py-5 shadow-xl border  dark:border-slate-700 sm:p-6">
                     <dt className="flex items-center">
                       <span id='totalUsersPing' className="relative flex h-6 w-6 justify-center items-center">
@@ -369,7 +369,7 @@ export default function Page() {
                   </div>
                 </dl>
               </div>
-              <div id="testimonial" className="mt-12">
+              <div id="testimonial" className="mt-12 lg:mt-16">
                 <div className="flex flex-col text-center text-2xl text-black dark:text-white font-semibold">🪴 People LOVE CompressX 🌱</div>
                 <div className="mx-auto sm:mt-8 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm leading-6 text-gray-900 sm:grid-cols-2 xl:mx-0 xl:max-w-7xl xl:grid-flow-col xl:grid-cols-4">
                   <div className='sm:col-span-2 xl:col-start-2 xl:row-end-1 flex items-center flex-col'>
