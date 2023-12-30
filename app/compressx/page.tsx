@@ -50,6 +50,44 @@ const VideoPlayer = () => {
   );
 };
 
+const LemonSqueezySubscribeForm = () => {
+  return (
+    <div className="group relative py-8 bg-white dark:bg-slate-950">
+      <div>
+        <form action="https://hieudinh.lemonsqueezy.com/email-subscribe/external" method="post" className="flex flex-col items-center">
+          <p className="mb-2 text-md font-medium text-black dark:text-white">💌 Get notified on new features and updates</p>
+          <div className="flex flex-row">
+            <input
+              className="block w-full appearance-none rounded-lg 
+              border border-gray-200 bg-white px-2 text-gray-900 
+              placeholder:text-gray-400 focus:border-yellow-400 focus:outline-none focus:ring-yellow-400 
+              text-sm"
+              type="email"
+              name="email" 
+              id="email"
+              placeholder="you@gmail.com"
+              required
+            />
+            <button className="
+            inline-flex justify-center rounded-lg py-2 px-3 text-sm font-semibold 
+            ml-2 flex-none
+            text-sm text-gray-100 dark:text-black
+            outline-2 outline-offset-2 
+            bg-black dark:bg-slate-100 group
+            transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400
+            " 
+            type="submit">
+              <span className="">Subscribe</span>
+            </button>
+          </div>
+          <p className="mt-2 text-xs text-gray-500">No spams. Only product updates.</p>
+        </form>
+        
+      </div>
+    </div>
+  );
+};
+
 const features = [
   "Optimized for macOS",
   "Up to 90% file size reduction",
@@ -402,6 +440,11 @@ export default function Page() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+        <section>
+          <div id="susbcribe">
+            <LemonSqueezySubscribeForm/>
           </div>
         </section>
         <footer className="bg-white dark:bg-slate-950">
