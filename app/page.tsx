@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import appleGif from '/src/images/wwdc-apple.gif'
 import swiftGif from '/src/images/wwdc-swift.gif'
@@ -69,7 +71,7 @@ const BackgroundGif = () => {
 const Container =({ className, ...props }: { className?: string } & HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={clsx('row-span-1 rounded-xl backdrop-filter backdrop-blur-sm bg-opacity-10 border border-neutral-600	bg-indigo-400 bg-clip-padding p-4 text-white', className)}
+      className={clsx('row-span-1 rounded-xl backdrop-filter backdrop-blur-md bg-opacity-10 border border-neutral-700	bg-indigo-400 bg-clip-padding p-4 text-white', className)}
       {...props}
     />
   )
@@ -126,8 +128,6 @@ export default function Home() {
                 shape-rendering="geometricPrecision" 
                 text-rendering="geometricPrecision" 
                 image-rendering="optimizeQuality" 
-                fill-rule="evenodd" 
-                clip-rule="evenodd" 
                 viewBox="0 0 448 511.471"
                 className="align-middle h-12 w-12 fill-slate-500 group-hover:fill-slate-700 ml-1"
                 >
@@ -135,7 +135,7 @@ export default function Home() {
                 </svg>
                 <span className="mt-4">Substack</span>
                 <span className="mt-4 text-gray-400 text-sm">Latest issue: </span>
-                <span className="text-gray-400 text-sm">December 31st, 2023</span>
+                <span className="text-gray-400 text-sm">2023 Look back</span>
               </div>
             </Container>
           </a>
