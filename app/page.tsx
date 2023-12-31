@@ -6,6 +6,7 @@ import LemonQLogo from '/src/images/lemon-squeezy-logos.jpeg'
 import GitHubLogo from '/src/images/github-mark-white.png'
 import ProductHuntLogo from '/src/images/producthunt.png'
 import BaoBao from '/src/images/baobao.jpg'
+import BigMountainStudioLogo from '/src/images/bigmountainstudio.png'
 import { Metadata } from 'next'
 import clsx from 'clsx'
 import React, { HTMLAttributes } from 'react';
@@ -202,15 +203,26 @@ export default function Home() {
               </div>
             </Container>
           </a>
-          <Image
-              className="z-10 w-48 h-48 rounded-xl transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-fuchsia-400"
-              src={BaoBao}
-              alt="My cat"
-              priority
-              // width={48}
-              // height={48}
-              unoptimized
-            />
+          <a 
+          className="transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-green-400" 
+          href='https://hieudinh.notion.site/Learn-SwiftUI-with-Big-Mountain-Studio-30afd2742f7f4476b2fc09d2f5ff2273?pvs=4'
+          >
+            <Container className="w-48 h-48">
+              <div className="flex flex-col flex-wrap mt-2 ml-1">
+                <Image
+                  className=" z-10 rounded-full"
+                  src={BigMountainStudioLogo}
+                  alt="GitHub Logo"
+                  priority
+                  width={48}
+                  height={48}
+                  unoptimized
+                />
+                <span className="mt-4 ">Big Mountain Studio</span>
+                <span className="mt-4 text-gray-400 text-sm">Learn SwiftUI</span>
+              </div>
+            </Container>
+          </a>
         </div>
       </div>
     </main>
