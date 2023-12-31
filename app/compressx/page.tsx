@@ -91,7 +91,7 @@ const LemonSqueezySubscribeForm = () => {
 const GetItOnLemonSqueezy =() => {
   return (
     <div id="download">
-      <a className="inline-flex justify-center mt-4 
+      <a className="inline-flex justify-center mt-8 
       rounded-full py-2 px-6 
       text-xl text-gray-100 dark:text-black py-2
       outline-2 outline-offset-2 
@@ -384,19 +384,12 @@ export default function Page() {
                     </div>
                   </div>
                   <h1 className="text-4xl lg:text-5xl font-bold leading-8 tracking-tight dark:text-white">CompressX</h1>
-                  <p className="mt-2 lg:mr-4 text-xl tracking-tight text-gray-700 dark:text-slate-300">
+                  <p className="mt-4 lg:mr-4 text-xl tracking-tight text-gray-700 dark:text-slate-300">
                     Significant file size reduction, similar video quality!
                   </p>
-                  <GetItOnLemonSqueezy/>
-                  <p className='text-sm text-gray-500 dark:text-slate-400 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
-                  <div id="productHunt" className='mt-4 lg:mt-8 rounded-xl transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400'>
-                    <a 
-                    href="https://www.producthunt.com/posts/compressx?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-compressx" 
-                    target="_blank">
-                      <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=431659&theme=light" 
-                      alt="CompressX - Ultra&#0032;video&#0032;compression | Product Hunt" 
-                      width="250" height="54" />
-                    </a>
+                  <div>
+                    <GetItOnLemonSqueezy/>
+                    <p className='text-sm text-gray-500 dark:text-slate-400 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
                   </div>
                 </div>
                 <div className='mt-4 w-full' >
