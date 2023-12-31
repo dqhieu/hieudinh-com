@@ -248,9 +248,9 @@ function formatBytesAsGB(bytes: number, decimals = 2): string {
 
 export default function Page() {
 
-  const [usersCount, setUsersCount] = useState("2190");
-  const [videosCount, setVideosCount] = useState("6114");
-  const [totalReducedSize, setTotalReducedSize] = useState("3014");
+  const [usersCount, setUsersCount] = useState("2277");
+  const [videosCount, setVideosCount] = useState("7573");
+  const [totalReducedSize, setTotalReducedSize] = useState("3482");
   const [loadingUsers, setLoadingUsers] = useState(true);
   const [loadingVideos, setLoadingVideos] = useState(true);
   const [loadingSize, setLoadingSize] = useState(true);
@@ -417,9 +417,9 @@ export default function Page() {
                     <dd className="">
                       {
                         loadingUsers ?
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={2190} duration={3} separator="," /> 
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={2277} duration={3} separator="," /> 
                         :
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={2190} end={parseInt(usersCount)} duration={1} separator="," /> 
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={2277} end={parseInt(usersCount)} duration={1} separator="," /> 
                       }
                       <span className="text-md text-gray-700 dark:text-slate-400">users</span>
                     </dd>
@@ -431,9 +431,9 @@ export default function Page() {
                     <dd className="">
                       {
                         loadingVideos ?
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={6000} duration={3} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={7573} duration={3} separator="," />
                         :
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={6000} end={parseInt(videosCount)} duration={1} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={7573} end={parseInt(videosCount)} duration={1} separator="," />
                       }
                       <span className="text-md text-gray-700 dark:text-slate-400">videos</span>
                     </dd>
@@ -445,9 +445,9 @@ export default function Page() {
                     <dd className="">
                       {
                         loadingSize ?
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={3014} duration={5} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={3482} duration={5} separator="," />
                         :
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={3014} end={parseInt(totalReducedSize)} duration={1} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={3482} end={parseInt(totalReducedSize)} duration={1} separator="," />
                       }
                       <span className="text-md text-gray-700 dark:text-slate-400">GB</span>
                     </dd>

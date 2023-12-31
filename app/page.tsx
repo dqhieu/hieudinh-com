@@ -1,10 +1,11 @@
 import Image from 'next/image'
-import swiftGif from '/src/images/wwdc-swift.gif'
+import swiftGif from '/src/images/wwdc-swift-cropped.gif'
 import profilePhoto from '/src/images/profile_photo.jpg'
 import CompressXLogo from '/src/images/icon.png'
 import LemonQLogo from '/src/images/lemon-squeezy-logos.jpeg'
 import GitHubLogo from '/src/images/github-mark-white.png'
 import ProductHuntLogo from '/src/images/producthunt.png'
+import BaoBao from '/src/images/baobao.jpg'
 import { Metadata } from 'next'
 import clsx from 'clsx'
 import React, { HTMLAttributes } from 'react';
@@ -47,16 +48,16 @@ export default function Home() {
     <main>
       <div className="bg-black relative flex items-center justify-center" style={{height: '100vh'}}>
         <Image
-          className="absolute z-10"
+          className="fixed z-10 "
           src={swiftGif}
           alt="background gif"
           priority
-          width={1558}
-          height={946}
+          width={1200}
+          height={1200}
           unoptimized
         />
         <div id='bento' className="grid auto-rows-[192px] grid-cols-3 gap-4 z-20 relative"> 
-          <Container className="w-48 h-48  transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-blue-600">
+          <Container className="w-48 h-48  transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-sky-500">
             <div className="flex flex-col  mt-2 ml-1">
               <Image
                 className=" z-10 rounded-full"
@@ -201,6 +202,15 @@ export default function Home() {
               </div>
             </Container>
           </a>
+          <Image
+              className="z-10 w-48 h-48 rounded-xl transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-fuchsia-400"
+              src={BaoBao}
+              alt="My cat"
+              priority
+              // width={48}
+              // height={48}
+              unoptimized
+            />
         </div>
       </div>
     </main>
