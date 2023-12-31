@@ -1,7 +1,4 @@
-'use client'
-
 import Image from 'next/image'
-import appleGif from '/src/images/wwdc-apple.gif'
 import swiftGif from '/src/images/wwdc-swift.gif'
 import profilePhoto from '/src/images/profile_photo.jpg'
 import CompressXLogo from '/src/images/icon.png'
@@ -36,38 +33,6 @@ export const metadata: Metadata = {
   },
 }
 
-const BackgroundGif = () => {
-
-  const randomBoolean = Math.random() >= 0.5;
-
-    return (
-      <>
-        {
-          randomBoolean ?
-        <Image
-          className="absolute z-10"
-          src={swiftGif}
-          alt="background gif"
-          priority
-          width={1558}
-          height={946}
-          unoptimized
-        />
-        :
-        <Image
-          className="absolute z-10"
-          src={appleGif}
-          alt="background gif"
-          priority
-          width={1558}
-          height={946}
-          unoptimized
-        />
-        }
-      </>
-  );
-};
-
 const Container =({ className, ...props }: { className?: string } & HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
@@ -81,7 +46,15 @@ export default function Home() {
   return (
     <main>
       <div className="bg-black relative flex items-center justify-center" style={{height: '100vh'}}>
-        <BackgroundGif/>
+        <Image
+          className="absolute z-10"
+          src={swiftGif}
+          alt="background gif"
+          priority
+          width={1558}
+          height={946}
+          unoptimized
+        />
         <div id='bento' className="grid auto-rows-[192px] grid-cols-3 gap-4 z-20 relative"> 
           <Container className="w-48 h-48  transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-blue-600">
             <div className="flex flex-col  mt-2 ml-1">
