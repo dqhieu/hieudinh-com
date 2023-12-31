@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import swiftGif from '/src/images/wwdc-swift-cropped.gif'
 import profilePhoto from '/src/images/profile_photo.jpg'
@@ -7,33 +9,8 @@ import GitHubLogo from '/src/images/github-mark-white.png'
 import ProductHuntLogo from '/src/images/producthunt.png'
 import BaoBao from '/src/images/baobao.jpg'
 import BigMountainStudioLogo from '/src/images/bigmountainstudio.png'
-import { Metadata } from 'next'
 import clsx from 'clsx'
-import React, { HTMLAttributes } from 'react';
-
-export const metadata: Metadata = {
-  openGraph: {
-    title: 'Hieu Dinh',
-    description: 'I make apps for  ecosystem',
-    url: 'https://hieudinh.com/',
-    siteName: 'Hieu Dinh',
-    images: [
-      {
-        url: 'https://hieudinh.com/opengraph-image.png',
-        width: 1200,
-        height: 627,
-      }
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Hieu Dinh',
-    description: 'I make apps for  ecosystem',
-    images: ['https://hieudinh.com/twitter-image.png'],
-  },
-}
+import React, { HTMLAttributes, useState, useEffect } from 'react';
 
 const Container =({ className, ...props }: { className?: string } & HTMLAttributes<HTMLDivElement>) => {
   return (
@@ -45,9 +22,33 @@ const Container =({ className, ...props }: { className?: string } & HTMLAttribut
 }
 
 export default function Home() {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    // Set isSmallScreen to true if the window width is less than 640px
+    setIsSmallScreen(window.innerWidth < 640);
+  }, []); // Empty dependency array means this effect runs once on mount
+
+
   return (
     <main>
-      <div className="bg-black relative flex items-center justify-center" style={{height: '100vh'}}>
+      <meta property="og:title" content="Hieu Dinh" />
+      <meta property="og:description" content="I make apps for  ecosystem" />
+      <meta property="og:url" content="https://hieudinh.com/" />
+      <meta property="og:site_name" content="Hieu Dinh" />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:image:url" content="https://hieudinh.com/opengraph-image.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="627" />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site:id" content="2808665022" />
+      <meta name="twitter:creator" content="@hieudinh_" />
+      <meta name="twitter:creator:id" content="2808665022" />
+      <meta name="twitter:title" content="Hieu Dinh" />
+      <meta name="twitter:description" content="I make apps for  ecosystem" />
+      <meta name="twitter:image" content="https://hieudinh.com/twitter-image.png" />
+      <div className="bg-black relative flex items-center justify-center " style={isSmallScreen ? {} : {height: '100vh'}}>
         <Image
           className="fixed z-10 "
           src={swiftGif}
@@ -55,10 +56,9 @@ export default function Home() {
           priority
           width={1200}
           height={1200}
-          unoptimized
         />
-        <div id='bento' className="grid auto-rows-[192px] grid-cols-3 gap-4 z-20 relative"> 
-          <Container className="w-48 h-48  transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-sky-500">
+        <div id='bento' className="grid grid-cols-2 sm:grid-cols-3 gap-4 z-20 relative py-20"> 
+          <Container className="w-48 h-48 transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-sky-500">
             <div className="flex flex-col  mt-2 ml-1">
               <Image
                 className=" z-10 rounded-full"
