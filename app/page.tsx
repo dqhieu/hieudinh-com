@@ -1,7 +1,14 @@
 import Image from 'next/image'
+import appleGif from '/src/images/wwdc-apple.gif'
 import swiftGif from '/src/images/wwdc-swift.gif'
-import LemonSqueezyLogo from '/src/images/lemon_squeezy.svg'
+import profilePhoto from '/src/images/profile_photo.jpg'
+import CompressXLogo from '/src/images/icon.png'
+import LemonQLogo from '/src/images/lemon-squeezy-logos.jpeg'
+import GitHubLogo from '/src/images/github-mark-white.png'
+import ProductHuntLogo from '/src/images/producthunt.png'
 import { Metadata } from 'next'
+import clsx from 'clsx'
+import React, { HTMLAttributes } from 'react';
 
 export const metadata: Metadata = {
   openGraph: {
@@ -27,30 +34,202 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Home() {
-  return (
-    <main>
-      
-      <div className="min-h-screen flex flex-col items-center justify-center font:sans-serif bg-black">
+const BackgroundGif = () => {
+
+  const randomBoolean = Math.random() >= 0.5;
+
+    return (
+      <>
+        {
+          randomBoolean ?
         <Image
-          className="fixed"
+          className="absolute z-10"
           src={swiftGif}
-          alt="background video"
+          alt="background gif"
           priority
           width={1558}
           height={946}
           unoptimized
         />
-        <div className="absolute flex flex-col items-center justify-center text-2xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <p>Hi, I’m Hieu Dinh</p>
-          <p>I make apps for  ecosystem</p>
-          <p>Check out my works on <a href='https://x.com/hieudinh_'>𝕏</a></p>
-          <div className="flex items-center">
-            Get my apps for free on<a href='https://hieudinh.lemonsqueezy.com/'><Image className="pl-2" src={LemonSqueezyLogo} alt="LemonSqueezy logo"/></a>
-          </div>
+        :
+        <Image
+          className="absolute z-10"
+          src={appleGif}
+          alt="background gif"
+          priority
+          width={1558}
+          height={946}
+          unoptimized
+        />
+        }
+      </>
+  );
+};
+
+const Container =({ className, ...props }: { className?: string } & HTMLAttributes<HTMLDivElement>) => {
+  return (
+    <div
+      className={clsx('row-span-1 rounded-xl backdrop-filter backdrop-blur-sm bg-opacity-10 border border-neutral-600	bg-indigo-400 bg-clip-padding p-4 text-white', className)}
+      {...props}
+    />
+  )
+}
+
+export default function Home() {
+  return (
+    <main>
+      <div className="bg-black relative flex items-center justify-center" style={{height: '100vh'}}>
+        <BackgroundGif/>
+        <div id='bento' className="grid auto-rows-[192px] grid-cols-3 gap-4 z-20 relative"> 
+          <Container className="w-48 h-48  transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-blue-600">
+            <div className="flex flex-col  mt-2 ml-1">
+              <Image
+                className=" z-10 rounded-full"
+                src={profilePhoto}
+                alt="Profile picture"
+                priority
+                width={48}
+                height={48}
+                unoptimized
+              />
+              <span className="mt-4">Hieu Dinh</span>
+              <span className="mt-4 text-sm">Software Engineer ☀️</span>
+              <span className="mt-0 text-sm">Indie Hacker 🌙</span>
+            </div>
+          </Container>
+          
+          <a 
+          className="transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-indigo-400" 
+          href='https://x.com/hieudinh_'
+          >
+            <Container className="w-48 h-48">
+              <div className="flex flex-col mt-2 ml-1">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" width="1em" height="1em"
+                  aria-hidden="true"
+                  className="align-middle h-12 w-12 fill-slate-500 group-hover:fill-slate-700 ml-1"
+                >
+                  <path d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"></path>
+                </svg>
+                <span className="mt-4 text-gray-400 text-sm">I post everything about Swift and  ecosystem development + my indie hacking journey</span>
+              </div>
+            </Container>
+          </a>
+          <a 
+          className="transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-orange-400" 
+          href='https://hieudinh.substack.com'
+          >
+            <Container className="w-48 h-48">
+              <div className="flex flex-col mt-2">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                shape-rendering="geometricPrecision" 
+                text-rendering="geometricPrecision" 
+                image-rendering="optimizeQuality" 
+                fill-rule="evenodd" 
+                clip-rule="evenodd" 
+                viewBox="0 0 448 511.471"
+                className="align-middle h-12 w-12 fill-slate-500 group-hover:fill-slate-700 ml-1"
+                >
+                  <path fill="#FF681A" d="M0 0h448v62.804H0V0zm0 229.083h448v282.388L223.954 385.808 0 511.471V229.083zm0-114.542h448v62.804H0v-62.804z"/>
+                </svg>
+                <span className="mt-4">Substack</span>
+                <span className="mt-4 text-gray-400 text-sm">Latest issue: </span>
+                <span className="text-gray-400 text-sm">December 31st, 2023</span>
+              </div>
+            </Container>
+          </a>
+          
+          <a 
+          className="col-span-2 transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-neutral-400" 
+          href='/compressx'
+          >
+            <Container className="w-100 h-48 ">
+              <div className="grid grid-cols-2 ">
+                <div className="flex flex-col auto-cols-auto text-wrap  items-start">
+                  <span className="text-2xl">CompressX</span>
+                  <span className="mt-2 text-sm text-gray-400">Significant file size reduction, similar video quality!</span>
+                  <span className="mt-4 text-sm text-gray-400">Trusted by 2000+ users</span>
+                </div>
+                <div className="flex flex-col items-end">
+                  <Image
+                    className=""
+                    src={CompressXLogo}
+                    alt="CompressX logo"
+                    priority
+                    width={160}
+                    height={160}
+                    unoptimized
+                  />
+                </div>
+              </div>
+            </Container>
+          </a>
+          <a 
+          className="transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-yellow-400" 
+          href='https://hieudinh.lemonsqueezy.com/'
+          >
+            <Container className="w-48 h-48">
+              <div className="flex flex-col flex-wrap mt-2 ml-1">
+                <Image
+                  className=" z-10 rounded-full"
+                  src={LemonQLogo}
+                  alt="Lemon Squeezy Logo"
+                  priority
+                  width={48}
+                  height={48}
+                  unoptimized
+                />
+                <span className="mt-4 ">Lemon Squeezy</span>
+                <span className="mt-4 text-gray-400 text-sm">Products created: 4</span>
+              </div>
+            </Container>
+          </a>
+          {/* <Container className="">
+            
+          </Container> */}
+          <a 
+          className="transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-red-400" 
+          href='https://www.producthunt.com/@hieudinh'
+          >
+            <Container className="w-48 h-48">
+              <div className="flex flex-col flex-wrap mt-2 ml-1">
+                <Image
+                  className=" z-10 rounded-full"
+                  src={ProductHuntLogo}
+                  alt="Product Hunt Logo"
+                  priority
+                  width={48}
+                  height={48}
+                  unoptimized
+                />
+                <span className="mt-4 ">Product Hunt</span>
+                <span className="mt-4 text-gray-400 text-sm">Products launched: 3</span>
+              </div>
+            </Container>
+          </a>
+          <a 
+          className="transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-green-400" 
+          href='https://github.com/dqhieu'
+          >
+            <Container className="w-48 h-48">
+              <div className="flex flex-col flex-wrap mt-2 ml-1">
+                <Image
+                  className=" z-10 rounded-full"
+                  src={GitHubLogo}
+                  alt="GitHub Logo"
+                  priority
+                  width={48}
+                  height={48}
+                  unoptimized
+                />
+                <span className="mt-4 ">GitHub</span>
+                <span className="mt-4 text-gray-400 text-sm">Many useful things here</span>
+              </div>
+            </Container>
+          </a>
         </div>
       </div>
-
     </main>
   )
 }
