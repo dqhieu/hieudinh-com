@@ -93,7 +93,7 @@ export default function Home() {
           </a>
           <a 
           className="transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-orange-400" 
-          href='https://hieudinh.substack.com'
+          href='https://news.hieudinh.com'
           >
             <Container className="w-48 h-48">
               <div className="flex flex-col mt-2">
