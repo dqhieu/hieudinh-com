@@ -551,7 +551,7 @@ export default function Page() {
           </div>
           <div className="mt-8 md:order-1 md:mt-0">
             <p className="text-center text-xs leading-5 text-gray-500 dark:text-slate-200">
-              Made with ❤️ and ☕️ by &copy; 2023 Dinh Quang Hieu 🐈
+              Made with ❤️ and ☕️ by &copy; {new Date().getFullYear()} Dinh Quang Hieu 🐈
             </p>
           </div>
         </div>
