@@ -469,7 +469,7 @@ export default function Page() {
         </section>
         <section>
           <div id="joinCreators">
-            <JoinCreators users={parseInt(usersCount).toLocaleString('en-US')}/>
+            <JoinCreators users={usersCount.toLocaleString('en-US')}/>
           </div>
         </section>
         <section>
