@@ -242,21 +242,19 @@ function classNames(...classes: string[]): string {
   return classes.filter(Boolean).join(' ')
 }
 
-function formatBytesAsGB(bytes: number, decimals = 2): string {
-  return Math.round(bytes / Math.pow(1024, 3)).toString();
+function formatBytesAsGB(bytes: number, decimals = 2): number {
+  return Math.round(bytes / Math.pow(1024, 3));
 }
 
 export default function Page() {
 
-  const [usersCount, setUsersCount] = useState("2277");
-  const [videosCount, setVideosCount] = useState("7573");
-  const [totalReducedSize, setTotalReducedSize] = useState("3482");
-  const [loadingUsers, setLoadingUsers] = useState(true);
-  const [loadingVideos, setLoadingVideos] = useState(true);
-  const [loadingSize, setLoadingSize] = useState(true);
+  const [usersCount, setUsersCount] = useState(2277);
+  const [videosCount, setVideosCount] = useState(7573);
+  const [totalReducedSize, setTotalReducedSize] = useState(3482);
+  const [loadingData, setLoadingData] = useState(true);
 
   useEffect(() => {
-    fetch('https://amctrqowqyzxipgtwaxx.supabase.co/functions/v1/getTotalUsers', {
+    fetch('https://amctrqowqyzxipgtwaxx.supabase.co/functions/v1/getLandingPageData', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -264,52 +262,14 @@ export default function Page() {
     })
     .then(response => response.json())
     .then(data => {
-      const dataString = JSON.stringify(data);
-      setUsersCount(dataString);
-      setLoadingUsers(false);
+      setUsersCount(data.data[0].totalUsers);
+      setVideosCount(data.data[0].totalCompressedVideos);
+      setTotalReducedSize(formatBytesAsGB(data.data[0].totalReducedSize));
+      setLoadingData(false);
     })
     .catch(error => {
-      setLoadingUsers(false);
-      // setUsersCount("2190")
-      // console.error('Error fetching total users:', error);
-    });
-
-    fetch('https://amctrqowqyzxipgtwaxx.supabase.co/functions/v1/getTotalCompressedVideos', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    })
-    .then(response => response.json())
-    .then(data => {
-      const dataString = JSON.stringify(data);
-      setVideosCount(dataString);
-      setLoadingVideos(false);
-    })
-    .catch(error => {
-      setLoadingVideos(false);
-      // setVideosCount("6114")
-      // console.error('Error fetching total videos:', error);
-    });
-
-    fetch('https://amctrqowqyzxipgtwaxx.supabase.co/functions/v1/getTotalReducedSize', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    })
-    .then(response => response.json())
-    .then(data => {
-      const dataString = JSON.stringify(data);
-      let dataSizeString = formatBytesAsGB(parseInt(dataString));
-      setTotalReducedSize(dataSizeString);
-      setLoadingSize(false);
-      // console.error('reduced size', dataString);
-    })
-    .catch(error => {
-      setLoadingSize(false);
-      // setTotalReducedSize("3000")
-      // console.error('Error fetching total reduced size:', error);
+      setLoadingData(false);
+      console.log(error);
     });
   }, []);
 
@@ -416,10 +376,10 @@ export default function Page() {
                     </dt>
                     <dd className="">
                       {
-                        loadingUsers ?
+                        loadingData ?
                         <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={2277} duration={3} separator="," /> 
                         :
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={2277} end={parseInt(usersCount)} duration={1} separator="," /> 
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={2277} end={usersCount} duration={1} separator="," /> 
                       }
                       <span className="text-md text-gray-700 dark:text-slate-400">users</span>
                     </dd>
@@ -430,10 +390,10 @@ export default function Page() {
                     </dt>
                     <dd className="">
                       {
-                        loadingVideos ?
+                        loadingData ?
                         <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={7573} duration={3} separator="," />
                         :
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={7573} end={parseInt(videosCount)} duration={1} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={7573} end={videosCount} duration={1} separator="," />
                       }
                       <span className="text-md text-gray-700 dark:text-slate-400">videos</span>
                     </dd>
@@ -444,10 +404,10 @@ export default function Page() {
                     </dt>
                     <dd className="">
                       {
-                        loadingSize ?
+                        loadingData ?
                         <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={0} end={3482} duration={5} separator="," />
                         :
-                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={3482} end={parseInt(totalReducedSize)} duration={1} separator="," />
+                        <CountUp className='mt-1 mr-2 text-3xl font-semibold tracking-tight text-gray-900 dark:text-slate-200' start={3482} end={totalReducedSize} duration={1} separator="," />
                       }
                       <span className="text-md text-gray-700 dark:text-slate-400">GB</span>
                     </dd>
@@ -456,7 +416,7 @@ export default function Page() {
                 <div className="flex items-center justify-center pt-4 space-x-1">
                   <span id='totalCompressedVideoPing' className="relative flex h-6 w-6 justify-center items-center">
                     {
-                      loadingUsers || loadingVideos || loadingSize ?
+                      loadingData ?
                     <span className="animate-ping absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
                     :
                     <span className="animate-ping-slow delay-1000 absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75"></span>
@@ -465,7 +425,7 @@ export default function Page() {
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                   </span>
                     {
-                      loadingUsers || loadingVideos || loadingSize ?
+                      loadingData ?
                     <span className="text-sm text-gray-400">fetching latest data</span>
                     :
                     <span className="text-sm text-gray-400"><TimeUpdated/></span>
