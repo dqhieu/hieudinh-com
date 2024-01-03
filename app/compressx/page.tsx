@@ -354,7 +354,7 @@ export default function Page() {
                 <div className="lg:mt-12 text-center flex flex-col items-center lg:items-start">
                   <div className="mb-8 sm:flex sm:justify-center ">
                     <div className="shadow-red-500/50 hover:shadow-red-500 shadow-lg hover:shadow-xl transition-shadow duration-500 ease-in-out relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 dark:text-white ring-1 ring-gray-900/10 dark:ring-gray-50/25 hover:ring-gray-900/20 dark:hover:ring-gray-50/50">
-                      We are live on Product Hunt!{' '}
+                      Our Product Hunt launch scheduled for January 4th, 2024!{' '}
                       <a href="https://www.producthunt.com/posts/compressx" className="font-semibold text-red-500 ">
                         <span className="absolute inset-0" aria-hidden="true" />
                         Join us <span aria-hidden="true">&rarr;</span>
