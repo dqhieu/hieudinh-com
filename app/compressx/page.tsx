@@ -8,6 +8,7 @@ import LemonSqueezyLogoLightMode from '/src/images/lemon_squeezy_black.svg'
 import LemonSqueezyLogoDarkMode from '/src/images/lemon_squeezy.svg'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import CountUp from 'react-countup'
+import Confetti from 'react-dom-confetti';
 
 // export const metadata: Metadata = {
 //   openGraph: {
@@ -252,8 +253,26 @@ export default function Page() {
   const [videosCount, setVideosCount] = useState(7573);
   const [totalReducedSize, setTotalReducedSize] = useState(3482);
   const [loadingData, setLoadingData] = useState(true);
+  const [confetti, setConfetti] = useState(false);
+
+  const config = {
+    angle: 90,
+    spread: 360,
+    startVelocity: 30,
+    elementCount: 70,
+    dragFriction: 0.12,
+    duration: 3000,
+    stagger: 3,
+    width: "10px",
+    height: "10px",
+    perspective: "500px",
+    colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+  };
 
   useEffect(() => {
+    setConfetti(true);
+    // Reset confetti after 2 seconds
+    setTimeout(() => setConfetti(false), 5000);
     fetch('https://amctrqowqyzxipgtwaxx.supabase.co/functions/v1/getLandingPageData', {
       method: 'GET',
       headers: {
@@ -292,7 +311,6 @@ export default function Page() {
       <meta name="twitter:description" content="Ultra video compression" />
       <meta name="twitter:image" content="https://hieudinh.com/compressx/twitter-image.png" />
       <div>
-        
         <section>
           <div className="relative isolate bg-white dark:bg-slate-950 pb-12 sm:pb-12 pt-12 sm:pt-12">
             <div
@@ -340,8 +358,11 @@ export default function Page() {
                       <a href="https://www.producthunt.com/posts/compressx" className="font-semibold text-red-500 ">
                         <span className="absolute inset-0" aria-hidden="true" />
                         Join us <span aria-hidden="true">&rarr;</span>
+                        
                       </a>
+                      
                     </div>
+                    <Confetti active={ confetti } config={ config } />
                   </div>
                   <h1 className="text-4xl lg:text-5xl font-bold leading-8 tracking-tight dark:text-white">CompressX</h1>
                   <p className="mt-4 lg:mr-4 text-xl tracking-tight text-gray-700 dark:text-slate-300">
