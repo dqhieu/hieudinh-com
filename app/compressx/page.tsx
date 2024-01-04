@@ -107,6 +107,23 @@ const GetItOnLemonSqueezy =() => {
   )
 }
 
+const AlternativeLink =() => {
+  return (
+    <div id="download2">
+      <a className="inline-flex justify-center mt-2 
+      rounded-full px-2
+      text-md text-gray-100 dark:text-black
+      outline-2 outline-offset-2 
+      bg-black dark:bg-slate-100 group
+      transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400"
+      href='https://hieudinh.lemonsqueezy.com/'
+      >
+        <span className="">Alternative link</span>
+      </a>
+    </div>
+  )
+}
+
 const JoinCreators =({ users }: { users: string }) => {
   return (
     <div className="bg-white dark:bg-slate-950">
@@ -372,6 +389,7 @@ export default function Page() {
                   </p>
                   <div>
                     <GetItOnLemonSqueezy/>
+                    <AlternativeLink/>
                     <p className='text-sm text-gray-500 dark:text-slate-400 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
                   </div>
                 </div>
