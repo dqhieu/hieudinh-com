@@ -294,8 +294,10 @@ export default function Page() {
 
   return (
     <main>
+      <title>CompressX</title>
+      <meta name="description" content="Ultra video compression" />
       <meta property="og:title" content="CompressX" />
-      <meta property="og:description" content="Ultra video compression" />
+      <meta property="og:description" content="Significant file size reduction, similar video quality!" />
       <meta property="og:url" content="https://hieudinh.com/compressx" />
       <meta property="og:site_name" content="ComprssX" />
       <meta property="og:locale" content="en_US" />
@@ -308,7 +310,7 @@ export default function Page() {
       <meta name="twitter:creator" content="@hieudinh_" />
       <meta name="twitter:creator:id" content="2808665022" />
       <meta name="twitter:title" content="CompressX" />
-      <meta name="twitter:description" content="Ultra video compression" />
+      <meta name="twitter:description" content="Significant file size reduction, similar video quality!" />
       <meta name="twitter:image" content="https://hieudinh.com/compressx/twitter-image.png" />
       <div>
         <section>

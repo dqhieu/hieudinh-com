@@ -32,6 +32,8 @@ export default function Home() {
 
   return (
     <main>
+      <title>Hieu Dinh</title>
+      <meta name="description" content="I make apps for  ecosystem" />
       <meta property="og:title" content="Hieu Dinh" />
       <meta property="og:description" content="I make apps for  ecosystem" />
       <meta property="og:url" content="https://hieudinh.com/" />
