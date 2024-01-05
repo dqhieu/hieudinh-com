@@ -107,19 +107,27 @@ const GetItOnLemonSqueezy =() => {
   )
 }
 
-const AlternativeLink =() => {
+const BuyNowButton =() => {
   return (
-    <div id="download2">
-      <a className="inline-flex justify-center mt-2 
-      rounded-full px-2
-      text-md text-gray-100 dark:text-black
+    <div id="download">
+      <a className="inline-flex justify-center mt-8 
+      rounded-full py-2 px-6 
+      text-xl text-gray-100 dark:text-black py-2
       outline-2 outline-offset-2 
       bg-black dark:bg-slate-100 group
       transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400"
+      href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'
+      >
+        <span className="">Buy now</span>
+      </a>
+      <a className="inline-flex justify-center mt-8 
+      py-2 px-4 
+      text-sm text-gray-500 dark:text-slate-400 py-2"
       href='https://hieudinh.lemonsqueezy.com/'
       >
-        <span className="">Alternative link</span>
+        <span className="no-underline hover:underline">Alternative link</span>  
       </a>
+      
     </div>
   )
 }
@@ -388,8 +396,7 @@ export default function Page() {
                     Significant file size reduction, similar video quality!
                   </p>
                   <div>
-                    <GetItOnLemonSqueezy/>
-                    <AlternativeLink/>
+                    <BuyNowButton/>
                     <p className='text-sm text-gray-500 dark:text-slate-400 mt-2'>Supports Mac Intel & Apple Silicon. macOS 13+</p>
                   </div>
                 </div>
