@@ -117,12 +117,14 @@ const BuyNowButton =() => {
       bg-black dark:bg-slate-100 group
       transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400"
       href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'
+      target="_blank"
       >
         <span className="">Buy now</span>
       </a>
       <a className="inline-flex px-4 
       text-sm text-gray-500 dark:text-slate-400"
       href='https://hieudinh.lemonsqueezy.com/'
+      target="_blank"
       >
         <span className="no-underline hover:underline">Alternative link</span>  
       </a>
@@ -157,7 +159,7 @@ const JoinCreators =({ users }: { users: string }) => {
 const ProductOfTheDay = () => {
   return (
     <div className="flex justify-center items-center"> 
-      <a href='https://www.producthunt.com/posts/compressx'>
+      <a href='https://www.producthunt.com/posts/compressx' target="_blank">
         <svg  
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 122 37" 
@@ -168,14 +170,14 @@ const ProductOfTheDay = () => {
   )
 }
 
-const ProductHunt = () => {
+const ProductHuntReview = () => {
   return (
     <div className="mb-8 flex justify-center">
       <div className="shadow-red-500/50 hover:shadow-red-500 shadow-lg hover:shadow-xl transition-shadow duration-500 ease-in-out relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 dark:text-white ring-1 ring-gray-900/10 dark:ring-gray-50/25 hover:ring-gray-900/20 dark:hover:ring-gray-50/50 inline-block">
-        We are on Product Hunt!{' '}
-        <a href="https://www.producthunt.com/posts/compressx" className="font-semibold text-red-500 ">
+        Leave us a review on{' '}
+        <a href="https://www.producthunt.com/products/compressx/reviews/new"  target="_blank" className="font-semibold text-red-500 ">
           <span className="absolute inset-0" aria-hidden="true" />
-          Leave a review <span aria-hidden="true">&rarr;</span>
+          Product Hunt <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
     </div>
@@ -505,8 +507,7 @@ export default function Page() {
                     <span className="text-sm text-gray-400"><TimeUpdated/></span>
                     }
                 </div>
-                <div className="mt-12 lg:mt-16">
-                  <ProductHunt/>
+                <div className="mt-8 lg:mt-12">
                   <ProductOfTheDay />
                 </div>
               </div>
@@ -543,6 +544,9 @@ export default function Page() {
                 </div>
               </div>
             </div>
+            <div className='mt-4'>
+              <ProductHuntReview/>
+            </div>
           </div>
         </section>
         <section>
@@ -558,25 +562,25 @@ export default function Page() {
         <footer className="bg-white dark:bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
           <div className="flex justify-center items-center text-center md:order-2 grid sm:grid-flow-col sm:auto-cols-auto space-x-4">
-            <a key='how_to_setup' href='https://hieudinh.notion.site/How-to-setup-CompressX-bae796ec3aa54781bfee27c8481d6e00' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+            <a key='how_to_setup' href='https://hieudinh.notion.site/How-to-setup-CompressX-bae796ec3aa54781bfee27c8481d6e00' target="_blank" className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
               <p className="text-center text-xs leading-5 ">How to setup</p>
             </a>
-            <a key='changelog' href='https://hieudinh.notion.site/Changelog-a1a7c020cd2d468cbd7fe826bec4875b?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200 ">
+            <a key='changelog' href='https://hieudinh.notion.site/Changelog-a1a7c020cd2d468cbd7fe826bec4875b?pvs=4' target="_blank" className="text-gray-500 hover:text-gray-400  dark:text-slate-200 ">
               <p className="text-center text-xs leading-5 ">Changelog</p>
             </a>
-            <a key='terms_of_service' href='https://hieudinh.notion.site/Terms-of-Service-906def93ee1541769bb74957f0d8a412?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+            <a key='terms_of_service' href='https://hieudinh.notion.site/Terms-of-Service-906def93ee1541769bb74957f0d8a412?pvs=4' target="_blank" className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
               <p className="text-center text-xs leading-5">Terms of Service</p>
             </a>
-            <a key='privacy_policy' href='https://hieudinh.notion.site/Privacy-Policy-f9e0cae49daa40d69ba7d3baff5c8038?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+            <a key='privacy_policy' href='https://hieudinh.notion.site/Privacy-Policy-f9e0cae49daa40d69ba7d3baff5c8038?pvs=4' target="_blank" className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
               <p className="text-center text-xs leading-5">Privacy Policy</p>
             </a>
-            <a key='acknowledgements' href='https://hieudinh.notion.site/Acknowledgements-bf74067c491a479588321852a18922b3?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+            <a key='acknowledgements' href='https://hieudinh.notion.site/Acknowledgements-bf74067c491a479588321852a18922b3?pvs=4' target="_blank" className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
               <p className="text-center text-xs leading-5">Acknowledgements</p>
             </a>
-            <a key='faqs' href='https://hieudinh.notion.site/FAQs-4581e1e772184711bf5dd7891386599b?pvs=4' className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
+            <a key='faqs' href='https://hieudinh.notion.site/FAQs-4581e1e772184711bf5dd7891386599b?pvs=4' target="_blank" className="text-gray-500 hover:text-gray-400  dark:text-slate-200">
               <p className="text-center text-xs leading-5">FAQs</p>
             </a>
-            <a key='X' href='https://twitter.com/hieudinh_' className="flex flex-wrap text-gray-500 hover:text-gray-400 dark:text-slate-200">
+            <a key='X' href='https://twitter.com/hieudinh_' target="_blank" className="flex flex-wrap text-gray-500 hover:text-gray-400 dark:text-slate-200">
               <p className=" text-center text-xs leading-5">Follow me on</p>
               <svg 
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" width="1em" height="1em"
