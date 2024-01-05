@@ -100,7 +100,7 @@ const GetItOnLemonSqueezy =() => {
       transition-shadow duration-500 ease-in-out shadow-lg hover:shadow-yellow-400"
       href='https://hieudinh.lemonsqueezy.com/checkout/buy/572b7285-ab58-48b5-a919-036c7787c30b'
       >
-        <span className="">Get it on</span>
+        <span className="">Buy it on</span>
         <LemonSqueezyLogo/>
       </a>
     </div>
