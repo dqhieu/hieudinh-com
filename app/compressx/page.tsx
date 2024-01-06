@@ -184,6 +184,20 @@ const ProductHuntReview = () => {
   )
 }
 
+const ProductHuntUpvote = () => {
+  return (
+    <div className="mb-8 flex justify-center">
+      <div className="shadow-red-500/50 hover:shadow-red-500 shadow-lg hover:shadow-xl transition-shadow duration-500 ease-in-out relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 dark:text-white ring-1 ring-gray-900/10 dark:ring-gray-50/25 hover:ring-gray-900/20 dark:hover:ring-gray-50/50 inline-block">
+        Give us an upvote and enjoy 20% OFF on{' '}
+        <a href="https://www.producthunt.com/posts/compressx"  target="_blank" className="font-semibold text-red-500 ">
+          <span className="absolute inset-0" aria-hidden="true" />
+          Product Hunt <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  )
+}
+
 const TimeUpdated = () => {
   const [lastUpdated, setLastUpdated] = useState(Date.now());
   const [formattedTime, setFormattedTime] = useState('updated just now');
@@ -413,6 +427,7 @@ export default function Page() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto max-w-xl lg:max-w-7xl">
                 <div className="lg:mt-12 text-center flex flex-col items-center lg:items-start">
+                  <ProductHuntUpvote/>
                   <h1 className="text-4xl lg:text-5xl font-bold leading-8 tracking-tight dark:text-white">
                     CompressX
                     <div className='flex flex-col items-center lg:items-end'>
