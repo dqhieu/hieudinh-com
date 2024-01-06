@@ -119,7 +119,7 @@ export default function Home() {
           
           <a 
           className="col-span-2 transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-neutral-400" 
-          href='/compressx'
+          href='https://compressx.app/'
           >
             <Container className="w-100 h-48 ">
               <div className="grid grid-cols-2 ">
