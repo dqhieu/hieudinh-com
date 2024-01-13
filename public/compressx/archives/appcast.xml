@@ -4,6 +4,15 @@
         <title>CompressX</title>
         <item>
             <title>1.1</title>
+            <pubDate>Sat, 13 Jan 2024 20:49:04 +0800</pubDate>
+            <sparkle:version>32</sparkle:version>
+            <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://compressx.app/archives/CompressX.html</sparkle:releaseNotesLink>
+            <enclosure url="https://compressx.app/archives/CompressX.zip" length="2753488" type="application/octet-stream" sparkle:edSignature="uivt/zTVS6CBaqhWU6Rn51bc1cQXVubN7o70MDtBwpX2tcMTC1ROu39TJLvCII/5jWWEI+gLKxjCxUUZs6EICw=="/>
+        </item>
+        <item>
+            <title>1.1</title>
             <pubDate>Sat, 13 Jan 2024 19:57:36 +0800</pubDate>
             <sparkle:version>30</sparkle:version>
             <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
@@ -19,15 +28,6 @@
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
             <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2710551" type="application/octet-stream" sparkle:edSignature="Y0N4pnhlgpTt63cxyQYfOamhQZFPoKP27KR3h75AOHpaszcsXJOE+68j4ek1zMOzSjcPnC6xW7JiVOBdYZrOBA=="/>
-        </item>
-        <item>
-            <title>1.0</title>
-            <pubDate>Wed, 27 Dec 2023 21:37:21 +0800</pubDate>
-            <sparkle:version>15</sparkle:version>
-            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://hieudinh.com/compressx/archives/CompressX.html</sparkle:releaseNotesLink>
-            <enclosure url="https://hieudinh.com/compressx/archives/CompressX.zip" length="2709127" type="application/octet-stream" sparkle:edSignature="cA0fWna/uOqgVG77xhPA4yFWzRQo73k6hYST26oPCKXY5y3wvu7xaChr3w7vfUMYSvJy2dMHrxKWcNiRssvjDg=="/>
         </item>
     </channel>
 </rss>
