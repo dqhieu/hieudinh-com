@@ -3,6 +3,14 @@
     <channel>
         <title>IconX</title>
         <item>
+            <title>1.4</title>
+            <pubDate>Thu, 18 Jan 2024 11:46:20 +0800</pubDate>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://hieudinh.com/iconx/archives/IconX.zip" length="5422320" type="application/octet-stream" sparkle:edSignature="YZ5l+NpX8oKMgjboUh6z4jY8jzhMV95BDG6px3TIjSyGV2nbjwwFjNEKCvGAXwZ7VdIHrK23Kv5sWtG86KoSCA=="/>
+        </item>
+        <item>
             <title>1.3</title>
             <pubDate>Sat, 18 Nov 2023 20:29:20 +0800</pubDate>
             <sparkle:version>4</sparkle:version>
