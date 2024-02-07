@@ -112,7 +112,7 @@ export default function Home() {
                 </svg>
                 <span className="mt-4">Substack</span>
                 <span className="mt-4 text-gray-400 text-sm">Latest issue: </span>
-                <span className="text-gray-400 text-sm">2023 Look back</span>
+                <span className="text-gray-400 text-sm">January 2024</span>
               </div>
             </Container>
           </a>
