@@ -96,7 +96,7 @@ export default function Home() {
           </a>
           <a 
           className="transition-shadow duration-500 ease-in-out shadow-lg rounded-xl hover:shadow-orange-400" 
-          href='https://news.hieudinh.com'
+          href='https://open.substack.com/pub/hieudinh/p/february-2024?r=1ovhn9&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true'
           >
             <Container className="w-48 h-48">
               <div className="flex flex-col mt-2">
@@ -112,7 +112,7 @@ export default function Home() {
                 </svg>
                 <span className="mt-4">Substack</span>
                 <span className="mt-4 text-gray-400 text-sm">Latest issue: </span>
-                <span className="text-gray-400 text-sm">January 2024</span>
+                <span className="text-gray-400 text-sm">February 2024</span>
               </div>
             </Container>
           </a>
