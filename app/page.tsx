@@ -17,7 +17,8 @@ const LINKS = {
   compressX: 'https://compressx.app',
   twitter: 'https://twitter.com/hieudinh_',
   github: 'https://github.com/dqhieu',
-  productHunt: 'https://www.producthunt.com/@hieudinh'
+  productHunt: 'https://www.producthunt.com/@hieudinh',
+  linkedin: 'https://www.linkedin.com/in/dinhquanghieu/'
 }
 
 // Simple container for nav items
@@ -93,6 +94,17 @@ export default function Home() {
                 <span>@hieudinh</span>
                 <span className="mx-2">·</span>
                 <span>Latest launches</span>
+              </div>
+            </div>
+          </a>
+
+          <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer">
+              <h2 className="text-xl mb-1">LinkedIn</h2>
+              <div className="text-neutral-500">
+                <span>dinhquanghieu</span>
+                <span className="mx-2">·</span>
+                <span>Professional network</span>
               </div>
             </div>
           </a>
