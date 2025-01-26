@@ -8,14 +8,12 @@ import rehypePrism from 'rehype-prism-plus'
 import 'prismjs/themes/prism-tomorrow.css' // You can choose different themes
 import Link from 'next/link'
 
-interface BlogPostProps {
-  params: {
-    slug: string
-  }
-}
+type Params = Promise<{ slug: string }>;
 
-export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
-  const post = getBlogPost(params.slug)
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   
   if (!post) {
     return {
@@ -46,9 +44,10 @@ function getBlogPost(slug: string) {
     return null
   }
 }
+export default async function BlogPost({ params }: { params: Params }) {
 
-export default function BlogPost({ params }: BlogPostProps) {
-  const post = getBlogPost(params.slug)
+  const { slug } = await params;
+  const post = getBlogPost(slug);
   
   if (!post) {
     notFound()
