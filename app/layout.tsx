@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark:bg-gray-900">
       <head>
         <Script 
           src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
@@ -29,7 +29,7 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} dark:text-gray-100`}>{children}</body>
     </html>
   )
 }

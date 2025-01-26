@@ -52,14 +52,14 @@ export default function BlogPage() {
       <h1 className="text-3xl font-bold mb-8">Swift things</h1>
       <div className="space-y-6">
         {posts.map((post) => (
-          <article key={post.slug} className="border-b pb-6">
+          <article key={post.slug} className="border-b border-gray-200 dark:border-gray-700 pb-6">
             <Link href={`/blog/${post.slug}`} className="block hover:opacity-75">
               <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
               <div className="flex items-center gap-4">
-                <time className="text-gray-500">{post.date}</time>
+                <time className="text-gray-500 dark:text-gray-400">{post.date}</time>
                 <div className="flex gap-2">
                   {post.tags.map(tag => (
-                    <span key={tag} className="bg-gray-100 text-gray-700 text-sm px-2 py-1 rounded">
+                    <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-orange-700 dark:text-orange-300 text-sm px-2 py-1 rounded">
                       {tag}
                     </span>
                   ))}

@@ -57,7 +57,7 @@ export default function BlogPost({ params }: BlogPostProps) {
     <article className="max-w-4xl mx-auto py-12 px-4">
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
       <div className="flex items-center gap-4 mb-8">
-        <time className="text-gray-500">
+        <time className="text-gray-500 dark:text-gray-400">
           {new Date(post.date).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
@@ -66,7 +66,7 @@ export default function BlogPost({ params }: BlogPostProps) {
         </time>
         <div className="flex gap-2">
           {post.tags.map((tag: string) => (
-            <span key={tag} className="bg-gray-100 text-gray-700 text-sm px-2 py-1 rounded">
+            <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-orange-700 dark:text-orange-300 text-sm px-2 py-1 rounded">
               {tag}
             </span>
           ))}
