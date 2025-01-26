@@ -82,7 +82,7 @@ export default async function BlogPost({ params }: { params: Params }) {
       {/* Table of Contents Sidebar */}
       <nav className="hidden lg:block w-64 flex-shrink-0">
         <div className="sticky top-8">
-          <h2 className="text-lg font-semibold mb-4">Table of Contents</h2>
+          <h2 className="text-md font-semibold mb-4">Table of Contents</h2>
           <ul className="space-y-2">
             {tableOfContents.map((heading) => (
               <li
@@ -91,7 +91,7 @@ export default async function BlogPost({ params }: { params: Params }) {
               >
                 <a
                   href={`#${heading.id}`}
-                  className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+                  className="text-gray-600 hover:text-orange-600 dark:text-gray-400 dark:hover:text-orange-400 text-sm"
                 >
                   {heading.text}
                 </a>
