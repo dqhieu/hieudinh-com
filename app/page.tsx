@@ -1,16 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import profilePhoto from '/src/images/profile_photo.jpg'
-import CompressXLogo from '/src/images/icon.png'
-import LemonQLogo from '/src/images/lemon-squeezy-logos.jpeg'
-import GitHubLogo from '/src/images/github-mark-white.png'
-import ProductHuntLogo from '/src/images/producthunt.png'
-import BaoBao from '/src/images/baobao.jpg'
-import BigMountainStudioLogo from '/src/images/bigmountainstudio.png'
-import clsx from 'clsx'
-import React, { HTMLAttributes, useState, useEffect } from 'react';
 
 // Add these URLs at the top of the file
 const LINKS = {
@@ -23,14 +14,14 @@ const LINKS = {
 
 // Simple container for nav items
 const NavItem = ({ href, children }: { href: string, children: React.ReactNode }) => (
-  <a href={href} className="text-neutral-500 hover:text-black transition-colors">
+  <a href={href} className="text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
     {children}
   </a>
 )
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-black p-8 md:p-16 flex items-center justify-center">
+    <main className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-8 md:p-16 flex items-center justify-center">
       <div className="max-w-xl w-full">
         {/* Header Section */}
         <div className="mb-16">
@@ -42,7 +33,7 @@ export default function Home() {
             className="rounded-full mb-6"
           />
           <h1 className="text-2xl mb-2">Hieu Dinh</h1>
-          <p className="text-xl text-neutral-500">Software Engineer & Indie Hacker</p>
+          <p className="text-xl text-neutral-500 dark:text-neutral-400">Software Engineer & Indie Hacker</p>
         </div>
 
         {/* Navigation */}
@@ -55,9 +46,9 @@ export default function Home() {
         {/* Projects List */}
         <div className="space-y-2">
           <a href={LINKS.compressX} target="_blank" rel="noopener noreferrer">
-            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
               <h2 className="text-xl mb-1">CompressX</h2>
-              <div className="text-neutral-500">
+              <div className="text-neutral-500 dark:text-neutral-400">
                 <span>2024</span>
                 <span className="mx-2">·</span>
                 <span>File compression app</span>
@@ -66,9 +57,9 @@ export default function Home() {
           </a>
 
           <a href={LINKS.twitter} target="_blank" rel="noopener noreferrer">
-            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
               <h2 className="text-xl mb-1">𝕏 (formerly Twitter)</h2>
-              <div className="text-neutral-500">
+              <div className="text-neutral-500 dark:text-neutral-400">
                 <span>@hieudinh_</span>
                 <span className="mx-2">·</span>
                 <span>Thoughts on software & indie hacking</span>
@@ -77,9 +68,9 @@ export default function Home() {
           </a>
 
           <a href={LINKS.github} target="_blank" rel="noopener noreferrer">
-            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
               <h2 className="text-xl mb-1">GitHub</h2>
-              <div className="text-neutral-500">
+              <div className="text-neutral-500 dark:text-neutral-400">
                 <span>@dqhieu</span>
                 <span className="mx-2">·</span>
                 <span>Open source contributions</span>
@@ -88,9 +79,9 @@ export default function Home() {
           </a>
 
           <a href={LINKS.productHunt} target="_blank" rel="noopener noreferrer">
-            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
               <h2 className="text-xl mb-1">Product Hunt</h2>
-              <div className="text-neutral-500">
+              <div className="text-neutral-500 dark:text-neutral-400">
                 <span>@hieudinh</span>
                 <span className="mx-2">·</span>
                 <span>Latest launches</span>
@@ -99,9 +90,9 @@ export default function Home() {
           </a>
 
           <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">
-            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 transition-colors cursor-pointer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
               <h2 className="text-xl mb-1">LinkedIn</h2>
-              <div className="text-neutral-500">
+              <div className="text-neutral-500 dark:text-neutral-400">
                 <span>dinhquanghieu</span>
                 <span className="mx-2">·</span>
                 <span>Professional network</span>
