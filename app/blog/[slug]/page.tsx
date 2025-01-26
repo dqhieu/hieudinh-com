@@ -77,13 +77,13 @@ export default function BlogPost({ params }: BlogPostProps) {
         </time>
         <div className="flex gap-2">
           {post.tags.map((tag: string) => (
-            <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-orange-700 dark:text-orange-300 text-sm px-2 py-1 rounded">
+            <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-orange-600 dark:text-orange-400 text-sm px-2 py-1 rounded">
               {tag}
             </span>
           ))}
         </div>
       </div>
-      <div className="prose prose-lg dark:prose-invert">
+      <div className="prose prose-lg dark:prose-invert prose-code:text-orange-600 dark:prose-code:text-orange-400">
         <ReactMarkdown rehypePlugins={[[rehypePrism, { showLineNumbers: true }]]}>
           {post.content}
         </ReactMarkdown>

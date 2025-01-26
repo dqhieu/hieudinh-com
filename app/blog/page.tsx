@@ -69,7 +69,7 @@ export default function BlogPage() {
                   </time>
                   <div className="flex gap-2">
                     {post.tags.map(tag => (
-                      <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-orange-700 dark:text-orange-300 text-sm px-2 py-1 rounded">
+                      <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-orange-600 dark:text-orange-400 text-sm px-2 py-1 rounded">
                         {tag}
                       </span>
                     ))}
