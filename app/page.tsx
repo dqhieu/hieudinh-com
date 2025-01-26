@@ -7,6 +7,7 @@ import profilePhoto from '/src/images/profile_photo.jpg'
 const LINKS = {
   compressX: 'https://compressx.app',
   twitter: 'https://twitter.com/hieudinh_',
+  blog: '/blog',
   github: 'https://github.com/dqhieu',
   productHunt: 'https://www.producthunt.com/@hieudinh',
   linkedin: 'https://www.linkedin.com/in/dinhquanghieu/'
@@ -63,6 +64,17 @@ export default function Home() {
                 <span>@hieudinh_</span>
                 <span className="mx-2">·</span>
                 <span>Thoughts on software & indie hacking</span>
+              </div>
+            </div>
+          </a>
+
+          <a href={LINKS.blog} rel="noopener noreferrer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+              <h2 className="text-xl mb-1">Blog</h2>
+              <div className="text-neutral-500 dark:text-neutral-400">
+                <span>hieudinh.com/blog</span>
+                <span className="mx-2">·</span>
+                <span>Writing about Swift</span>
               </div>
             </div>
           </a>
