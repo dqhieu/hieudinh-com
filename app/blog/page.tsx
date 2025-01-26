@@ -1,6 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
+import Image from 'next/image'
+import swiftBanner from '@/public/assets/swift.png'
 
 interface BlogPost {
   slug: string
@@ -49,6 +51,7 @@ export default function BlogPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-4">
+      <Image src={swiftBanner} alt="Swift Banner" className="w-full h-auto mb-8 rounded-xl" />
       <h1 className="text-3xl font-bold mb-8">Swift things</h1>
       <div className="space-y-6">
         {posts.map((post) => (
