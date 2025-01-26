@@ -6,6 +6,7 @@ import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import rehypePrism from 'rehype-prism-plus'
 import 'prismjs/themes/prism-tomorrow.css' // You can choose different themes
+import Link from 'next/link'
 
 interface BlogPostProps {
   params: {
@@ -55,6 +56,16 @@ export default function BlogPost({ params }: BlogPostProps) {
 
   return (
     <article className="max-w-4xl mx-auto py-12 px-4">
+      <Link 
+        href="/blog" 
+        className="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 mb-8"
+      >
+        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to blog
+      </Link>
+
       <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
       <div className="flex items-center gap-4 mb-8">
         <time className="text-gray-500 dark:text-gray-400">
@@ -77,6 +88,15 @@ export default function BlogPost({ params }: BlogPostProps) {
           {post.content}
         </ReactMarkdown>
       </div>
+      <Link 
+        href="/blog" 
+        className="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 mt-8"
+      >
+        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to blog
+      </Link>
     </article>
   )
 } 

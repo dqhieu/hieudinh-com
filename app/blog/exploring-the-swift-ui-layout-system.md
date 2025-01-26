@@ -4,7 +4,7 @@ date: 2025-01-26
 tags: [SwiftUI, Swift]
 ---
 
-The SwiftUI layout system introduces a declarative approach to building interfaces, allowing you to focus on your design rather than manually calculating frames and positions. In this post, we'll discuss how the SwiftUI layout process works, review common layout containers (HStack, VStack, ZStack), and touch on more advanced topics like alignment guides, GeometryReader, and custom layouts.
+The SwiftUI layout system introduces a declarative approach to building interfaces, allowing you to focus on your design rather than manually calculating frames and positions. In this post, we'll discuss how the SwiftUI layout process works, review common layout containers (`HStack`, `VStack`, `ZStack`), and touch on more advanced topics like alignment guides, GeometryReader, and custom layouts.
 
 ---
 
@@ -29,7 +29,7 @@ This approach lets SwiftUI respond dynamically to different screen sizes and dev
 
 ### VStack
 
-A VStack arranges its children vertically. By default, it will center them, but you can customize alignment and spacing:
+A `VStack` arranges its children vertically. By default, it will center them, but you can customize alignment and spacing:
 
 ```swift
 VStack(alignment: .leading, spacing: 16) {
@@ -46,7 +46,7 @@ VStack(alignment: .leading, spacing: 16) {
 
 ### HStack
 
-An HStack aligns its children horizontally, with similar customizable alignment and spacing parameters:
+An `HStack` aligns its children horizontally, with similar customizable alignment and spacing parameters:
 
 ```swift
 HStack(alignment: .center, spacing: 8) {
@@ -56,11 +56,11 @@ HStack(alignment: .center, spacing: 8) {
 .padding()
 ```
 
-You can nest HStacks and VStacks to build more complex layouts.
+You can nest `HStacks` and `VStacks` to build more complex layouts.
 
 ### ZStack
 
-A ZStack layers its children, placing them on top of each other in the Z-axis (depth). It’s useful for overlays or aligning views relative to each other:
+A `ZStack` layers its children, placing them on top of each other in the Z-axis (depth). It’s useful for overlays or aligning views relative to each other:
 
 ```swift
 ZStack {
@@ -72,13 +72,13 @@ ZStack {
 }
 ```
 
-You can use .alignment() on a ZStack to position overlays (e.g., top-left, bottom-right).
+You can use `.alignment()` on a `ZStack` to position overlays (e.g., top-left, bottom-right).
 
 ---
 
 ## Alignment Guides
 
-SwiftUI aligns child views based on their frames. However, for fine-grained control, you can use alignment guides. For instance, if you have text within an HStack or VStack and want to align them by their first baseline, you can do so using .alignmentGuide(_:_:).
+SwiftUI aligns child views based on their frames. However, for fine-grained control, you can use alignment guides. For instance, if you have text within an `HStack` or `VStack` and want to align them by their first baseline, you can do so using `.alignmentGuide(_:_:)`.
 
 For example:
 
@@ -97,7 +97,7 @@ Here, the second text line will align its first baseline with the bottom of the 
 
 ## GeometryReader and Coordinate Spaces
 
-When you need to build views that adapt dynamically to the parent’s size or position elements based on available space, GeometryReader is your go-to. It provides a GeometryProxy that exposes size and coordinate information:
+When you need to build views that adapt dynamically to the parent’s size or position elements based on available space, `GeometryReader` is your go-to. It provides a `GeometryProxy` that exposes size and coordinate information:
 
 ```swift
 GeometryReader { geometry in
@@ -114,7 +114,7 @@ This lets you create responsive layouts that adjust as the parent view changes i
 
 ## Custom Layouts
 
-Starting in iOS 16, SwiftUI introduced a Layout protocol that allows you to create custom layout containers. Instead of relying on HStack, VStack, or ZStack, you can define how the container calculates its children’s positions. While this is an advanced topic, it opens up possibilities for building unique grid systems or specialized view arrangements that go beyond SwiftUI’s stock containers.
+Starting in iOS 16, SwiftUI introduced a `Layout` protocol that allows you to create custom layout containers. Instead of relying on `HStack`, `VStack`, or `ZStack`, you can define how the container calculates its children’s positions. While this is an advanced topic, it opens up possibilities for building unique grid systems or specialized view arrangements that go beyond SwiftUI’s stock containers.
 
 An example might look like this (simplified for illustration):
 
@@ -135,13 +135,13 @@ struct MyCustomLayout: Layout {
 
 ## Tips for Managing Complex Layouts
 
-- **Compose smaller building blocks:** Rather than one massive VStack or ZStack with dozens of children, break layouts into smaller, reusable views.
+- **Compose smaller building blocks:** Rather than one massive `VStack` or `ZStack` with dozens of children, break layouts into smaller, reusable views.
 - **Leverage Preview Variations:** Use SwiftUI Previews to test your layouts across various device sizes and orientations.
-- **Use Spacers:** Spacer can help distribute empty space or push views apart.
+- **Use Spacers:** `Spacer` can help distribute empty space or push views apart.
 - **Profile Performance:** Overly complex layouts may affect performance. Use Instruments and the SwiftUI inspector to detect slow re-renders.
 
 ---
 
 ## Conclusion
 
-The SwiftUI layout system is both powerful and intuitive once you understand its proposal-response cycle. By combining stacks, alignment guides, GeometryReader, and even custom layouts, you can create intricate designs that adapt seamlessly to different screen sizes. As you build and refine your SwiftUI apps, keep experimenting with new layout techniques—SwiftUI's declarative model rewards creativity and clean, maintainable code.
+The SwiftUI layout system is both powerful and intuitive once you understand its proposal-response cycle. By combining stacks, alignment guides, `GeometryReader`, and even custom layouts, you can create intricate designs that adapt seamlessly to different screen sizes. As you build and refine your SwiftUI apps, keep experimenting with new layout techniques—SwiftUI's declarative model rewards creativity and clean, maintainable code.
