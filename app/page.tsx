@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import profilePhoto from '/src/images/profile_photo.jpg'
+import profilePhoto from '/public/assets/profile_photo.jpg'
 
 // Add these URLs at the top of the file
 const LINKS = {
