@@ -1,10 +1,7 @@
 import './globals.css'
 import './styles/prism-custom.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Script from 'next/script'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hieudinh.com')
@@ -29,7 +26,7 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body className={`${inter.className} dark:text-gray-100`}>{children}</body>
+      <body className="dark:text-gray-100">{children}</body>
     </html>
   )
 }
