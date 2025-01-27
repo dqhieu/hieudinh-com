@@ -92,7 +92,7 @@ export default async function BlogPost({ params }: { params: Params }) {
           Back to blog
         </Link>
 
-        <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
+        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <div className="flex items-center gap-4 mb-8">
           <time className="text-gray-500 dark:text-gray-400">
             {new Date(post.date).toLocaleDateString('en-US', {
@@ -115,7 +115,7 @@ export default async function BlogPost({ params }: { params: Params }) {
             components={{
               h1: ({ children }) => {
                 const id = (children?.toString() || '').toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h1 id={id}>{children}</h1>;
+                return <h1 id={id}><a href={`#${id}`} className="text-orange-600 font-bold no-underline">#</a> {children}</h1>;
               },
               h2: ({ children }) => {
                 const id = (children?.toString() || '').toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');

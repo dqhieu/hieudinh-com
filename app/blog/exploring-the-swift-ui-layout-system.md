@@ -8,7 +8,7 @@ The SwiftUI layout system introduces a declarative approach to building interfac
 
 ---
 
-## How SwiftUI Handles Layout
+# How SwiftUI Handles Layout
 
 SwiftUI's layout system is driven by a three-step process often summarized as:
 
@@ -25,9 +25,9 @@ This approach lets SwiftUI respond dynamically to different screen sizes and dev
 
 ---
 
-## Common Layout Containers
+# Common Layout Containers
 
-### VStack
+## VStack
 
 A `VStack` arranges its children vertically. By default, it will center them, but you can customize alignment and spacing:
 
@@ -44,7 +44,7 @@ VStack(alignment: .leading, spacing: 16) {
 - **alignment** controls how child views are aligned along the horizontal axis.
 - **spacing** is the distance between child views.
 
-### HStack
+## HStack
 
 An `HStack` aligns its children horizontally, with similar customizable alignment and spacing parameters:
 
@@ -58,7 +58,7 @@ HStack(alignment: .center, spacing: 8) {
 
 You can nest `HStacks` and `VStacks` to build more complex layouts.
 
-### ZStack
+## ZStack
 
 A `ZStack` layers its children, placing them on top of each other in the Z-axis (depth). It’s useful for overlays or aligning views relative to each other:
 
@@ -76,7 +76,7 @@ You can use `.alignment()` on a `ZStack` to position overlays (e.g., top-left, b
 
 ---
 
-## Alignment Guides
+# Alignment Guides
 
 SwiftUI aligns child views based on their frames. However, for fine-grained control, you can use alignment guides. For instance, if you have text within an `HStack` or `VStack` and want to align them by their first baseline, you can do so using `.alignmentGuide(_:_:)`.
 
@@ -96,7 +96,7 @@ Here, the second text line will align its first baseline with the bottom of the 
 
 ---
 
-## GeometryReader and Coordinate Spaces
+# GeometryReader and Coordinate Spaces
 
 When you need to build views that adapt dynamically to the parent’s size or position elements based on available space, `GeometryReader` is your go-to. It provides a `GeometryProxy` that exposes size and coordinate information:
 
@@ -113,7 +113,7 @@ This lets you create responsive layouts that adjust as the parent view changes i
 
 ---
 
-## Custom Layouts
+# Custom Layouts
 
 Starting in iOS 16, SwiftUI introduced a `Layout` protocol that allows you to create custom layout containers. Instead of relying on `HStack`, `VStack`, or `ZStack`, you can define how the container calculates its children’s positions. While this is an advanced topic, it opens up possibilities for building unique grid systems or specialized view arrangements that go beyond SwiftUI’s stock containers.
 
@@ -143,7 +143,7 @@ struct MyCustomLayout: Layout {
 
 ---
 
-## Tips for Managing Complex Layouts
+# Tips for Managing Complex Layouts
 
 - **Compose smaller building blocks:** Rather than one massive `VStack` or `ZStack` with dozens of children, break layouts into smaller, reusable views.
 - **Leverage Preview Variations:** Use SwiftUI Previews to test your layouts across various device sizes and orientations.
@@ -152,6 +152,6 @@ struct MyCustomLayout: Layout {
 
 ---
 
-## Conclusion
+# Conclusion
 
 The SwiftUI layout system is both powerful and intuitive once you understand its proposal-response cycle. By combining stacks, alignment guides, `GeometryReader`, and even custom layouts, you can create intricate designs that adapt seamlessly to different screen sizes. As you build and refine your SwiftUI apps, keep experimenting with new layout techniques—SwiftUI's declarative model rewards creativity and clean, maintainable code.
