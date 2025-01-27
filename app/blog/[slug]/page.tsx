@@ -115,11 +115,11 @@ export default async function BlogPost({ params }: { params: Params }) {
             components={{
               h1: ({ children }) => {
                 const id = (children?.toString() || '').toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h1 className="text-3xl font-bold mt-4" id={id}><a href={`#${id}`} className="text-orange-600 font-bold no-underline">#</a> {children}</h1>;
+                return <h1 className="text-3xl font-bold mt-8" id={id}><a href={`#${id}`} className="text-orange-600 font-bold no-underline">#</a> {children}</h1>;
               },
               h2: ({ children }) => {
                 const id = (children?.toString() || '').toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h2 id={id}>{children}</h2>;
+                return <h2 className="mt-4" id={id}>{children}</h2>;
               },
               h3: ({ children }) => {
                 const id = (children?.toString() || '').toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
