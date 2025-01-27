@@ -60,6 +60,7 @@ struct DockIcon: View {
     Image(nsImage: application.icon)
       .resizable()
       .aspectRatio(contentMode: .fit)
+      .frame(width: 48, height: 48)
   }
 }
 
@@ -74,6 +75,9 @@ struct ContentView: View {
       }
     }
     .padding()
+    .task {
+      runningApps = getRunningApps()
+    }
   }
 
 }
@@ -156,11 +160,12 @@ _(The translucent effect was not fully visible in the screenshot)_
 
 # Pin the container to the bottom of the display
 
-Finally, let’s pin our container to the bottom of the display—right where the Dock traditionally lives. We’ll use a WindowBackground view alongside an `NSWindowDelegate` to calculate and update our window’s frame position.
+Finally, let’s pin our container to the bottom of the display—right where the Dock traditionally lives. We’ll use a `WindowBackground` view as the delegation of `NSWindowDelegate` to calculate and update our window’s frame position.
 
 Since we want the container at the bottom, we can compute its origin by setting:
-• `x = screenFrame.midX - (windowFrame.width / 2)`
-• `y = screenFrame.minY + padding`
+
+- `x = screenFrame.midX - (windowFrame.width / 2)`
+- `y = screenFrame.minY + padding`
 
 Here’s the complete code:
 
