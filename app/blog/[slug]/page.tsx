@@ -1,12 +1,10 @@
-import fs from 'fs'
-import path from 'path'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import matter from 'gray-matter'
+import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import rehypePrism from 'rehype-prism-plus'
-import 'prismjs/themes/prism-tomorrow.css' // You can choose different themes
-import Link from 'next/link'
+import 'prismjs/themes/prism-tomorrow.css'
+import { getBlogPost } from '@/app/lib/blog'
 
 type Params = Promise<{ slug: string }>;
 
@@ -29,25 +27,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
   return {
     title: post.title,
-    description: post.content.substring(0, 160)
-  }
-}
-
-function getBlogPost(slug: string) {
-  const fullPath = path.join(process.cwd(), 'app/blog', `${slug}.md`)
-  
-  try {
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const { data, content } = matter(fileContents)
-    
-    return {
-      title: data.title,
-      date: data.date,
-      content,
-      tags: data.tags || []
-    }
-  } catch (error) {
-    return null
+    description: post.content?.substring(0, 160) || ''
   }
 }
 
@@ -75,7 +55,7 @@ export default async function BlogPost({ params }: { params: Params }) {
     notFound()
   }
 
-  const tableOfContents = extractTableOfContents(post.content);
+  const tableOfContents = extractTableOfContents(post.content || '');
 
   return (
     <div className="flex gap-8 max-w-6xl mx-auto py-12 px-4">

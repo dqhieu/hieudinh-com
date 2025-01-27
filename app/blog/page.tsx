@@ -1,50 +1,7 @@
-import fs from 'fs'
-import path from 'path'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 import swiftBanner from '@/public/assets/swift.png'
-
-interface BlogPost {
-  slug: string
-  title: string
-  date: string
-  tags: string[]
-}
-
-function getBlogPosts(): BlogPost[] {
-  const postsDirectory = path.join(process.cwd(), 'app/blog')
-  const files = fs.readdirSync(postsDirectory)
-  
-  const posts = files
-    .filter(file => file.endsWith('.md'))
-    .map(file => {
-      // Read the markdown file content
-      const fullPath = path.join(postsDirectory, file)
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-      
-      // Extract metadata from markdown frontmatter
-      // Assuming each markdown file starts with:
-      // ---
-      // title: Post Title
-      // date: YYYY-MM-DD
-      // ---
-      const metadata = fileContents.split('---')[1]
-      const title = metadata.match(/title: (.*)/)?.[1] || file.replace('.md', '')
-      const date = metadata.match(/date: (.*)/)?.[1] || ''
-      const tagsMatch = metadata.match(/tags: \[(.*)\]/)
-      const tags = tagsMatch ? tagsMatch[1].split(',').map(tag => tag.trim()) : []
-      
-      return {
-        slug: file.replace('.md', ''),
-        title,
-        date,
-        tags
-      }
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-
-  return posts
-}
+import { getBlogPosts } from '@/app/lib/blog'
 
 export default function BlogPage() {
   const posts = getBlogPosts()
@@ -52,7 +9,7 @@ export default function BlogPage() {
   return (
     <div className="max-w-4xl mx-auto py-12 px-4">
       <Image src={swiftBanner} alt="Swift Banner" className="w-full h-auto mb-8 rounded-xl" />
-      <h1 className="text-3xl font-bold mb-8">Swift things</h1>
+      <h1 className="text-3xl font-bold mb-4">Swift things</h1>
       <div className="space-y-2">
         {posts.map((post) => (
           <article key={post.slug}>
