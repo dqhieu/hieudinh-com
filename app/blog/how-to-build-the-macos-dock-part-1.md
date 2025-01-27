@@ -1,27 +1,27 @@
 ---
-title: How to mimic the macOS dock (part 1)
+title: How to build the macOS dock (part 1)
 date: 2025-01-27
 tags: [Swift, SwiftUI, macOS, AppKit]
 ---
 
-This month I tried to build a new macOS application from an idea I had since a year ago. When I use MacBook with external displays, the dock always shows in the main display which is kind of annoying since I have to move focus from the external display to main display if I want to use the dock. That's why I wanted to build a new app which can bring the dock over to external displays so that I can see the dock in all of the displays.
+I’ve been thinking about this idea for about a year: building a macOS app that replicates the Dock on external displays. Whenever I connect my MacBook to an external monitor, the Dock remains on the main display, which forces me to shift focus every time I need it. This frustration sparked my desire to create an app that brings the Dock to any connected display—allowing me to see and use the Dock wherever I’m working.
 
-To build a proof of concept for this app, here are things I need to do:
+In this post, I’ll walk you through the proof-of-concept phase of this project. By the end, we’ll have a basic version of our own Dock-like interface, pinned to the bottom of the screen. Here’s what we’ll cover:
 
-1. Get the list of running applications
-2. Display all running applications in a horizontal container
-3. Make the container looks similar to the Dock container
-4. Pin the container to the bottom of the screen
+1. Retrieve running applications
+2. Present the applications in a horizontal container
+3. Apply a Dock-like appearance
+4. Pin the container to the bottom of the display
 
-Let's get started!
+Let’s get started!
 
-# Get the list of running applications
+# Retrieve running applications
 
-In macOS, you can get the all running applications by using [runningApplications](https://developer.apple.com/documentation/appkit/nsworkspace/runningapplications) property of NSWorkspace. This property returns an array of [NSRunningApplication](https://developer.apple.com/documentation/appkit/nsrunningapplication) instances.
+macOS lets us retrieve running applications via the [runningApplications](https://developer.apple.com/documentation/appkit/nsworkspace/runningapplications) property of `NSWorkspace`. This property returns an array of [NSRunningApplication](https://developer.apple.com/documentation/appkit/nsrunningapplication) instances.
 
-The NSRunningApplication gives you `localizedName: String?`, `icon: NSImage?`, and `bundleURL: URL?` so you have all the neccessary information to display and interact with the app.
+Each `NSRunningApplication` instance provides key information such as `localizedName: String?`, `icon: NSImage?`, and `bundleURL: URL?`, which is everything we need to display and interact with each app.
 
-Here's a simple code snippet to get list of all running applications
+Here’s a simple snippet showing how to fetch the list of running applications:
 
 ```swift
 struct RunningApp: Identifiable, Equatable {
@@ -46,11 +46,11 @@ func getRunningApps() -> [RunningApp] {
 }
 ```
 
-# Display all running applications in a horizontal container
+# Present the applications in a horizontal container
 
-After getting the all the running apps, display them in a horizontal container is an easy task. We just need to create a HStack and display all the app icons there.
+With our list of running apps in hand, we can move on to displaying them in a horizontal container. SwiftUI makes this simple: just create an `HStack` and place the app icons inside it.
 
-Here's a minimal version to get them displayed:
+Below is a minimal SwiftUI example:
 
 ```swift
 struct DockIcon: View {
@@ -79,18 +79,19 @@ struct ContentView: View {
 }
 ```
 
-Here's what it looks like:
+Here’s the result:
 
-![Simple horizontal dock with application icons](/assets/how-to-mimic-the-macos-dock-part-1/step1.jpg)
+![Simple horizontal dock with application icons](/assets/how-to-build-the-macos-dock-part-1/step1.jpg)
 
-# Make the container looks similar to the Dock container
+# Apply a Dock-like appearance
 
-Next step is to remove the title bar and window buttons. The container should also have a translucent background with rounded corners and a border.
-While [`containerBackground`](<https://developer.apple.com/documentation/swiftui/view/containerbackground(_:for:)>) can help with the material background, and [`toolbarBackgroundVisibility`](<https://developer.apple.com/documentation/swiftui/view/toolbarbackgroundvisibility(_:for:)>) for the title bar visibility, there is no way to hide the close, minimize, maximize buttons in the window. On the other hands, you need to set your app to macOS 15 as the minimum support versions as those APIs are only available from macOS 15.
+Next, let’s make our container closely resemble the real Dock. We want a translucent background, rounded corners, and no visible title bar or window buttons.
 
-So, we need to go visit our old friend AppKit and use some of its APIs.
+SwiftUI provides [`containerBackground`](<https://developer.apple.com/documentation/swiftui/view/containerbackground(_:for:)>) for creating a material-like background, and [`toolbarBackgroundVisibility`](<https://developer.apple.com/documentation/swiftui/view/toolbarbackgroundvisibility(_:for:)>) to toggle the title bar’s visibility. However, there’s no native SwiftUI way to hide the close, minimize, and maximize buttons. On top of that, these APIs require macOS 15 or later, so you’ll need to set that as your minimum deployment target.
 
-First, let make a background view to remove the title bar and window buttons
+Because of these limitations, we’ll lean on some AppKit APIs to fine-tune the window’s appearance.
+
+**Remove the title bar and window buttons:**
 
 ```swift
 struct WindowBackground: NSViewRepresentable {
@@ -130,7 +131,7 @@ struct SecondDock2App: App {
 }
 ```
 
-Then, update the container to have the material background with some rounded corners and border
+**Add a translucent material background with rounded corners and a border:**
 
 ```swift
 HStack {
@@ -149,13 +150,19 @@ HStack {
 }
 ```
 
-It should look good now
-![Horizontal dock with application icons](/assets/how-to-mimic-the-macos-dock-part-1/step2.jpg)
-_The translucent effect failed to shown captured_
+It should now look something like this:
+![Horizontal dock with application icons](/assets/how-to-build-the-macos-dock-part-1/step2.jpg)
+_(The translucent effect was not fully visible in the screenshot)_
 
-# Pin the container to the bottom of the screen
+# Pin the container to the bottom of the display
 
-Our last step is to move the container to the bottom of the display to replace the macOS system dock. With the WindowBackground view, we can create a Coordinator to handle callbacks from NSWindowDelegate of our window, and also calculate the correct location to update our window frame. Since we want to pin the container at the bottom of the display, we can calculate the origin point with `x` as `screenFrame.midX - windowFrame.width / 2` and `y` as `screenFrame.minY + padding`. The completed code can be seen below:
+Finally, let’s pin our container to the bottom of the display—right where the Dock traditionally lives. We’ll use a WindowBackground view alongside an `NSWindowDelegate` to calculate and update our window’s frame position.
+
+Since we want the container at the bottom, we can compute its origin by setting:
+• `x = screenFrame.midX - (windowFrame.width / 2)`
+• `y = screenFrame.minY + padding`
+
+Here’s the complete code:
 
 ```swift
 struct WindowBackground: NSViewRepresentable {
@@ -223,9 +230,9 @@ struct WindowBackground: NSViewRepresentable {
 
 ```
 
-And this is our result:
-![Horizontal dock with application icons](/assets/how-to-mimic-the-macos-dock-part-1/step3.jpg)
+And here’s how it looks:
+![Horizontal dock with application icons](/assets/how-to-build-the-macos-dock-part-1/step3.jpg)
 
-What a beautiful dock! Can you even spot the differences?
+What a beautiful dock! Can you spot the differences from the real thing?
 
-That's all for our MVP.
+That’s all for now. We will dive deeper and explore additional features. Stay tuned!
