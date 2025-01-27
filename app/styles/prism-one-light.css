@@ -28,6 +28,7 @@
  * --syntax-cursor-line: hsla(230, 8%, 24%, 0.05);
  */
 
+/* Light theme styles (default) */
 code[class*="language-"],
 pre[class*="language-"] {
 	background: hsl(230, 1%, 98%);
