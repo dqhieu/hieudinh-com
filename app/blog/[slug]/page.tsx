@@ -3,7 +3,6 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import rehypePrism from 'rehype-prism-plus'
-import 'prismjs/themes/prism-tomorrow.css'
 import { getBlogPost } from '@/app/lib/blog'
 
 type Params = Promise<{ slug: string }>;

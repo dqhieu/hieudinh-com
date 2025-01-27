@@ -8,7 +8,7 @@ export default function BlogPage() {
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-4">
-      <Image src={swiftBanner} alt="Swift Banner" className="w-full h-auto mb-8 rounded-xl" />
+      <Image src={swiftBanner} alt="Swift Banner" className="w-16 h-auto mb-8 rounded-xl" />
       <h1 className="text-3xl font-bold mb-4">Swift things</h1>
       <div className="space-y-2">
         {posts.map((post) => (

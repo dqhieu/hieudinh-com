@@ -1,5 +1,5 @@
 import './globals.css'
-import './styles/prism-custom.css'
+import './styles/prism-one-dark.css'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 
