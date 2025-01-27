@@ -33,10 +33,10 @@ A `VStack` arranges its children vertically. By default, it will center them, bu
 
 ```swift
 VStack(alignment: .leading, spacing: 16) {
-    Text("SwiftUI")
-        .font(.largeTitle)
-    Text("A powerful, declarative UI framework.")
-        .font(.subheadline)
+   Text("SwiftUI")
+      .font(.largeTitle)
+   Text("A powerful, declarative UI framework.")
+      .font(.subheadline)
 }
 .padding()
 ```
@@ -50,8 +50,8 @@ An `HStack` aligns its children horizontally, with similar customizable alignmen
 
 ```swift
 HStack(alignment: .center, spacing: 8) {
-    Image(systemName: "star.fill")
-    Text("Favorite")
+   Image(systemName: "star.fill")
+   Text("Favorite")
 }
 .padding()
 ```
@@ -64,11 +64,11 @@ A `ZStack` layers its children, placing them on top of each other in the Z-axis 
 
 ```swift
 ZStack {
-    Image("Background")
-    Text("Overlay Text")
-        .foregroundColor(.white)
-        .font(.title)
-        .padding()
+   Image("Background")
+   Text("Overlay Text")
+      .foregroundColor(.white)
+      .font(.title)
+      .padding()
 }
 ```
 
@@ -84,10 +84,11 @@ For example:
 
 ```swift
 VStack(alignment: .firstTextBaseline) {
-    Text("Title")
-        .font(.largeTitle)
-    Text("Subtitle")
-        .alignmentGuide(.firstTextBaseline) { d in d[.bottom] }
+   Text("Title")
+      .font(.largeTitle)
+   Text("Subtitle")
+      .alignmentGuide(.firstTextBaseline) { d in d[.bottom]
+      }
 }
 ```
 
@@ -101,10 +102,10 @@ When you need to build views that adapt dynamically to the parent’s size or po
 
 ```swift
 GeometryReader { geometry in
-    VStack {
-        Text("Width: \(geometry.size.width)")
-        Text("Height: \(geometry.size.height)")
-    }
+   VStack {
+      Text("Width: \(geometry.size.width)")
+      Text("Height: \(geometry.size.height)")
+   }
 }
 ```
 
@@ -120,14 +121,23 @@ An example might look like this (simplified for illustration):
 
 ```swift
 struct MyCustomLayout: Layout {
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        // Calculate desired container size based on subviews
-        // Return the size as a CGSize
-    }
+   func sizeThatFits(
+      proposal: ProposedViewSize,
+      subviews: Subviews,
+      cache: inout ()
+   ) -> CGSize {
+      // Calculate desired container size based on subviews
+      // Return the size as a CGSize
+   }
 
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        // Position subviews within the given bounds
-    }
+   func placeSubviews(
+      in bounds: CGRect,
+      proposal: ProposedViewSize,
+      subviews: Subviews,
+      cache: inout ()
+   ) {
+      // Position subviews within the given bounds
+   }
 }
 ```
 
