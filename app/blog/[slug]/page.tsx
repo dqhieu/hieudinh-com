@@ -110,7 +110,7 @@ export default async function BlogPost({ params }: { params: Params }) {
             ))}
           </div>
         </div>
-        <div className="prose prose-lg dark:prose-invert prose-code:text-orange-600 dark:prose-code:text-orange-400">
+        <div className="prose prose-md dark:prose-invert prose-code:text-orange-600 dark:prose-code:text-orange-400">
           <ReactMarkdown
             rehypePlugins={[[rehypePrism, { showLineNumbers: true }]]}
             components={{
