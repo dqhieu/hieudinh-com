@@ -33,7 +33,7 @@ struct RunningApp: Identifiable, Equatable {
 
 func getRunningApps() -> [RunningApp] {
   let apps = NSWorkspace.shared.runningApplications
-    .filter { $0.activationPolicy == .regular } // Only show regular apps (excluding background processes)
+    .filter { $0.activationPolicy == .regular }
     .map { app in
       RunningApp(
         id: Int(app.processIdentifier),
@@ -235,4 +235,4 @@ And here’s how it looks:
 
 What a beautiful dock! Can you spot the differences from the real thing?
 
-That’s all for now. We will dive deeper and explore additional features. Stay tuned!
+That’s all for now. We will dive deeper and explore additional features in the next post. Stay tuned!
