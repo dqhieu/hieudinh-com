@@ -87,7 +87,8 @@ VStack(alignment: .firstTextBaseline) {
    Text("Title")
       .font(.largeTitle)
    Text("Subtitle")
-      .alignmentGuide(.firstTextBaseline) { d in d[.bottom]
+      .alignmentGuide(.firstTextBaseline) { d in
+         d[.bottom]
       }
 }
 ```
