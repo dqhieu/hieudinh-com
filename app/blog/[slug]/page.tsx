@@ -4,7 +4,7 @@ import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import rehypePrism from 'rehype-prism-plus'
 import { getBlogPost } from '@/app/lib/blog'
-
+import { MarkdownComponents } from '@/app/components/Markdown'
 type Params = Promise<{ slug: string }>;
 
 // Add this type definition near the top of the file
@@ -109,35 +109,10 @@ export default async function BlogPost({ params }: { params: Params }) {
             ))}
           </div>
         </div>
-        <div className="prose prose-md dark:prose-invert prose-code:text-orange-600 dark:prose-code:text-orange-400">
+        <div className="max-w-md sm:max-w-4xl prose prose-md dark:prose-invert prose-code:text-orange-600 dark:prose-code:text-orange-400">
           <ReactMarkdown
             rehypePlugins={[[rehypePrism, { showLineNumbers: true }]]}
-            components={{
-              h1: ({ children }) => {
-                const id = (children?.toString() || '').toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h1 className="text-3xl font-bold mt-8" id={id}><a href={`#${id}`} className="text-orange-600 font-bold no-underline">#</a> {children}</h1>;
-              },
-              h2: ({ children }) => {
-                const id = (children?.toString() || '').toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h2 className="mt-4" id={id}>{children}</h2>;
-              },
-              h3: ({ children }) => {
-                const id = (children?.toString() || '').toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h3 id={id}>{children}</h3>;
-              },
-              h4: ({ children }) => {
-                const id = (children?.toString() || '').toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h4 id={id}>{children}</h4>;
-              },
-              h5: ({ children }) => {
-                const id = (children?.toString() || '').toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h5 id={id}>{children}</h5>;
-              },
-              h6: ({ children }) => {
-                const id = (children?.toString() || '').toString().toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-                return <h6 id={id}>{children}</h6>;
-              },
-            }}
+            components={MarkdownComponents}
           >
             {post.content}
           </ReactMarkdown>
