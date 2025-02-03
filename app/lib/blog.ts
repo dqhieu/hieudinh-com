@@ -7,6 +7,7 @@ export interface BlogPost {
   title: string
   date: string
   tags: string[]
+  description: string
   content?: string
 }
 
@@ -25,12 +26,13 @@ export function getBlogPosts(): BlogPost[] {
       const date = metadata.match(/date: (.*)/)?.[1] || ''
       const tagsMatch = metadata.match(/tags: \[(.*)\]/)
       const tags = tagsMatch ? tagsMatch[1].split(',').map(tag => tag.trim()) : []
-      
+      const description = metadata.match(/description: (.*)/)?.[1] || ''
       return {
         slug: file.replace('.md', ''),
         title,
         date,
-        tags
+        tags,
+        description: ''
       }
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -50,7 +52,8 @@ export function getBlogPost(slug: string): BlogPost | null {
       title: data.title,
       date: data.date,
       content,
-      tags: data.tags || []
+      tags: data.tags || [],
+      description: data.description || ''
     }
   } catch (error) {
     return null

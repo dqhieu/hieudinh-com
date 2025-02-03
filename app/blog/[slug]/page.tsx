@@ -26,7 +26,15 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
   return {
     title: post.title,
-    description: post.content?.substring(0, 160) || ''
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      url: 'https://hieudinh.com/blog/' + post.slug,
+      siteName: 'Swift things',
+      locale: 'en_US',
+      type: 'article',
+    },
   }
 }
 
