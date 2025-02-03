@@ -11,7 +11,7 @@ export interface BlogPost {
 }
 
 export function getBlogPosts(): BlogPost[] {
-  const postsDirectory = path.join(process.cwd(), 'app/blog')
+  const postsDirectory = path.join(process.cwd(), 'app/blog/posts')
   const files = fs.readdirSync(postsDirectory)
   
   const posts = files
@@ -39,7 +39,7 @@ export function getBlogPosts(): BlogPost[] {
 }
 
 export function getBlogPost(slug: string): BlogPost | null {
-  const fullPath = path.join(process.cwd(), 'app/blog', `${slug}.md`)
+  const fullPath = path.join(process.cwd(), 'app/blog/posts', `${slug}.md`)
   
   try {
     const fileContents = fs.readFileSync(fullPath, 'utf8')
