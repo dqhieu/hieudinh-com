@@ -5,7 +5,7 @@ import profilePhoto from '/public/assets/profile_photo.jpg'
 
 // Add these URLs at the top of the file
 const LINKS = {
-  compressX: 'https://compressx.app',
+  compresto: 'https://compresto.app',
   twitter: 'https://twitter.com/hieudinh_',
   blog: '/blog',
   github: 'https://github.com/dqhieu',
@@ -46,9 +46,9 @@ export default function Home() {
 
         {/* Projects List */}
         <div className="space-y-2">
-          <a href={LINKS.compressX} target="_blank" rel="noopener noreferrer">
+          <a href={LINKS.compresto} target="_blank" rel="noopener noreferrer">
             <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
-              <h2 className="text-xl mb-1">CompressX</h2>
+              <h2 className="text-xl mb-1">Compresto</h2>
               <div className="text-neutral-500 dark:text-neutral-400">
                 <span>2024</span>
                 <span className="mx-2">·</span>
