@@ -1,7 +1,6 @@
 ---
 title: How to build the macOS dock (part 1)
 description: Learn how to build a macOS Dock clone using SwiftUI and AppKit. This tutorial covers retrieving running applications, creating a horizontal dock interface, styling with materials, and positioning the dock—perfect for developers interested in macOS development.
-date: 2025-01-27
 tags: [Swift, SwiftUI, macOS, AppKit]
 ---
 

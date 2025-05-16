@@ -17,13 +17,6 @@ export default function BlogPage() {
               <div className="p-4 h-full -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
                 <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
                 <div className="flex flex-col gap-2">
-                  <time className="text-gray-500 dark:text-gray-400">
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-                  </time>
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map(tag => (
                       <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-orange-600 dark:text-orange-400 text-sm px-2 py-1 rounded">

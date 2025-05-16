@@ -1,7 +1,6 @@
 ---
 title: Creating a Rotating Animated Gradient Border in SwiftUI
 description: Learn how to create an eye-catching rotating gradient border animation in SwiftUI. This step-by-step tutorial covers implementing animated borders, gradients, and custom animations for iOS apps.
-date: 2025-02-02
 tags: [Swift, SwiftUI, iOS, Animation]
 ---
 

@@ -103,13 +103,6 @@ export default async function BlogPost({ params }: { params: Params }) {
 
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <div className="flex items-center gap-4 mb-8">
-          <time className="text-gray-500 dark:text-gray-400">
-            {new Date(post.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}
-          </time>
           <div className="flex gap-2">
             {post.tags.map((tag: string) => (
               <span key={tag} className="bg-gray-100 dark:bg-gray-800 text-orange-600 dark:text-orange-400 text-sm px-2 py-1 rounded">

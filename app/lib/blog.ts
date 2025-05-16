@@ -5,7 +5,6 @@ import matter from 'gray-matter'
 export interface BlogPost {
   slug: string
   title: string
-  date: string
   tags: string[]
   description: string
   content?: string
@@ -23,19 +22,16 @@ export function getBlogPosts(): BlogPost[] {
       
       const metadata = fileContents.split('---')[1]
       const title = metadata.match(/title: (.*)/)?.[1] || file.replace('.md', '')
-      const date = metadata.match(/date: (.*)/)?.[1] || ''
       const tagsMatch = metadata.match(/tags: \[(.*)\]/)
       const tags = tagsMatch ? tagsMatch[1].split(',').map(tag => tag.trim()) : []
       const description = metadata.match(/description: (.*)/)?.[1] || ''
       return {
         slug: file.replace('.md', ''),
         title,
-        date,
         tags,
         description: ''
       }
     })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   return posts
 }
@@ -50,7 +46,6 @@ export function getBlogPost(slug: string): BlogPost | null {
     return {
       slug,
       title: data.title,
-      date: data.date,
       content,
       tags: data.tags || [],
       description: data.description || ''

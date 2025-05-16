@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   let dynamicPages = posts.map((post) => ({
     url: `https://hieudinh.com/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 1,
   }));
