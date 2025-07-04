@@ -6,6 +6,7 @@ import profilePhoto from '/public/assets/profile_photo.jpg'
 // Add these URLs at the top of the file
 const LINKS = {
   compresto: 'https://compresto.app',
+  steps: 'https://getsteps.app',
   twitter: 'https://twitter.com/hieudinh_',
   blog: '/blog',
   github: 'https://github.com/dqhieu',
@@ -53,6 +54,17 @@ export default function Home() {
                 <span>2024</span>
                 <span className="mx-2">·</span>
                 <span>File compression app</span>
+              </div>
+            </div>
+          </a>
+
+          <a href={LINKS.steps} target="_blank" rel="noopener noreferrer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+              <h2 className="text-xl mb-1">Steps</h2>
+              <div className="text-neutral-500 dark:text-neutral-400">
+                <span>2025</span>
+                <span className="mx-2">·</span>
+                <span>Daily steps counter and workouts</span>
               </div>
             </div>
           </a>
