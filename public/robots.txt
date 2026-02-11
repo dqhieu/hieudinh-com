@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://hieudinh.com
-
-# Sitemaps
-Sitemap: https://hieudinh.com/sitemap.xml
