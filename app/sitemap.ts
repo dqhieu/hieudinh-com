@@ -1,18 +1,7 @@
 import type { MetadataRoute } from 'next'
-import { getBlogPosts } from './lib/blog';
- 
+
 export default function sitemap(): MetadataRoute.Sitemap {
-
-  const posts = getBlogPosts();
-
-  let dynamicPages = posts.map((post) => ({
-    url: `https://hieudinh.com/blog/${post.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 1,
-  }));
-
-  let staticPages = [
+  return [
     {
       url: 'https://hieudinh.com',
       lastModified: new Date(),
@@ -20,15 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: 'https://hieudinh.com/blog',
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
+      url: 'https://hieudinh.com/dadjokes',
+      lastModified: new Date('2023-07-27'),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
     },
-  ]
-
-  return [
-    ...staticPages,
-    ...dynamicPages,
   ]
 }
