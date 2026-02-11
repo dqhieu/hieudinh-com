@@ -3,12 +3,12 @@
 import Image from 'next/image'
 import profilePhoto from '/public/assets/profile_photo.jpg'
 
-// Add these URLs at the top of the file
 const LINKS = {
   compresto: 'https://compresto.app',
   steps: 'https://getsteps.app',
+  marketingChannels: 'https://marketingchannels.co',
+  flowly: 'https://useflowly.ai',
   twitter: 'https://twitter.com/hieudinh_',
-  blog: '/blog',
   github: 'https://github.com/dqhieu',
   productHunt: 'https://www.producthunt.com/@hieudinh',
   linkedin: 'https://www.linkedin.com/in/dinhquanghieu/'
@@ -51,9 +51,7 @@ export default function Home() {
             <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
               <h2 className="text-xl mb-1">Compresto</h2>
               <div className="text-neutral-500 dark:text-neutral-400">
-                <span>2024</span>
-                <span className="mx-2">·</span>
-                <span>File compression app</span>
+                <span>Video, image & PDF compression for macOS</span>
               </div>
             </div>
           </a>
@@ -62,9 +60,25 @@ export default function Home() {
             <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
               <h2 className="text-xl mb-1">Steps</h2>
               <div className="text-neutral-500 dark:text-neutral-400">
-                <span>2025</span>
-                <span className="mx-2">·</span>
-                <span>Daily steps counter and workouts</span>
+                <span>Workout & pedometer app</span>
+              </div>
+            </div>
+          </a>
+
+          <a href={LINKS.marketingChannels} target="_blank" rel="noopener noreferrer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+              <h2 className="text-xl mb-1">Marketing Channels</h2>
+              <div className="text-neutral-500 dark:text-neutral-400">
+                <span>One new marketing channel, every day</span>
+              </div>
+            </div>
+          </a>
+
+          <a href={LINKS.flowly} target="_blank" rel="noopener noreferrer">
+            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+              <h2 className="text-xl mb-1">Flowly</h2>
+              <div className="text-neutral-500 dark:text-neutral-400">
+                <span>AI-powered automated testing</span>
               </div>
             </div>
           </a>
@@ -76,17 +90,6 @@ export default function Home() {
                 <span>@hieudinh_</span>
                 <span className="mx-2">·</span>
                 <span>Thoughts on software & indie hacking</span>
-              </div>
-            </div>
-          </a>
-
-          <a href={LINKS.blog} rel="noopener noreferrer">
-            <div className="group p-4 -mx-4 rounded-xl hover:bg-neutral-100 dark:hover:bg-gray-800 transition-colors cursor-pointer">
-              <h2 className="text-xl mb-1">Blog</h2>
-              <div className="text-neutral-500 dark:text-neutral-400">
-                <span>hieudinh.com/blog</span>
-                <span className="mx-2">·</span>
-                <span>Writing about Swift</span>
               </div>
             </div>
           </a>

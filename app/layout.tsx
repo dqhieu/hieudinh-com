@@ -1,6 +1,4 @@
 import './globals.css'
-import './styles/prism-one-light.css'
-import './styles/prism-one-dark.css'
 import type { Metadata } from 'next'
 import { Analytics } from "@vercel/analytics/next"
 
