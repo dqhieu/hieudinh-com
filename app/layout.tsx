@@ -1,11 +1,19 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Bricolage_Grotesque } from 'next/font/google'
+import { Instrument_Serif, Inter } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/next"
 
-const bricolage = Bricolage_Grotesque({
+const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
+  weight: '400',
   variable: '--font-display',
+  display: 'swap',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-body',
   display: 'swap',
 })
 
@@ -44,8 +52,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={bricolage.variable}>
-      <body>
+    <html lang="en" className={`${instrumentSerif.variable} ${inter.variable}`}>
+      <body className="font-body">
         {children}
         <Analytics />
       </body>

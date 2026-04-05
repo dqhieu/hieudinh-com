@@ -1,6 +1,3 @@
-import Image from 'next/image'
-import profilePhoto from '/public/assets/profile_photo.jpg'
-
 const PRODUCTS = [
   {
     name: 'Compresto',
@@ -8,8 +5,8 @@ const PRODUCTS = [
     href: 'https://compresto.app',
   },
   {
-    name: 'Steps',
-    description: 'Workout & pedometer app',
+    name: 'Steps: Workout & Pedometer',
+    description: 'Stay motivated with every step and workout on iOS',
     href: 'https://getsteps.app',
   },
   {
@@ -42,123 +39,6 @@ const SOCIALS = [
   )},
 ]
 
-function FloralCorner({ position }: { position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' }) {
-  const isTop = position.includes('top')
-  const isLeft = position.includes('left')
-
-  const positionClasses = [
-    isTop ? 'top-0' : 'bottom-0',
-    isLeft ? 'left-0' : 'right-0',
-  ].join(' ')
-
-  return (
-    <div className={`absolute ${positionClasses} w-[140px] h-[120px] md:w-[200px] md:h-[160px] pointer-events-none hidden sm:block`}>
-      {/* Main flower cluster */}
-      <div
-        className="floral-dot"
-        style={{
-          [isTop ? 'top' : 'bottom']: '-8px',
-          [isLeft ? 'left' : 'right']: '-8px',
-          width: 60, height: 60,
-          background: 'rgba(230,155,178,0.72)',
-          filter: 'blur(5px)',
-        }}
-      />
-      <div
-        className="floral-dot"
-        style={{
-          [isTop ? 'top' : 'bottom']: '22px',
-          [isLeft ? 'left' : 'right']: '38px',
-          width: 42, height: 42,
-          background: 'rgba(218,148,175,0.6)',
-          filter: 'blur(4px)',
-        }}
-      />
-      <div
-        className="floral-dot"
-        style={{
-          [isTop ? 'top' : 'bottom']: '6px',
-          [isLeft ? 'left' : 'right']: '70px',
-          width: 30, height: 30,
-          background: 'rgba(198,155,212,0.5)',
-          filter: 'blur(3px)',
-        }}
-      />
-      <div
-        className="floral-dot"
-        style={{
-          [isTop ? 'top' : 'bottom']: '48px',
-          [isLeft ? 'left' : 'right']: '12px',
-          width: 32, height: 32,
-          background: 'rgba(238,172,192,0.52)',
-          filter: 'blur(3px)',
-        }}
-      />
-      <div
-        className="floral-dot"
-        style={{
-          [isTop ? 'top' : 'bottom']: '38px',
-          [isLeft ? 'left' : 'right']: '55px',
-          width: 22, height: 22,
-          background: 'rgba(192,162,215,0.42)',
-          filter: 'blur(2px)',
-        }}
-      />
-      {/* Leaves */}
-      <div
-        className="floral-leaf"
-        style={{
-          [isTop ? 'top' : 'bottom']: '65px',
-          [isLeft ? 'left' : 'right']: '8px',
-          width: 24, height: 12,
-          background: 'rgba(125,172,125,0.42)',
-          transform: `rotate(${isLeft ? '-22deg' : '22deg'})`,
-        }}
-      />
-      <div
-        className="floral-leaf"
-        style={{
-          [isTop ? 'top' : 'bottom']: '55px',
-          [isLeft ? 'left' : 'right']: '72px',
-          width: 18, height: 9,
-          background: 'rgba(125,172,125,0.32)',
-          transform: `rotate(${isLeft ? '18deg' : '-18deg'})`,
-        }}
-      />
-    </div>
-  )
-}
-
-function FloatingPetals() {
-  const petals = [
-    { top: '28%', left: '14%', size: 10, rotate: 48, opacity: 0.45 },
-    { top: '72%', left: '88%', size: 8, rotate: 125, opacity: 0.38 },
-    { top: '18%', left: '68%', size: 7, rotate: 205, opacity: 0.32 },
-    { top: '82%', left: '22%', size: 9, rotate: 80, opacity: 0.35 },
-    { top: '55%', left: '8%', size: 8, rotate: 160, opacity: 0.3 },
-    { top: '40%', left: '92%', size: 7, rotate: 260, opacity: 0.28 },
-  ]
-
-  return (
-    <>
-      {petals.map((p, i) => (
-        <div
-          key={`petal-${i}`}
-          className="floral-petal pointer-events-none hidden sm:block"
-          style={{
-            top: p.top,
-            left: p.left,
-            width: p.size,
-            height: p.size,
-            background: `rgba(238,178,192,${p.opacity})`,
-            transform: `rotate(${p.rotate}deg)`,
-          }}
-        />
-      ))}
-    </>
-  )
-}
-
 export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -175,87 +55,85 @@ export default function Home() {
   }
 
   return (
-    <main
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
-      style={{ backgroundImage: "url('/assets/bg.jpg')" }}
-    >
+    <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Decorative floral corners */}
-      <FloralCorner position="top-left" />
-      <FloralCorner position="top-right" />
-      <FloralCorner position="bottom-left" />
-      <FloralCorner position="bottom-right" />
+      {/* Fullscreen background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"
+          type="video/mp4"
+        />
+      </video>
 
-      {/* Floating petals */}
-      <FloatingPetals />
+      {/* Navigation */}
+      <nav className="relative z-10 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
+        <span
+          className="text-3xl tracking-tight text-foreground"
+          style={{ fontFamily: "'Instrument Serif', serif" }}
+        >
+          Hieu Dinh
+        </span>
 
-      {/* Centered content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6 py-16">
-        {/* Glass card */}
-        <div className="bg-white/45 backdrop-blur-[10px] rounded-[20px] border border-white/50 shadow-[0_8px_32px_rgba(178,138,168,0.15)] px-8 py-10 md:px-12 md:py-12 text-center max-w-md w-full">
-          {/* Profile photo */}
-          <Image
-            src={profilePhoto}
-            alt="Hieu Dinh"
-            width={88}
-            height={88}
-            className="rounded-full border-[3px] border-white/80 shadow-[0_5px_20px_rgba(178,138,168,0.28)] mb-5 mx-auto"
-          />
-
-          {/* Name */}
-          <h1 className="font-display text-4xl md:text-5xl text-plum-900 tracking-[2.5px]">
-            Hieu Dinh
-          </h1>
-
-          {/* Subtitle */}
-          <p className="mt-2 text-[11px] uppercase tracking-[2px] text-plum-600">
-            Software Engineer &amp; Indie Hacker
-          </p>
-
-          {/* Tagline */}
-          <p className="mt-4 text-[13px] italic text-plum-700 max-w-xs leading-relaxed font-display mx-auto">
-            Building tools that simplify everyday life.
-          </p>
-
-          {/* Social links */}
-          <div className="flex gap-3 mt-6 justify-center">
-            {SOCIALS.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.name}
-                className="glass w-[38px] h-[38px] rounded-full flex items-center justify-center text-plum-700 hover:-translate-y-0.5 transition-all duration-300"
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-
-          {/* Divider */}
-          <div className="w-[45px] h-px bg-gradient-to-r from-transparent via-plum-400/40 to-transparent my-5 mx-auto" />
-
-          {/* Product links */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {PRODUCTS.map((product) => (
-              <a
-                key={product.name}
-                href={product.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass text-[11px] text-plum-700 tracking-[0.8px] px-3 py-1.5 rounded-full hover:-translate-y-0.5 transition-all duration-300"
-              >
-                {product.name}
-              </a>
-            ))}
-          </div>
+        <div className="flex items-center gap-4">
+          {SOCIALS.map((social) => (
+            <a
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.name}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {social.icon}
+            </a>
+          ))}
         </div>
-      </div>
+
+      </nav>
+
+      {/* Hero section */}
+      <section className="relative z-10 flex flex-col items-center text-center px-6 pt-32 pb-40 py-[90px]">
+        <h1
+          className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl leading-[0.95] tracking-[-2.46px] max-w-7xl font-normal"
+          style={{ fontFamily: "'Instrument Serif', serif" }}
+        >
+          Building <em className="not-italic text-muted-foreground">tools</em> that
+          simplify <em className="not-italic text-muted-foreground">everyday life.</em>
+        </h1>
+
+        <p className="animate-fade-rise-delay text-muted-foreground text-base sm:text-lg max-w-2xl mt-8 leading-relaxed">
+          Software engineer &amp; indie hacker crafting apps for macOS and iOS.
+          Compresto, Steps, and more — designed for focus and simplicity.
+        </p>
+
+        {/* Product pills */}
+        {/* Product cards */}
+        <div className="animate-fade-rise-delay-2 grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-3xl w-full">
+          {PRODUCTS.map((product) => (
+            <a
+              key={product.name}
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="liquid-glass rounded-2xl px-6 py-5 text-left hover:scale-[1.03] transition-transform cursor-pointer"
+            >
+              <span className="block text-base font-medium text-foreground">{product.name}</span>
+              <span className="block text-sm text-muted-foreground mt-1 leading-snug">{product.description}</span>
+            </a>
+          ))}
+        </div>
+
+      </section>
     </main>
   )
 }
