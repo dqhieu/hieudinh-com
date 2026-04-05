@@ -47,6 +47,123 @@ const SOCIALS = [
   )},
 ]
 
+function FloralCorner({ position }: { position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' }) {
+  const isTop = position.includes('top')
+  const isLeft = position.includes('left')
+
+  const positionClasses = [
+    isTop ? 'top-0' : 'bottom-0',
+    isLeft ? 'left-0' : 'right-0',
+  ].join(' ')
+
+  return (
+    <div className={`absolute ${positionClasses} w-[140px] h-[120px] md:w-[200px] md:h-[160px] pointer-events-none hidden sm:block`}>
+      {/* Main flower cluster */}
+      <div
+        className="floral-dot"
+        style={{
+          [isTop ? 'top' : 'bottom']: '-8px',
+          [isLeft ? 'left' : 'right']: '-8px',
+          width: 60, height: 60,
+          background: 'rgba(230,155,178,0.72)',
+          filter: 'blur(5px)',
+        }}
+      />
+      <div
+        className="floral-dot"
+        style={{
+          [isTop ? 'top' : 'bottom']: '22px',
+          [isLeft ? 'left' : 'right']: '38px',
+          width: 42, height: 42,
+          background: 'rgba(218,148,175,0.6)',
+          filter: 'blur(4px)',
+        }}
+      />
+      <div
+        className="floral-dot"
+        style={{
+          [isTop ? 'top' : 'bottom']: '6px',
+          [isLeft ? 'left' : 'right']: '70px',
+          width: 30, height: 30,
+          background: 'rgba(198,155,212,0.5)',
+          filter: 'blur(3px)',
+        }}
+      />
+      <div
+        className="floral-dot"
+        style={{
+          [isTop ? 'top' : 'bottom']: '48px',
+          [isLeft ? 'left' : 'right']: '12px',
+          width: 32, height: 32,
+          background: 'rgba(238,172,192,0.52)',
+          filter: 'blur(3px)',
+        }}
+      />
+      <div
+        className="floral-dot"
+        style={{
+          [isTop ? 'top' : 'bottom']: '38px',
+          [isLeft ? 'left' : 'right']: '55px',
+          width: 22, height: 22,
+          background: 'rgba(192,162,215,0.42)',
+          filter: 'blur(2px)',
+        }}
+      />
+      {/* Leaves */}
+      <div
+        className="floral-leaf"
+        style={{
+          [isTop ? 'top' : 'bottom']: '65px',
+          [isLeft ? 'left' : 'right']: '8px',
+          width: 24, height: 12,
+          background: 'rgba(125,172,125,0.42)',
+          transform: `rotate(${isLeft ? '-22deg' : '22deg'})`,
+        }}
+      />
+      <div
+        className="floral-leaf"
+        style={{
+          [isTop ? 'top' : 'bottom']: '55px',
+          [isLeft ? 'left' : 'right']: '72px',
+          width: 18, height: 9,
+          background: 'rgba(125,172,125,0.32)',
+          transform: `rotate(${isLeft ? '18deg' : '-18deg'})`,
+        }}
+      />
+    </div>
+  )
+}
+
+function FloatingPetals() {
+  const petals = [
+    { top: '28%', left: '14%', size: 10, rotate: 48, opacity: 0.45 },
+    { top: '72%', left: '88%', size: 8, rotate: 125, opacity: 0.38 },
+    { top: '18%', left: '68%', size: 7, rotate: 205, opacity: 0.32 },
+    { top: '82%', left: '22%', size: 9, rotate: 80, opacity: 0.35 },
+    { top: '55%', left: '8%', size: 8, rotate: 160, opacity: 0.3 },
+    { top: '40%', left: '92%', size: 7, rotate: 260, opacity: 0.28 },
+  ]
+
+  return (
+    <>
+      {petals.map((p, i) => (
+        <div
+          key={i}
+          className="floral-petal pointer-events-none hidden sm:block"
+          style={{
+            top: p.top,
+            left: p.left,
+            width: p.size,
+            height: p.size,
+            background: `rgba(238,178,192,${p.opacity})`,
+            transform: `rotate(${p.rotate}deg)`,
+          }}
+        />
+      ))}
+    </>
+  )
+}
+
 export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -63,102 +180,82 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-950 text-white">
+    <main
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
+      style={{ backgroundImage: "url('/assets/bg.jpg')" }}
+    >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="max-w-2xl mx-auto px-6 py-20 md:py-28">
-        {/* Terminal-style Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="relative">
-              <div className="absolute -inset-0.5 bg-emerald-500 rounded-full blur opacity-50" />
-              <Image
-                src={profilePhoto}
-                alt="Hieu Dinh"
-                width={56}
-                height={56}
-                className="relative rounded-full ring-1 ring-emerald-500/50"
-              />
-            </div>
-            <div className="h-px flex-1 bg-gradient-to-r from-emerald-500/50 to-transparent" />
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
-            Hieu Dinh
-          </h1>
-          <p className="font-mono text-sm text-emerald-400">
-            <span className="text-gray-600">$</span> Software Engineer &amp; Indie Hacker
-          </p>
-          <p className="font-mono text-sm text-gray-500 mt-2">
-            <span className="text-gray-600">#</span> Building products that people love
-          </p>
+
+      {/* Decorative floral corners */}
+      <FloralCorner position="top-left" />
+      <FloralCorner position="top-right" />
+      <FloralCorner position="bottom-left" />
+      <FloralCorner position="bottom-right" />
+
+      {/* Floating petals */}
+      <FloatingPetals />
+
+      {/* Centered content */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-16 text-center">
+        {/* Profile photo */}
+        <Image
+          src={profilePhoto}
+          alt="Hieu Dinh"
+          width={88}
+          height={88}
+          className="rounded-full border-[3px] border-white/80 shadow-[0_5px_20px_rgba(178,138,168,0.28)] mb-5"
+        />
+
+        {/* Name */}
+        <h1 className="font-serif text-4xl md:text-5xl text-plum-900 tracking-[2.5px]">
+          Hieu Dinh
+        </h1>
+
+        {/* Subtitle */}
+        <p className="mt-2 text-[11px] uppercase tracking-[2px] text-plum-600">
+          Software Engineer &amp; Indie Hacker
+        </p>
+
+        {/* Tagline */}
+        <p className="mt-4 text-[13px] italic text-plum-700 max-w-xs leading-relaxed font-serif">
+          Building tools that simplify everyday life.
+        </p>
+
+        {/* Social links */}
+        <div className="flex gap-3 mt-6">
+          {SOCIALS.map((social) => (
+            <a
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.name}
+              className="glass w-[38px] h-[38px] rounded-full flex items-center justify-center text-plum-700 hover:-translate-y-0.5 transition-all duration-300"
+            >
+              {social.icon}
+            </a>
+          ))}
         </div>
 
-        {/* Products */}
-        <section className="mb-14" aria-label="Products">
-          <div className="flex items-center gap-3 mb-6">
-            <h2 className="font-mono text-xs text-emerald-500">~/products</h2>
-            <div className="h-px flex-1 bg-gray-800" />
-          </div>
-          <div className="space-y-2">
-            {PRODUCTS.map((product) => (
-              <a
-                key={product.name}
-                href={product.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block p-4 rounded-lg border border-gray-800 hover:border-emerald-500/50 bg-gray-900/50 hover:bg-gray-900 transition-all duration-300"
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="font-medium mb-1 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 group-hover:shadow-[0_0_8px_rgba(16,185,129,0.6)] transition-shadow" />
-                      {product.name}
-                    </h3>
-                    <p className="text-sm text-gray-500 font-mono">
-                      {product.description}
-                    </p>
-                  </div>
-                  <span className="font-mono text-xs text-gray-700 group-hover:text-emerald-500 transition-colors">
-                    &gt;_
-                  </span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </section>
+        {/* Divider */}
+        <div className="w-[45px] h-px bg-gradient-to-r from-transparent via-plum-400/40 to-transparent my-5" />
 
-        {/* Social Links */}
-        <section aria-label="Social links">
-          <div className="flex items-center gap-3 mb-6">
-            <h2 className="font-mono text-xs text-emerald-500">~/connect</h2>
-            <div className="h-px flex-1 bg-gray-800" />
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {SOCIALS.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.name}
-                className="group flex items-center gap-2 px-3 py-2 rounded-md border border-gray-800 hover:border-emerald-500/50 bg-gray-900/50 hover:bg-gray-900 transition-all duration-300"
-              >
-                <span className="text-gray-500 group-hover:text-emerald-400 transition-colors">
-                  {social.icon}
-                </span>
-                <span className="font-mono text-xs text-gray-400 group-hover:text-white transition-colors">
-                  {social.name}
-                </span>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        {/* Blinking cursor footer */}
-        <div className="mt-20 font-mono text-sm text-gray-700" aria-hidden="true">
-          <span className="text-emerald-500">~</span> <span className="animate-pulse">_</span>
+        {/* Product links */}
+        <div className="flex flex-wrap justify-center gap-3">
+          {PRODUCTS.map((product) => (
+            <a
+              key={product.name}
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass text-[11px] text-plum-700 tracking-[0.8px] px-3 py-1.5 rounded-full hover:-translate-y-0.5 transition-all duration-300"
+            >
+              {product.name}
+            </a>
+          ))}
         </div>
       </div>
     </main>
