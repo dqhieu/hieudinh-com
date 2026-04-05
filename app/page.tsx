@@ -17,11 +17,6 @@ const PRODUCTS = [
     description: 'One new marketing channel, every day',
     href: 'https://marketingchannels.co',
   },
-  {
-    name: 'Flowly',
-    description: 'AI-powered automated testing',
-    href: 'https://useflowly.ai',
-  },
 ]
 
 const SOCIALS = [
@@ -199,63 +194,66 @@ export default function Home() {
       <FloatingPetals />
 
       {/* Centered content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-16 text-center">
-        {/* Profile photo */}
-        <Image
-          src={profilePhoto}
-          alt="Hieu Dinh"
-          width={88}
-          height={88}
-          className="rounded-full border-[3px] border-white/80 shadow-[0_5px_20px_rgba(178,138,168,0.28)] mb-5"
-        />
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-6 py-16">
+        {/* Glass card */}
+        <div className="bg-white/45 backdrop-blur-[10px] rounded-[20px] border border-white/50 shadow-[0_8px_32px_rgba(178,138,168,0.15)] px-8 py-10 md:px-12 md:py-12 text-center max-w-md w-full">
+          {/* Profile photo */}
+          <Image
+            src={profilePhoto}
+            alt="Hieu Dinh"
+            width={88}
+            height={88}
+            className="rounded-full border-[3px] border-white/80 shadow-[0_5px_20px_rgba(178,138,168,0.28)] mb-5 mx-auto"
+          />
 
-        {/* Name */}
-        <h1 className="font-display text-4xl md:text-5xl text-plum-900 tracking-[2.5px]">
-          Hieu Dinh
-        </h1>
+          {/* Name */}
+          <h1 className="font-display text-4xl md:text-5xl text-plum-900 tracking-[2.5px]">
+            Hieu Dinh
+          </h1>
 
-        {/* Subtitle */}
-        <p className="mt-2 text-[11px] uppercase tracking-[2px] text-plum-600">
-          Software Engineer &amp; Indie Hacker
-        </p>
+          {/* Subtitle */}
+          <p className="mt-2 text-[11px] uppercase tracking-[2px] text-plum-600">
+            Software Engineer &amp; Indie Hacker
+          </p>
 
-        {/* Tagline */}
-        <p className="mt-4 text-[13px] italic text-plum-700 max-w-xs leading-relaxed font-display">
-          Building tools that simplify everyday life.
-        </p>
+          {/* Tagline */}
+          <p className="mt-4 text-[13px] italic text-plum-700 max-w-xs leading-relaxed font-display mx-auto">
+            Building tools that simplify everyday life.
+          </p>
 
-        {/* Social links */}
-        <div className="flex gap-3 mt-6">
-          {SOCIALS.map((social) => (
-            <a
-              key={social.name}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={social.name}
-              className="glass w-[38px] h-[38px] rounded-full flex items-center justify-center text-plum-700 hover:-translate-y-0.5 transition-all duration-300"
-            >
-              {social.icon}
-            </a>
-          ))}
-        </div>
+          {/* Social links */}
+          <div className="flex gap-3 mt-6 justify-center">
+            {SOCIALS.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.name}
+                className="glass w-[38px] h-[38px] rounded-full flex items-center justify-center text-plum-700 hover:-translate-y-0.5 transition-all duration-300"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
 
-        {/* Divider */}
-        <div className="w-[45px] h-px bg-gradient-to-r from-transparent via-plum-400/40 to-transparent my-5" />
+          {/* Divider */}
+          <div className="w-[45px] h-px bg-gradient-to-r from-transparent via-plum-400/40 to-transparent my-5 mx-auto" />
 
-        {/* Product links */}
-        <div className="flex flex-wrap justify-center gap-3">
-          {PRODUCTS.map((product) => (
-            <a
-              key={product.name}
-              href={product.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass text-[11px] text-plum-700 tracking-[0.8px] px-3 py-1.5 rounded-full hover:-translate-y-0.5 transition-all duration-300"
-            >
-              {product.name}
-            </a>
-          ))}
+          {/* Product links */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {PRODUCTS.map((product) => (
+              <a
+                key={product.name}
+                href={product.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass text-[11px] text-plum-700 tracking-[0.8px] px-3 py-1.5 rounded-full hover:-translate-y-0.5 transition-all duration-300"
+              >
+                {product.name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </main>
