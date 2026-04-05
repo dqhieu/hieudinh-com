@@ -2,26 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.52);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(178, 148, 168, 0.28);
+    box-shadow: 0 2px 8px rgba(178, 138, 168, 0.15);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .glass:hover {
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 12px rgba(178, 138, 168, 0.25);
+  }
+
+  .floral-dot {
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .floral-leaf {
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .floral-petal {
+    position: absolute;
+    border-radius: 50% 0 50% 50%;
   }
 }
 
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
