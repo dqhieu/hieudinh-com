@@ -8,17 +8,28 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+      },
+      colors: {
+        plum: {
+          900: '#3a2838',
+          700: '#5a4552',
+          600: '#685060',
+          400: '#9a7a8a',
+        },
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
-        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite', // Adjust the duration as needed
+        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
       width: {
         '100': '25rem',
-      }
+      },
     },
   },
   plugins: [
