@@ -1,11 +1,11 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Playfair_Display } from 'next/font/google'
+import { Bricolage_Grotesque } from 'next/font/google'
 import { Analytics } from "@vercel/analytics/next"
 
-const playfair = Playfair_Display({
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-display',
   display: 'swap',
 })
 
@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={playfair.variable}>
+    <html lang="en" className={bricolage.variable}>
       <body>
         {children}
         <Analytics />

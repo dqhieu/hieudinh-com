@@ -148,7 +148,7 @@ function FloatingPetals() {
     <>
       {petals.map((p, i) => (
         <div
-          key={i}
+          key={`petal-${i}`}
           className="floral-petal pointer-events-none hidden sm:block"
           style={{
             top: p.top,
@@ -210,7 +210,7 @@ export default function Home() {
         />
 
         {/* Name */}
-        <h1 className="font-serif text-4xl md:text-5xl text-plum-900 tracking-[2.5px]">
+        <h1 className="font-display text-4xl md:text-5xl text-plum-900 tracking-[2.5px]">
           Hieu Dinh
         </h1>
 
@@ -220,7 +220,7 @@ export default function Home() {
         </p>
 
         {/* Tagline */}
-        <p className="mt-4 text-[13px] italic text-plum-700 max-w-xs leading-relaxed font-serif">
+        <p className="mt-4 text-[13px] italic text-plum-700 max-w-xs leading-relaxed font-display">
           Building tools that simplify everyday life.
         </p>
 

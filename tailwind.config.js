@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'sans-serif'],
       },
       colors: {
         plum: {
