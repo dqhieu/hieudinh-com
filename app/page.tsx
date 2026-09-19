@@ -1,4 +1,11 @@
+import Image from 'next/image'
+
 const PRODUCTS = [
+  {
+    name: 'GrokBots',
+    description: 'Templates and prompts for the best Grok Bots',
+    href: 'https://grokbots.best',
+  },
   {
     name: 'Compresto',
     description: 'Video, image & PDF compression for macOS',
@@ -39,6 +46,23 @@ const SOCIALS = [
   )},
 ]
 
+const ExternalArrow = (
+  <svg
+    className="w-4 h-4 shrink-0 text-muted-foreground"
+    viewBox="0 0 16 16"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M4.5 11.5 11.5 4.5M6 4.5h5.5V10"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+
 export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -55,36 +79,63 @@ export default function Home() {
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Fullscreen background video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <div className="mx-auto flex max-w-3xl flex-col gap-4 px-6 py-16 sm:py-24">
+        <section className="surface-card animate-fade-rise flex flex-col items-center gap-6 p-8 text-center sm:flex-row sm:items-start sm:text-left">
+          <Image
+            src="/assets/profile_photo.jpg"
+            alt="Hieu Dinh"
+            width={88}
+            height={88}
+            priority
+            className="h-[88px] w-[88px] shrink-0 rounded-full object-cover outline outline-1 -outline-offset-1 outline-black/10"
+          />
 
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-        <span
-          className="text-3xl tracking-tight text-foreground"
-          style={{ fontFamily: "'Instrument Serif', serif" }}
-        >
-          Hieu Dinh
-        </span>
+          <div className="min-w-0">
+            <h1 className="font-display text-3xl tracking-tight text-foreground sm:text-4xl [text-wrap:balance]">
+              Hieu Dinh
+            </h1>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Software engineer &amp; indie hacker
+            </p>
+            <p className="font-display mt-4 text-xl leading-snug text-foreground sm:text-2xl [text-wrap:balance]">
+              Building tools that simplify everyday life.
+            </p>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground [text-wrap:pretty]">
+              Software engineer &amp; indie hacker crafting apps for macOS and iOS.
+              Compresto, Steps, and more — designed for focus and simplicity.
+            </p>
+          </div>
+        </section>
 
-        <div className="flex items-center gap-4">
+        <div className="animate-fade-rise-delay grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {PRODUCTS.map((product) => (
+            <a
+              key={product.name}
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="surface-card surface-card-interactive flex min-h-[10rem] flex-col p-6 text-left"
+            >
+              <span className="flex items-start justify-between gap-3">
+                <span className="text-base font-medium text-foreground [text-wrap:balance]">
+                  {product.name}
+                </span>
+                {ExternalArrow}
+              </span>
+              <span className="mt-2 text-sm leading-snug text-muted-foreground [text-wrap:pretty]">
+                {product.description}
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <div className="animate-fade-rise-delay-2 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {SOCIALS.map((social) => (
             <a
               key={social.name}
@@ -92,48 +143,14 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.name}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="surface-card surface-card-interactive flex min-h-[88px] flex-col items-center justify-center gap-2 px-3 py-5 text-foreground"
             >
               {social.icon}
+              <span className="text-sm text-muted-foreground">{social.name}</span>
             </a>
           ))}
         </div>
-
-      </nav>
-
-      {/* Hero section */}
-      <section className="relative z-10 flex flex-col items-center text-center px-6 pt-32 pb-40 py-[90px]">
-        <h1
-          className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl leading-[0.95] tracking-[-2.46px] max-w-7xl font-normal"
-          style={{ fontFamily: "'Instrument Serif', serif" }}
-        >
-          Building <em className="not-italic text-muted-foreground">tools</em> that
-          simplify <em className="not-italic text-muted-foreground">everyday life.</em>
-        </h1>
-
-        <p className="animate-fade-rise-delay text-muted-foreground text-base sm:text-lg max-w-2xl mt-8 leading-relaxed">
-          Software engineer &amp; indie hacker crafting apps for macOS and iOS.
-          Compresto, Steps, and more — designed for focus and simplicity.
-        </p>
-
-        {/* Product pills */}
-        {/* Product cards */}
-        <div className="animate-fade-rise-delay-2 grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-3xl w-full">
-          {PRODUCTS.map((product) => (
-            <a
-              key={product.name}
-              href={product.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="liquid-glass rounded-2xl px-6 py-5 text-left hover:scale-[1.03] transition-transform cursor-pointer"
-            >
-              <span className="block text-base font-medium text-foreground">{product.name}</span>
-              <span className="block text-sm text-muted-foreground mt-1 leading-snug">{product.description}</span>
-            </a>
-          ))}
-        </div>
-
-      </section>
+      </div>
     </main>
   )
 }

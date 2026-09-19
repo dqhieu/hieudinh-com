@@ -3,49 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --background: 201 100% 13%;
-  --foreground: 0 0% 100%;
-  --muted-foreground: 240 4% 66%;
-  --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 4%;
-  --secondary: 0 0% 10%;
-  --muted: 0 0% 10%;
-  --accent: 0 0% 10%;
-  --border: 0 0% 18%;
-  --input: 0 0% 18%;
+  --background: 220 8% 96%;
+  --foreground: 220 10% 10%;
+  --muted-foreground: 220 6% 40%;
+  --primary: 220 10% 10%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 8% 93%;
+  --muted: 220 8% 93%;
+  --accent: 220 8% 93%;
+  --border: 220 8% 88%;
+  --input: 220 8% 88%;
+  --card: 0 0% 100%;
+  --shadow-card:
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    0 1px 2px -1px rgba(0, 0, 0, 0.06),
+    0 2px 8px 0 rgba(0, 0, 0, 0.06);
+  --shadow-card-hover:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 4px 12px -2px rgba(0, 0, 0, 0.08),
+    0 8px 24px 0 rgba(0, 0, 0, 0.06);
 }
 
 @layer components {
-  .liquid-glass {
-    background: rgba(255, 255, 255, 0.01);
-    background-blend-mode: luminosity;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: none;
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
+  .surface-card {
+    background: hsl(var(--card));
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
   }
 
-  .liquid-glass::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1.4px;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.45) 0%,
-      rgba(255, 255, 255, 0.15) 20%,
-      rgba(255, 255, 255, 0) 40%,
-      rgba(255, 255, 255, 0) 60%,
-      rgba(255, 255, 255, 0.15) 80%,
-      rgba(255, 255, 255, 0.45) 100%
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
+  .surface-card-interactive {
+    transition-property: box-shadow, transform;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  .surface-card-interactive:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .surface-card-interactive:active {
+    transform: scale(0.96);
   }
 }
 

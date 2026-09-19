@@ -16,6 +16,7 @@ module.exports = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         'muted-foreground': 'hsl(var(--muted-foreground))',
+        card: 'hsl(var(--card))',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

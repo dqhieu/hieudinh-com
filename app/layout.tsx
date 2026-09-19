@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${instrumentSerif.variable} ${inter.variable}`}>
-      <body className="font-body">
+      <body className="font-body antialiased">
         {children}
         <Analytics />
       </body>
