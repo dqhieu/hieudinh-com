@@ -6,12 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:vinext": "vinext dev --port 3001",
+    "build:vinext": "vinext build",
+    "start:vinext": "wrangler dev --config dist/server/wrangler.json",
+    "deploy:vinext": "vinext-cloudflare deploy --config dist/server/wrangler.json"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@types/react-dom": "18.2.7",
     "@vercel/analytics": "^1.5.0",
+    "@vinext/cloudflare": "^1.0.0-beta.8",
     "autoprefixer": "10.4.14",
     "eslint": "8.45.0",
     "gray-matter": "^4.0.3",
@@ -20,21 +25,29 @@
     "next-sitemap": "^4.2.3",
     "postcss": "^8.4.32",
     "prismjs": "^1.29.0",
-    "react": "^19.0.0",
+    "react": "^19.3.0",
     "react-countup": "^6.5.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.3.0",
     "react-dom-confetti": "^0.2.0",
     "react-markdown": "^9.0.3",
+    "react-server-dom-webpack": "^19.3.0",
     "react-tweet": "^3.1.1",
     "rehype-prism-plus": "^2.0.0",
-    "sharp": "^0.33.1"
+    "sharp": "^0.33.1",
+    "vinext": "^1.0.0-beta.10"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.56.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "22.15.18",
     "@types/react": "19.1.4",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitejs/plugin-rsc": "^0.5.35",
     "eslint-config-next": "^15.1.4",
     "tailwindcss": "^3.3.6",
-    "typescript": "5.7.3"
-  }
+    "typescript": "5.7.3",
+    "vite": "^8.3.0",
+    "wrangler": "^4.135.0"
+  },
+  "type": "module"
 }
